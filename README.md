@@ -37,7 +37,7 @@ While this is a trivial example, the additional verbosity of the code is clearer
     $this->assertEquals(StatusCode:MOVED_PERMANENTLY, $response->getStatusCode());
     $this->assertEquals(StatusCode:CREATED, $response->getStatusCode());
 
-As StatusCode is an interface without any methods, you can directly implement it if you prefer:
+As `StatusCode` is an interface without any methods, you can directly implement it if you prefer:
 
     <?php
 
@@ -54,9 +54,11 @@ As StatusCode is an interface without any methods, you can directly implement it
 
 This may be beneficial in an abstract class, so that child classes don't need to explicitly use the interface.
 
+All constants have doc blocks that use the official W3C descriptions of the status code, to aid IDEs and for reference.
+
 ## Using the HttpException
 
-The HttpException is very straightforward. It simply is a named exception to aid verbosity:
+The `HttpException` is very straightforward. It simply is a named exception to aid verbosity:
 
 
     <?php
@@ -66,7 +68,7 @@ The HttpException is very straightforward. It simply is a named exception to aid
 
     throw new HttpException('Sorry this page does not exist!', StatusCode::NOT_FOUND);
 
-The exception itself uses the StatusCode interface, allowing you to avoid manually and explicitly importing it if you prefer:
+The exception itself uses the `StatusCode` interface, allowing you to avoid manually and explicitly importing it if you prefer:
 
     <?php
 
@@ -76,5 +78,5 @@ The exception itself uses the StatusCode interface, allowing you to avoid manual
 
 ## Coding Standards
 
-The entire library is intended to be PSR-0, PSR-1 and PSR-2 compliant.
+The entire library is intended to be PSR-0, PSR-1 and [PSR-2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md "PSR-2") compliant.
 
