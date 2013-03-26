@@ -1,0 +1,26 @@
+{
+    "name": "shrikeh/http",
+    "type": "library",
+    "description": "PHP HTTP Status library",
+    "keywords": ["http"],
+    "homepage": "http://shrikeh.github.com/php-http",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Barney Hanlon",
+            "email": "barney@shrikeh.net"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "autoload": {
+        "psr-0": { "Shrikeh\\Http\\": "" }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/shrikeh/php-http"
+        }
+    ],
+}
