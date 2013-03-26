@@ -16,11 +16,5 @@
     },
     "autoload": {
         "psr-0": { "Shrikeh\\Http\\": "" }
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/shrikeh/php-http"
-        }
-    ],
+    }
 }
