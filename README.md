@@ -63,8 +63,8 @@ The `HttpException` is very straightforward. It simply is a named exception to a
 
     <?php
 
-    use Shrikeh\Http\HttpException;
-    use Shrikeh\Http\StatusCode;
+    use \Shrikeh\Http\HttpException;
+    use \Shrikeh\Http\StatusCode;
 
     throw new HttpException('Sorry this page does not exist!', StatusCode::NOT_FOUND);
 
