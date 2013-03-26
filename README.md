@@ -23,14 +23,14 @@ Assuming for a moment a PHPUnit test on a cURL client response:
 This becomes:
 
     <?php
-    use \Http\StatusCode;
+    use \Shrikeh\Http\StatusCode;
     ...
     $this->assertEquals(StatusCode:OK, $response->getStatusCode());
 
 While this is a trivial example, the additional verbosity of the code is clearer with other HTTP status codes:
 
     <?php
-    use \Http\StatusCode;
+    use \Shrikeh\Http\StatusCode;
 
     $this->assertEquals(StatusCode:NOT_FOUND, $response->getStatusCode());
     $this->assertEquals(StatusCode:FORBIDDEN, $response->getStatusCode());
@@ -63,8 +63,8 @@ The `HttpException` is very straightforward. It simply is a named exception to a
 
     <?php
 
-    use \Http\HttpException;
-    use \Http\StatusCode;
+    use Shrikeh\Http\HttpException;
+    use Shrikeh\Http\StatusCode;
 
     throw new HttpException('Sorry this page does not exist!', StatusCode::NOT_FOUND);
 
@@ -78,5 +78,5 @@ The exception itself uses the `StatusCode` interface, allowing you to avoid manu
 
 ## Coding Standards
 
-The entire library is intended to be PSR-0, PSR-1 and [PSR-2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md "PSR-2") compliant.
+The entire library is intended to be [PSR-0](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md "PSR-0"), [PSR-1](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md "PSR-1") and [PSR-2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md "PSR-2") compliant.
 
