@@ -23,14 +23,14 @@ Assuming for a moment a PHPUnit test on a cURL client response:
 This becomes:
 
     <?php
-    use \Shrikeh\Http\StatusCode;
+    use \Http\StatusCode;
     ...
     $this->assertEquals(StatusCode:OK, $response->getStatusCode());
 
 While this is a trivial example, the additional verbosity of the code is clearer with other HTTP status codes:
 
     <?php
-    use \Shrikeh\Http\StatusCode;
+    use \Http\StatusCode;
 
     $this->assertEquals(StatusCode:NOT_FOUND, $response->getStatusCode());
     $this->assertEquals(StatusCode:FORBIDDEN, $response->getStatusCode());
@@ -63,8 +63,8 @@ The `HttpException` is very straightforward. It simply is a named exception to a
 
     <?php
 
-    use \Shrikeh\Http\HttpException;
-    use \Shrikeh\Http\StatusCode;
+    use \Http\HttpException;
+    use \Http\StatusCode;
 
     throw new HttpException('Sorry this page does not exist!', StatusCode::NOT_FOUND);
 
@@ -72,7 +72,7 @@ The exception itself uses the `StatusCode` interface, allowing you to avoid manu
 
     <?php
 
-    use \Shrikeh\Http\HttpException;
+    use \Http\HttpException;
 
     throw new HttpException('Sorry this page does not exist!', HttpException::NOT_FOUND);
 
