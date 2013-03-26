@@ -1,9 +1,12 @@
 <?php
 /**
- * Interface representing standard HTTP status codes. These codes are represented as an interface so that developers
- * may implement it and then use parent::[CODE] to gain a code, or to extend the codes using static::[CODE] and
- * override their default description.
- * This allows for codes to be repurposed in a natural way where the core, traditional use would not be meaningful.
+ * Interface representing standard HTTP status codes. These codes are 
+ * represented as an interface so that developers may implement it and then use
+ * parent::[CODE] to gain a code, or to extend the codes using static::[CODE] 
+ * and override their default description.
+ * 
+ * This allows for codes to be repurposed in a natural way where the core, 
+ * traditional use would not be meaningful.
  *
  * @author Barney Hanlon <@shrikeh>
  * @package Http
@@ -11,10 +14,13 @@
  */
 namespace Http;
 /**
- * Interface representing standard HTTP status codes. These codes are represented as an interface so that developers
- * may implement it and then use parent::[CODE] to gain a code, or to extend the codes using static::[CODE] and
- * override their default description.
- * This allows for codes to be repurposed in a natural way where the core, traditional use would not be meaningful.
+ * Interface representing standard HTTP status codes. These codes are 
+ * represented as an interface so that developers may implement it and then use
+ * parent::[CODE] to gain a code, or to extend the codes using static::[CODE] 
+ * and override their default description.
+ * 
+ * This allows for codes to be repurposed in a natural way where the core, 
+ * traditional use would not be meaningful.
  *
  * @author Barney Hanlon <@shrikeh>
  * @package Http
@@ -23,66 +29,85 @@ namespace Http;
 interface StatusCode
 {
     /**
-     * The request has succeeded. The information returned with the response is dependent on the method used in the
-     * request, for example:
-     * GET an entity corresponding to the requested resource is sent in the response;
-     * HEAD the entity-header fields corresponding to the requested resource are sent in the response without any
-     * message-body;
+     * The request has succeeded. The information returned with the response is
+     * dependent on the method used in therequest, for example:
+     * GET an entity corresponding to the requested resource is sent in the 
+     * response;
+     * HEAD the entity-header fields corresponding to the requested resource 
+     * are sent in the response without any message-body;
      * POST an entity describing or containing the result of the action;
-     * TRACE an entity containing the request message as received by the end server.
+     * TRACE an entity containing the request message as received by the end 
+     * server.
      *
      * @var integer
      */
     const OK = 200;
 
     /**
-     *
-     *
-     * The request has been fulfilled and resulted in a new resource being created. The newly created resource can be
-     * referenced by the URI(s) returned in the entity of the response, with the most specific URI for the resource
-     * given by a Location header field.
-     * The response SHOULD include an entity containing a list of resource characteristics and location(s) from which
-     * the user or user agent can choose the one most appropriate. The entity format is specified by the media type
-     * given in the Content-Type header field. The origin server MUST create the resource before returning the 201
-     * status code. If the action cannot be carried out immediately, the server SHOULD respond with 202 (Accepted)
-     * response instead.
+     * The request has been fulfilled and resulted in a new resource being 
+     * created. The newly created resource can be referenced by the URI(s) 
+     * returned in the entity of the response, with the most specific URI for 
+     * the resource given by a Location header field.
+     * The response SHOULD include an entity containing a list of resource 
+     * characteristics and location(s) from which the user or user agent can 
+     * choose the one most appropriate. The entity format is specified by the 
+     * media type given in the Content-Type header field. The origin server 
+     * MUST create the resource before returning the 201 status code. If the 
+     * action cannot be carried out immediately, the server SHOULD respond with
+     * 202 (Accepted) response instead.
      *
      * @var integer
      */
     const CREATED = 201;
 
     /**
-     * The request has been accepted for processing, but the processing has not been completed. The request might or might not eventually be acted upon,
-     * as it might be disallowed when processing actually takes place. There is no facility for re-sending a status code from an asynchronous operation
-     * such as this.
+     * The request has been accepted for processing, but the processing has not
+     * been completed. The request might or might not eventually be acted upon,
+     * as it might be disallowed when processing actually takes place. There 
+     * is no facility for re-sending a status code from an asynchronous 
+     * operation such as this.
      *
-     * The 202 response is intentionally non-committal. Its purpose is to allow a server to accept a request for some other process (perhaps a batch-oriented
-     * process that is only run once per day) without requiring that the user agent's connection to the server persist until the process is completed. The
-     * entity returned with this response SHOULD include an indication of the request's current status and either a pointer to a status monitor or some
-     * estimate of when the user can expect the request to be fulfilled.
+     * The 202 response is intentionally non-committal. Its purpose is to allow
+     * a server to accept a request for some other process (perhaps a 
+     * batch-oriented process that is only run once per day) without requiring 
+     * that the user agent's connection to the server persist until the 
+     * process is completed. The entity returned with this response SHOULD 
+     * include an indication of the request's current status and either a 
+     * pointer to a status monitor or some estimate of when the user can expect
+     * the request to be fulfilled.
      *
      * @var integer
      */
     const ACCEPTED = 202;
 
     /**
-     * The returned metainformation in the entity-header is not the definitive set as available from the origin server, but is gathered from a local or a
-     * third-party copy. The set presented MAY be a subset or superset of the original version. For example, including local annotation information about the
-     * resource might result in a superset of the metainformation known by the origin server. Use of this response code is not required and is only appropriate
-     * when the response would otherwise be 200 (OK).
+     * The returned metainformation in the entity-header is not the definitive 
+     * set as available from the origin server, but is gathered from a local or
+     * a third-party copy. The set presented MAY be a subset or superset of the
+     * original version. For example, including local annotation information 
+     * about the resource might result in a superset of the metainformation 
+     * known by the origin server. Use of this response code is not required 
+     * and is only appropriate when the response would otherwise be 200 (OK).
      *
      * @var integer
      */
     const NON_AUTHORATIVE_INFORMATION = 203;
 
     /**
-     * The server has fulfilled the request but does not need to return an entity-body, and might want to return updated metainformation. The response MAY include new
-     * or updated metainformation in the form of entity-headers, which if present SHOULD be associated with the requested variant.
-     * If the client is a user agent, it SHOULD NOT change its document view from that which caused the request to be sent. This response is primarily intended to
-     * allow input for actions to take place without causing a change to the user agent's active document view, although any new or updated metainformation SHOULD be
-     * applied to the document currently in the user agent's active view.
+     * The server has fulfilled the request but does not need to return an 
+     * entity-body, and might want to return updated metainformation. The 
+     * response MAY include new or updated metainformation in the form of 
+     * entity-headers, which if present SHOULD be associated with the requested
+     * variant.
+     * If the client is a user agent, it SHOULD NOT change its document view 
+     * from that which caused the request to be sent. This response is 
+     * primarily intended to allow input for actions to take place without 
+     * causing a change to the user agent's active document view, although any 
+     * new or updated metainformation SHOULD be applied to the document 
+     * currently in the user agent's active view.
      *
-     * The 204 response MUST NOT include a message-body, and thus is always terminated by the first empty line after the header fields.
+     * The 204 response MUST NOT include a message-body, and thus is always 
+     * terminated by the first empty line after the header fields.
      *
      * @var integer
      */
@@ -90,9 +115,12 @@ interface StatusCode
 
 
     /**
-      * The server has fulfilled the request and the user agent SHOULD reset the document view which caused the request to be sent. This response is primarily intended to
-      * allow input for actions to take place via user input, followed by a clearing of the form in which the input is given so that the user can easily initiate another
-      * input action. The response MUST NOT include an entity.
+      * The server has fulfilled the request and the user agent SHOULD reset 
+      * the document view which caused the request to be sent. This response is
+      * primarily intended to allow input for actions to take place via user 
+      * input, followed by a clearing of the form in which the input is given 
+      * so that the user can easily initiate another input action. The response
+      * MUST NOT include an entity.
       *
       * @var integer
       */
