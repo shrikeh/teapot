@@ -9,7 +9,7 @@
  * @package Http
  *
  */
-namespace ShrikehHttp\Http;
+namespace Http;
 /**
  * Interface representing standard HTTP status codes. These codes are represented as an interface so that developers
  * may implement it and then use parent::[CODE] to gain a code, or to extend the codes using static::[CODE] and
