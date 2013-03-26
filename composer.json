@@ -1,5 +1,5 @@
 {
-    "name": "shrikeh/http",
+    "name": "shrikeh/php-http",
     "type": "library",
     "description": "PHP HTTP Status library",
     "keywords": ["http"],
