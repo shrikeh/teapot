@@ -72,7 +72,7 @@ The exception itself uses the `StatusCode` interface, allowing you to avoid manu
 
     <?php
 
-    use \Http\HttpException;
+    use \Shrikeh\Http\HttpException;
 
     throw new HttpException('Sorry this page does not exist!', HttpException::NOT_FOUND);
 
