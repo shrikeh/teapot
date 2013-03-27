@@ -1,4 +1,4 @@
-php-http-response
+Teapot
 ========
 
 This is a very simple library that aims to aid verbosity in any Web-based application by defining clearly the HTTP 1.1 response codes as constants. It includes two files: an interface, which contains the constants, and an exception specifically for HTTP.
