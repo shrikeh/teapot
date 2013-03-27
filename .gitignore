@@ -21,4 +21,5 @@ tmtagsHistory
 atlassian-ide-plugin.xml
 
 vendor/*
+composer.lock
 !/.gitignore
