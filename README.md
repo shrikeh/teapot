@@ -23,14 +23,14 @@ Assuming for a moment a PHPUnit test on a cURL client response:
 This becomes:
 
     <?php
-    use \HttpResponse\StatusCode;
+    use \Teapot\StatusCode;
     ...
     $this->assertEquals(StatusCode:OK, $response->getStatusCode());
 
 While this is a trivial example, the additional verbosity of the code is clearer with other HTTP status codes:
 
     <?php
-    use \HttpResponse\StatusCode;
+    use \Teapot\StatusCode;
 
     $this->assertEquals(StatusCode:NOT_FOUND, $response->getStatusCode());
     $this->assertEquals(StatusCode:FORBIDDEN, $response->getStatusCode());
@@ -41,7 +41,7 @@ As `StatusCode` is an interface without any methods, you can directly implement 
 
     <?php
 
-    class FooController implements \HttpResponse\StatusCode
+    class FooController implements \Teapot\StatusCode
     {
 
         public function badAction()
@@ -56,25 +56,25 @@ This may be beneficial in an abstract class, so that child classes don't need to
 
 All constants have doc blocks that use the official W3C descriptions of the status code, to aid IDEs and for reference.
 
-## Using the HttpResponseException
+## Using the TeapotException
 
-The `HttpResponseException` is very straightforward. It simply is a named exception to aid verbosity:
+The `TeapotException` is very straightforward. It simply is a named exception to aid verbosity:
 
 
     <?php
 
-    use \HttpResponse\HttpResponseException;
-    use \HttpResponse\StatusCode;
+    use \Teapot\TeapotException;
+    use \Teapot\StatusCode;
 
-    throw new HttpResponseException('Sorry this page does not exist!', StatusCode::NOT_FOUND);
+    throw new TeapotException('Sorry this page does not exist!', StatusCode::NOT_FOUND);
 
 The exception itself uses the `StatusCode` interface, allowing you to avoid manually and explicitly importing it if you prefer:
 
     <?php
 
-    use \HttpResponse\HttpResponseException;
+    use \Teapot\TeapotException;
 
-    throw new HttpResponseException('Sorry this page does not exist!', HttpResponseException::NOT_FOUND);
+    throw new TeapotException('Sorry this page does not exist!', TeapotException::NOT_FOUND);
 
 ## Coding Standards
 

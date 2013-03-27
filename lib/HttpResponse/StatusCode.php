@@ -9,10 +9,10 @@
  * traditional use would not be meaningful.
  *
  * @author Barney Hanlon <@shrikeh>
- * @package HttpResponse
+ * @package Teapot
  *
  */
-namespace HttpResponse;
+namespace Teapot;
 /**
  * Interface representing standard HTTP status codes. These codes are 
  * represented as an interface so that developers may implement it and then use

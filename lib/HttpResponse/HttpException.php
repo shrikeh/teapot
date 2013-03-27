@@ -3,16 +3,16 @@
  * Simple Exception to represent http-based Exceptions
  *
  * @author Barney Hanlon <@shrikeh>
- * @package HttpResponse
+ * @package Teapot
  */
-namespace HttpResponse;
+namespace Teapot;
 /**
  * Simple Exception to represent http-based Exceptions
  *
  * @author Barney Hanlon <@shrikeh>
  * @package Http
  */
-use \HttpResponse\StatusCode;
+use \Teapot\StatusCode;
 
 class HttpException extends \Exception implements StatusCode
 {
