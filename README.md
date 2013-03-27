@@ -1,4 +1,4 @@
-php-http
+php-http-response
 ========
 
 This is a very simple library that aims to aid verbosity in any Web-based application by defining clearly the HTTP 1.1 response codes as constants. It includes two files: an interface, which contains the constants, and an exception specifically for HTTP.
@@ -23,14 +23,14 @@ Assuming for a moment a PHPUnit test on a cURL client response:
 This becomes:
 
     <?php
-    use \Http\StatusCode;
+    use \HttpResponse\StatusCode;
     ...
     $this->assertEquals(StatusCode:OK, $response->getStatusCode());
 
 While this is a trivial example, the additional verbosity of the code is clearer with other HTTP status codes:
 
     <?php
-    use \Http\StatusCode;
+    use \HttpResponse\StatusCode;
 
     $this->assertEquals(StatusCode:NOT_FOUND, $response->getStatusCode());
     $this->assertEquals(StatusCode:FORBIDDEN, $response->getStatusCode());
@@ -41,7 +41,7 @@ As `StatusCode` is an interface without any methods, you can directly implement 
 
     <?php
 
-    class FooController implements \Http\StatusCode
+    class FooController implements \HttpResponse\StatusCode
     {
 
         public function badAction()
@@ -56,25 +56,25 @@ This may be beneficial in an abstract class, so that child classes don't need to
 
 All constants have doc blocks that use the official W3C descriptions of the status code, to aid IDEs and for reference.
 
-## Using the HttpException
+## Using the HttpResponseException
 
-The `HttpException` is very straightforward. It simply is a named exception to aid verbosity:
+The `HttpResponseException` is very straightforward. It simply is a named exception to aid verbosity:
 
 
     <?php
 
-    use \Http\HttpException;
-    use \Http\StatusCode;
+    use \HttpResponse\HttpResponseException;
+    use \HttpResponse\StatusCode;
 
-    throw new HttpException('Sorry this page does not exist!', StatusCode::NOT_FOUND);
+    throw new HttpResponseException('Sorry this page does not exist!', StatusCode::NOT_FOUND);
 
 The exception itself uses the `StatusCode` interface, allowing you to avoid manually and explicitly importing it if you prefer:
 
     <?php
 
-    use \Http\HttpException;
+    use \HttpResponse\HttpResponseException;
 
-    throw new HttpException('Sorry this page does not exist!', HttpException::NOT_FOUND);
+    throw new HttpResponseException('Sorry this page does not exist!', HttpResponseException::NOT_FOUND);
 
 ## Coding Standards
 
