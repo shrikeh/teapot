@@ -9,10 +9,10 @@
  * traditional use would not be meaningful.
  *
  * @author Barney Hanlon <@shrikeh>
- * @package Http
+ * @package HttpResponse
  *
  */
-namespace Http;
+namespace HttpResponse;
 /**
  * Interface representing standard HTTP status codes. These codes are 
  * represented as an interface so that developers may implement it and then use
@@ -127,8 +127,10 @@ interface StatusCode
     const RESET_CONTENT = 205;
 
     /**
-     * The server has fulfilled the partial GET request for the resource. The request MUST have included a Range header field indicating the desired range, and MAY have
-     * included an If-Range header field (section 14.27) to make the request conditional.
+     * The server has fulfilled the partial GET request for the resource. The 
+     * request MUST have included a Range header field indicating the desired 
+     * range, and MAY have included an If-Range header field (section 14.27) to
+     * make the request conditional.
      * The response MUST include the following header fields:
      *
      * - Either a Content-Range header field (section 14.16) indicating
@@ -138,8 +140,10 @@ interface StatusCode
      *   value MUST match the actual number of OCTETs transmitted in the
      *   message-body.
      * - Date
-     * - ETag and/or Content-Location, if the header would have been sent in a 200 response to the same request
-     * - Expires, Cache-Control, and/or Vary, if the field-value might differ from that sent in any previous response for the same variant
+     * - ETag and/or Content-Location, if the header would have been sent in a 
+     *   200 response to the same request
+     * - Expires, Cache-Control, and/or Vary, if the field-value might differ 
+     *   from that sent in any previous response for the same variant
      *
      * If the 206 response is the result of an If-Range request that used a strong cache validator (see section 13.3.3), the response SHOULD NOT include other
      * entity-headers. If the response is the result of an If-Range request that used a weak validator, the response MUST NOT include other entity-headers;

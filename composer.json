@@ -1,7 +1,7 @@
 {
-    "name": "shrikeh/php-http",
+    "name": "shrikeh/php-http-response",
     "type": "library",
-    "description": "PHP HTTP Status library",
+    "description": "PHP HTTP Response Status library",
     "keywords": ["http"],
     "homepage": "http://shrikeh.github.com/php-http",
     "license": "MIT",
@@ -15,6 +15,6 @@
         "php": ">=5.3.3"
     },
     "autoload": {
-        "psr-0": { "Http": "lib" }
+        "psr-0": { "HttpResponse": "lib" }
     }
 }
