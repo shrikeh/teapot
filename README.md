@@ -23,14 +23,14 @@ Assuming for a moment a PHPUnit test on a cURL client response:
 This becomes:
 
     <?php
-    use \Teapot\StatusCode;
+    use \Teapot\HttpResponse\StatusCode;
     ...
     $this->assertEquals(StatusCode:OK, $response->getStatusCode());
 
 While this is a trivial example, the additional verbosity of the code is clearer with other HTTP status codes:
 
     <?php
-    use \Teapot\StatusCode;
+    use \Teapot\HttpResponse\StatusCode;
 
     $this->assertEquals(StatusCode:NOT_FOUND, $response->getStatusCode());
     $this->assertEquals(StatusCode:FORBIDDEN, $response->getStatusCode());
@@ -41,7 +41,7 @@ As `StatusCode` is an interface without any methods, you can directly implement 
 
     <?php
 
-    class FooController implements \Teapot\StatusCode
+    class FooController implements \Teapot\HttpResponse\StatusCode
     {
 
         public function badAction()
@@ -63,18 +63,18 @@ The `HttpException` is very straightforward. It simply is a named exception to a
 
     <?php
 
-    use \Teapot\HttpException;
-    use \Teapot\StatusCode;
+    use \Teapot\HttpResponse\HttpException;
+    use \Teapot\HttpResponse\StatusCode;
 
-    throw new HttpException('Sorry this page does not exist!', StatusCode::NOT_FOUND);
+    throw new ResponseException('Sorry this page does not exist!', StatusCode::NOT_FOUND);
 
 The exception itself uses the `StatusCode` interface, allowing you to avoid manually and explicitly importing it if you prefer:
 
     <?php
 
-    use \Teapot\HttpException;
+    use \Teapot\HttpResponse\ResponseException;
 
-    throw new TeapotException('Sorry this page does not exist!', HttpException::NOT_FOUND);
+    throw new ResponseException('Sorry this page does not exist!', ResponseException::NOT_FOUND);
 
 ## Coding Standards
 
