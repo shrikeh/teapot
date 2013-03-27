@@ -9,6 +9,7 @@ Thumbs.db
 tags
 vendor.tags
 tmtagsHistory
+
 # IDE generated files #
 #######################
 
@@ -19,4 +20,5 @@ tmtagsHistory
 *.sublime-workspace
 atlassian-ide-plugin.xml
 
+vendor/*
 !/.gitignore
