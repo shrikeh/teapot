@@ -58,23 +58,23 @@ All constants have doc blocks that use the official W3C descriptions of the stat
 
 ## Using the TeapotException
 
-The `TeapotException` is very straightforward. It simply is a named exception to aid verbosity:
+The `HttpException` is very straightforward. It simply is a named exception to aid verbosity:
 
 
     <?php
 
-    use \Teapot\TeapotException;
+    use \Teapot\HttpException;
     use \Teapot\StatusCode;
 
-    throw new TeapotException('Sorry this page does not exist!', StatusCode::NOT_FOUND);
+    throw new HttpException('Sorry this page does not exist!', StatusCode::NOT_FOUND);
 
 The exception itself uses the `StatusCode` interface, allowing you to avoid manually and explicitly importing it if you prefer:
 
     <?php
 
-    use \Teapot\TeapotException;
+    use \Teapot\HttpException;
 
-    throw new TeapotException('Sorry this page does not exist!', TeapotException::NOT_FOUND);
+    throw new TeapotException('Sorry this page does not exist!', HttpException::NOT_FOUND);
 
 ## Coding Standards
 
