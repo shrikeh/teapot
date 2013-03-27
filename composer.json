@@ -3,7 +3,7 @@
     "type": "library",
     "description": "PHP HTTP Response Status library",
     "keywords": ["http"],
-    "homepage": "http://shrikeh.github.com/php-http",
+    "homepage": "http://shrikeh.github.com/php-http-response",
     "license": "MIT",
     "authors": [
         {
