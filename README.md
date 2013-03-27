@@ -56,7 +56,7 @@ This may be beneficial in an abstract class, so that child classes don't need to
 
 All constants have doc blocks that use the official W3C descriptions of the status code, to aid IDEs and for reference.
 
-## Using the TeapotException
+## Using the HttpException
 
 The `HttpException` is very straightforward. It simply is a named exception to aid verbosity:
 
