@@ -16,7 +16,11 @@ namespace Teapot\HttpResponse;
  */
 use \Teapot\HttpResponse\StatusCode;
 
-class HttpException extends \Exception implements StatusCode
+class HttpResponseException extends \Exception implements StatusCode
 {
+    public function __construct($message, $errorCode)
+    {
 
+        parent::__construct($message, $errorCode);
+    }
 }

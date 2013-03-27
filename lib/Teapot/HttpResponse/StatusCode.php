@@ -434,21 +434,31 @@ interface StatusCode
     const PROXY_AUTHENTICATION_REQUIRED = 407;
 
     /**
-      * The client did not produce a request within the time that the server was prepared to wait. The client MAY repeat the request without modifications at any
-      * later time.
+      * The client did not produce a request within the time that the server
+      * was prepared to wait. The client MAY repeat the request without
+      * modifications at any later time.
       *
       * @var integer
       */
     const REQUEST_TIMEOUT = 408;
 
     /**
-      * The request could not be completed due to a conflict with the current state of the resource. This code is only allowed in situations where it is expected that
-      * the user might be able to resolve the conflict and resubmit the request. The response body SHOULD include enough information for the user to recognize the source
-      * of the conflict. Ideally, the response entity would include enough information for the user or user agent to fix the problem; however, that might not be possible
-      * and is not required.
-      * Conflicts are most likely to occur in response to a PUT request. For example, if versioning were being used and the entity being PUT included changes to a
-      * resource which conflict with those made by an earlier (third-party) request, the server might use the 409 response to indicate that it can't complete the request.
-      * In this case, the response entity would likely contain a list of the differences between the two versions in a format defined by the response Content-Type.
+      * The request could not be completed due to a conflict with the current
+      * state of the resource. This code is only allowed in situations where it
+      * is expected that the user might be able to resolve the conflict and
+      * resubmit the request. The response body SHOULD include enough
+      * information for the user to recognize the source of the conflict.
+      * Ideally, the response entity would include enough information for the
+      * user or user agent to fix the problem; however, that might not be
+      * possible and is not required.
+      * Conflicts are most likely to occur in response to a PUT request. For
+      * example, if versioning were being used and the entity being PUT
+      * included changes to a resource which conflict with those made by an
+      * earlier (third-party) request, the server might use the 409 response to
+      * indicate that it can't complete the request.
+      * In this case, the response entity would likely contain a list of the
+      * differences between the two versions in a format defined by the
+      * response Content-Type.
       *
       * @var integer
       */
@@ -456,39 +466,56 @@ interface StatusCode
 
 
     /**
-      * The requested resource is no longer available at the server and no forwarding address is known. This condition is expected to be considered permanent. Clients
-      * with link editing capabilities SHOULD delete references to the Request-URI after user approval. If the server does not know, or has no facility to determine,
-      * whether or not the condition is permanent, the status code 404 (Not Found) SHOULD be used instead. This response is cacheable unless indicated otherwise.
-      * The 410 response is primarily intended to assist the task of web maintenance by notifying the recipient that the resource is intentionally unavailable and that
-      * the server owners desire that remote links to that resource be removed. Such an event is common for limited-time, promotional services and for resources
-      * belonging to individuals no longer working at the server's site. It is not necessary to mark all permanently unavailable resources as "gone" or to keep the
-      * mark for any length of time -- that is left to the discretion of the server owner.
+      * The requested resource is no longer available at the server and no
+      * forwarding address is known. This condition is expected to be
+      * considered permanent. Clients with link editing capabilities SHOULD
+      * delete references to the Request-URI after user approval. If the server
+      * does not know, or has no facility to determine, whether or not the
+      * condition is permanent, the status code 404 (Not Found) SHOULD be used
+      * instead. This response is cacheable unless indicated otherwise.
+      *
+      * The 410 response is primarily intended to assist the task of web
+      * maintenance by notifying the recipient that the resource is
+      * intentionally unavailable and that the server owners desire that
+      * remote links to that resource be removed. Such an event is common for
+      * limited-time, promotional services and for resources belonging to
+      * individuals no longer working at the server's site. It is not necessary
+      * to mark all permanently unavailable resources as "gone" or to keep the
+      * mark for any length of time -- that is left to the discretion of the
+      * server owner.
       *
       * @var integer
       */
     const GONE = 410;
 
     /**
-      * The server refuses to accept the request without a defined Content-Length. The client MAY repeat the request if it adds a valid Content-Length header field
-      * containing the length of the message-body in the request message.
+      * The server refuses to accept the request without a defined
+      * Content-Length. The client MAY repeat the request if it adds a valid
+      * Content-Length header field containing the length of the message-body
+      * in the request message.
       *
       * @var integer
       */
     const LENGTH_REQUIRED = 411;
 
     /**
-     * The precondition given in one or more of the request-header fields evaluated to false when it was tested on the server. This response code allows the client to
-     * place preconditions on the current resource metainformation (header field data) and thus prevent the requested method from being applied to a resource other than
-     * the one intended.
+     * The precondition given in one or more of the request-header fields
+     * evaluated to false when it was tested on the server. This response code
+     * allows the client to place preconditions on the current resource
+     * metainformation (header field data) and thus prevent the requested
+     * method from being applied to a resource other than the one intended.
      *
      * @var integer
      */
     const PRECONDITION_FAILED = 412;
 
     /**
-      * The server is refusing to process a request because the request entity is larger than the server is willing or able to process. The server MAY close the
-      * connection to prevent the client from continuing the request.
-      * If the condition is temporary, the server SHOULD include a Retry- After header field to indicate that it is temporary and after what time the client MAY try again.
+      * The server is refusing to process a request because the request entity
+      * is larger than the server is willing or able to process. The server MAY
+      * close the connection to prevent the client from continuing the request.
+      * If the condition is temporary, the server SHOULD include a Retry- After
+      * header field to indicate that it is temporary and after what time the
+      * client MAY try again.
       *
       * @var integer
       */
@@ -496,43 +523,59 @@ interface StatusCode
     const REQUEST_ENTITY_TOO_LARGE = 413;
 
     /**
-      * The server is refusing to service the request because the Request-URI is longer than the server is willing to interpret. This rare condition is only likely to
-      * occur when a client has improperly converted a POST request to a GET request with long query information, when the client has descended into a URI "black hole"
-      * of redirection (e.g., a redirected URI prefix that points to a suffix of itself), or when the server is under attack by a client attempting to exploit security
-      * holes present in some servers using fixed-length buffers for reading or manipulating the Request-URI.
+      * The server is refusing to service the request because the Request-URI
+      * is longer than the server is willing to interpret. This rare condition
+      * is only likely to occur when a client has improperly converted a POST
+      * request to a GET request with long query information, when the client
+      * has descended into a URI "black hole" of redirection (e.g., a
+      * redirected URI prefix that points to a suffix of itself), or when the
+      * server is under attack by a client attempting to exploit security holes
+      * present in some servers using fixed-length buffers for reading or
+      * manipulating the Request-URI.
       *
       * @var integer
       */
     const REQUEST_URI_TOO_LONG = 414;
 
     /**
-      * The server is refusing to service the request because the entity of the request is in a format not supported by the requested resource for the requested method.
+      * The server is refusing to service the request because the entity of the
+      * request is in a format not supported by the requested resource for the
+      * requested method.
       *
       * @var integer
       */
     const UNSUPPORTED_MEDIA_TYPE = 415;
 
     /**
-      * A server SHOULD return a response with this status code if a request included a Range request-header field (section 14.35), and none of the range-specifier
-      * values in this field overlap the current extent of the selected resource, and the request did not include an If-Range request-header field. (For byte-ranges,
-      * this means that the first- byte-pos of all of the byte-range-spec values were greater than the current length of the selected resource.)
-      * When this status code is returned for a byte-range request, the response SHOULD include a Content-Range entity-header field specifying the current length of the
-      * selected resource (see section 14.16). This response MUST NOT use the multipart/byteranges content-type.
+      * A server SHOULD return a response with this status code if a request
+      * included a Range request-header field (section 14.35), and none of the
+      * range-specifier values in this field overlap the current extent of the
+      * selected resource, and the request did not include an If-Range
+      * request-header field. (For byte-ranges, this means that the
+      * first-byte-pos of all of the byte-range-spec values were greater than
+      * the current length of the selected resource.)
+      * When this status code is returned for a byte-range request, the
+      * response SHOULD include a Content-Range entity-header field specifying
+      * the current length of the selected resource (see section 14.16). This
+      * response MUST NOT use the multipart/byteranges content-type.
       *
       * @var integer
       */
     const REQUESTED_RANGE_NOT_SATISFIABLE = 416;
 
     /**
-      * The expectation given in an Expect request-header field (see section 14.20) could not be met by this server, or, if the server is a proxy, the server has
-      * unambiguous evidence that the request could not be met by the next-hop server.
+      * The expectation given in an Expect request-header field (see section
+      * 14.20) could not be met by this server, or, if the server is a proxy,
+      * the server has unambiguous evidence that the request could not be met
+      * by the next-hop server.
       *
       * @var integer
       */
     const EXPECTATION_FAILED = 417;
 
     /**
-      * The HTCPCP server is a teapot; the resulting entity may be short and stout. Demonstrations of this behaviour exist.
+      * The HTCPCP server is a teapot; the resulting entity may be short and
+      * stout. Demonstrations of this behaviour exist.
       *
       * @var integer
       */
@@ -540,49 +583,67 @@ interface StatusCode
 
 
     /**
-     * The policy for accessing the resource has not been met in the request. The response MUST include a PEP-Info or a C-PEP-Info header
-     * field specifying the extensions required by the publishing party for accessing the resource. The server MAY use the for attribute
-     * bag to indicate whether the policy applies to other resources.
-     * The client MAY repeat the request using the appropriate extensions). If the initial request already included the extensions requested in the
-     * 420 response, then the response indicates that access has been refused for those extension declarations.
-     * If the 420 response contains the same set of extension policies as the prior response, then the client MAY present any entity included
-     * in the response to the user, since that entity may include relevant diagnostic information.
-     * Implementers may note the similarity to the way authentication challenges are issued with the 401 (Unauthorized) status-code.
+     * The policy for accessing the resource has not been met in the request.
+     * The response MUST include a PEP-Info or a C-PEP-Info header field
+     * specifying the extensions required by the publishing party for accessing
+     * the resource. The server MAY use the for attribute bag to indicate
+     * whether the policy applies to other resources.
+     *
+     * The client MAY repeat the request using the appropriate extensions). If
+     * the initial request already included the extensions requested in the 420
+     * response, then the response indicates that access has been refused for
+     * those extension declarations.
+     * If the 420 response contains the same set of extension policies as the
+     * prior response, then the client MAY present any entity included in the
+     * response to the user, since that entity may include relevant diagnostic
+     * information.
+     * Implementers may note the similarity to the way authentication
+     * challenges are issued with the 401 (Unauthorized) status-code.
      *
      * @var integer
      */
     const POLICY_NOT_FULFILLED = 420;
 
     /**
-      * The mappings indicated by one or more map attribute bags in the request were not unique and mapped the same header field more than once.
-      * The client MAY repeat the request using a new set of mappings if it believes that it can find a unique set of header fields for which
-      * the transaction will succeed.
+      * The mappings indicated by one or more map attribute bags in the request
+      * were not unique and mapped the same header field more than once.
+      * The client MAY repeat the request using a new set of mappings if it
+      * believes that it can find a unique set of header fields for which the
+      * transaction will succeed.
       *
       * @var integer
       */
     const BAD_MAPPING = 421;
 
     /**
-      * The 422 (Unprocessable Entity) status code means the server understands the content type of the request entity (hence a 415(Unsupported Media Type)
-      * status code is inappropriate), and the syntax of the request entity is correct (thus a 400 (Bad Request) status code is inappropriate) but was
-      * unable to process the contained instructions. For example, this error condition may occur if an XML request body contains well-formed
-      * (i.e., syntactically correct), but semantically erroneous, XML instructions.
+      * The 422 (Unprocessable Entity) status code means the server understands
+      * the content type of the request entity (hence a
+      * 415[Unsupported Media Type] status code is inappropriate), and the
+      * syntax of the request entity is correct (thus a 400 (Bad Request)
+      * status code is inappropriate) but was unable to process the contained
+      * instructions. For example, this error condition may occur if an XML
+      * request body contains well-formed (i.e., syntactically correct), but
+      * semantically erroneous, XML instructions.
       *
       * @var integer
       */
     const UNPROCESSABLE_ENTITY = 422;
 
     /**
-      * The 423 (Locked) status code means the source or destination resource of a method is locked.  This response SHOULD contain an appropriate precondition or
-      * post-condition code, such as 'lock-token-submitted' or 'no-conflicting-lock'.
+      * The 423 (Locked) status code means the source or destination resource
+      * of a method is locked.  This response SHOULD contain an appropriate
+      * precondition or post-condition code, such as 'lock-token-submitted' or
+      * 'no-conflicting-lock'.
       *
       * @var integer
       */
     const ENTITY_LOCKED = 423;
 
     /**
-      * The 424 (Failed Dependency) status code means that the method could not be performed on the resource because the requested action
-      * depended on another action and that action failed. For example, if a command in a PROPPATCH method fails then, at minimum, the rest
+      * The 424 (Failed Dependency) status code means that the method could not
+      * be performed on the resource because the requested action
+      * depended on another action and that action failed. For example, if a
+      * command in a PROPPATCH method fails then, at minimum, the rest
       * of the commands will also fail with 424 (Failed Dependency).
       *
       * @var integer
@@ -591,94 +652,119 @@ interface StatusCode
 
 
     /**
-      * The Upgrade response header field advertises possible protocol upgrades a server MAY accept. In conjunction with the "426 Upgrade Required"
-      * status code, a server can advertise the exact protocol upgrades that a client MUST accept to complete the request. The server MAY include an
-      * Upgrade header in any response other than 101 or 426 to indicate a willingness to switch to any (combination) of the protocols listed.
+      * The Upgrade response header field advertises possible protocol upgrades
+      * a server MAY accept. In conjunction with the "426 Upgrade Required"
+      * status code, a server can advertise the exact protocol upgrades that a
+      * client MUST accept to complete the request. The server MAY include an
+      * Upgrade header in any response other than 101 or 426 to indicate a
+      * willingness to switch to any (combination) of the protocols listed.
       *
       * @var integer
       */
     const UPDATE_REQUIRED = 426;
 
     /**
-     * The server encountered an unexpected condition which prevented it from fulfilling the request.
+     * The server encountered an unexpected condition which prevented it from
+     * fulfilling the request.
      *
      * @var integer
      */
     const INTERNAL_SERVER_ERROR = 500;
 
     /**
-      * The server does not support the functionality required to fulfill the request. This is the appropriate response when the server does not recognize the
-      * request method and is not capable of supporting it for any resource.
+      * The server does not support the functionality required to fulfill the
+      * request. This is the appropriate response when the server does not
+      * recognize the request method and is not capable of supporting it for
+      * any resource.
       *
       * @var integer
       */
     const NOT_IMPLEMENTED = 501;
 
     /**
-      * The server, while acting as a gateway or proxy, received an invalid response from the upstream server it accessed in attempting to fulfill the request.
+      * The server, while acting as a gateway or proxy, received an invalid
+      * response from the upstream server it accessed in attempting to fulfill
+      * the request.
+      *
       * @var integer
       */
     const BAD_GATEWAY = 502;
 
     /**
-     * The server is currently unable to handle the request due to a temporary overloading or maintenance of the server. The implication is that this is a temporary
-     * condition which will be alleviated after some delay. If known, the length of the delay MAY be indicated in a Retry-After header. If no Retry-After is given,
-     * the client SHOULD handle the response as it would for a 500 response.
-     *    Note: The existence of the 503 status code does not imply that a server must use it when becoming overloaded.
-     *    Some servers may wish to simply refuse the connection.
+     * The server is currently unable to handle the request due to a temporary
+     * overloading or maintenance of the server. The implication is that this
+     * is a temporary condition which will be alleviated after some delay. If
+     * known, the length of the delay MAY be indicated in a Retry-After header.
+     * If no Retry-After is given, the client SHOULD handle the response as it
+     * would for a 500 response.
+     *    Note: The existence of the 503 status code does not imply that a
+     *    server must use it when becoming overloaded. Some servers may wish to
+     *    simply refuse the connection.
      *
      * @var integer
      */
     const SERVICE_UNAVAILABLE = 503;
 
     /**
-      * The server, while acting as a gateway or proxy, did not receive a timely response from the upstream server specified by the URI (e.g. HTTP, FTP, LDAP) or
-      * some other auxiliary server (e.g. DNS) it needed to access in attempting to complete the request.
-      *    Note: Note to implementors: some deployed proxies are known to return 400 or 500 when DNS lookups time out.
+      * The server, while acting as a gateway or proxy, did not receive a
+      * timely response from the upstream server specified by the URI (e.g.
+      * HTTP, FTP, LDAP) or some other auxiliary server (e.g. DNS) it needed to
+      * access in attempting to complete the request.
+      *    Note: Note to implementors: some deployed proxies are known to
+      *    return 400 or 500 when DNS lookups time out.
       *
       * @var integer
       */
     const GATEWAY_TIMEOUT = 504;
 
     /**
-      * The server does not support, or refuses to support, the HTTP protocol version that was used in the request message. The server is indicating that it is unable
-      * or unwilling to complete the request using the same major version as the client, as described in section 3.1, other than with this error message.
-      * The response SHOULD contain an entity describing why that version is not supported and what other protocols are supported by that server.
+      * The server does not support, or refuses to support, the HTTP protocol
+      * version that was used in the request message. The server is indicating
+      * that it is unable or unwilling to complete the request using the same
+      * major version as the client, as described in section 3.1, other than
+      * with this error message.
+      * The response SHOULD contain an entity describing why that version is
+      * not supported and what other protocols are supported by that server.
       *
       * @var integer
       */
     const HTTP_VERSION_NOT_SUPPORTED = 505;
 
     /**
-      * Transparent content negotiation for the request results in a circular reference.
+      * Transparent content negotiation for the request results in a circular
+      * reference.
       *
       * @var integer
       */
     const VARIANT_ALSO_NEGOTIATES = 506;
 
     /**
-      * The server is unable to store the representation needed to complete the request
+      * The server is unable to store the representation needed to complete the
+      * request.
       *
       * @var integer
       */
     const INSUFFICIENT_STORAGE = 507;
 
     /**
-      * The server detected an infinite loop while processing the request (sent in lieu of 208).
+      * The server detected an infinite loop while processing the request
+      * (sent in lieu of 208).
       *
       * @var integer
       */
     const LOOP_DETECTED = 508;
 
     /**
-      * This status code, while used by many servers, is not specified in any RFCs.
+      * This status code, while used by many servers, is not specified in any
+      * RFCs.
       *
       * @var integer
       */
     const BANDWIDTH_LIMIT_EXCEEDED = 509;
 
     /**
-      * Further extensions to the request are required for the server to fulfill it.
+      * Further extensions to the request are required for the server to fulfill
+      * it.
       *
       * @var integer
       */
