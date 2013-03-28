@@ -1,20 +1,54 @@
 <?php
+/**
+ * Validator for HTTP response codes.
+ *
+ * PHP version 5.3
+ *
+ * @category   StatusCode
+ * @package    Teapot
+ * @subpackage HttpResponse
+ * @author     Barney Hanlon <barney@shrikeh.net>
+ * @copyright  2013 B Hanlon. All rights reserved.
+ * @license    MIT http://opensource.org/licenses/MIT
+ * @link       http://shrikeh.github.com/teapot
+ */
 namespace Teapot\HttpResponse\StatusCode;
 
+/**
+ * Validator for HTTP response codes.
+ *
+ * PHP version 5.3
+ *
+ * @category   StatusCode
+ * @package    Teapot
+ * @subpackage HttpResponse
+ * @author     Barney Hanlon <barney@shrikeh.net>
+ * @copyright  2013 B Hanlon. All rights reserved.
+ * @license    MIT http://opensource.org/licenses/MIT
+ * @link       http://shrikeh.github.com/teapot
+ */
 class Validator
 {
 
     /**
-     * A ReflectionClass instance.
+     * Storage for the error codes and constants.
      *
-     * @var \ReflectionClass
+     * @var \ArrayAccess An object to store error codes in
      */
-    protected $reflector;
+    protected $storage;
+
+    public function __construct(\ArrayAccess $storage = null)
+    {
+        if (!$storage) {
+            $storage = new \ArrayObject(array());
+        }
+        $this->storage = $storage;
+    }
 
     /**
      * Validate a response code to see if it is a W3C-approved status code.
      *
-     * @param integer $code
+     * @param integer $code The status code to validate
      * @return bool
      */
     public function isValid($code)
@@ -22,23 +56,26 @@ class Validator
         if (!is_integer($code)) {
             return false;
         }
-        $reflector = $this->getReflector();
-        $constants = array_flip($reflector->getConstants());
+        $storage = $this->getStorage();
+        if (!count($this->storage)) {
+            // reflection is costly, so we try and do this only once.
+            $reflector = new \ReflectionClass('\Teapot\HttpResponse\StatusCode');
 
-        return (isset($constants[$code]));
+            foreach ($reflector->getConstants() as $constant => $statusCode) {
+                $storage->offsetSet($statusCode, $constant);
+            }
+        }
+
+        return $storage->offsetExists($code);
     }
 
     /**
-     * Get an instance of a reflector for the status code interface,
-     * or lazily create one.
+     * Simple getter to fetch the error code storage.
      *
-     * @return ReflectionClass
+     * @return \Iterator
      */
-    private function getReflector()
+    public function getStorage()
     {
-        if (!isset($this->reflector)) {
-            $this->reflector = new \ReflectionClass('\Teapot\HttpResponse\StatusCode');
-        }
-        return $this->reflector;
+        return $this->storage;
     }
 }

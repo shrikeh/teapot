@@ -8,12 +8,18 @@
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
  *
- * @author Barney Hanlon <@shrikeh>
- * @package Teapot
- * @subpackage HttpResponse
+ * PHP version 5.3
  *
+ * @category   StatusCode
+ * @package    Teapot
+ * @subpackage HttpResponse
+ * @author     Barney Hanlon <barney@shrikeh.net>
+ * @copyright  2013 B Hanlon. All rights reserved.
+ * @license    MIT http://opensource.org/licenses/MIT
+ * @link       http://shrikeh.github.com/teapot
  */
 namespace Teapot\HttpResponse;
+
 /**
  * Interface representing standard HTTP status codes. These codes are
  * represented as an interface so that developers may implement it and then use
@@ -23,10 +29,13 @@ namespace Teapot\HttpResponse;
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
  *
- * @author Barney Hanlon <@shrikeh>
- * @package Teapot
+ * @category   StatusCode
+ * @package    Teapot
  * @subpackage HttpResponse
- *
+ * @author     Barney Hanlon <barney@shrikeh.net>
+ * @copyright  2013 B Hanlon. All rights reserved.
+ * @license    MIT http://opensource.org/licenses/MIT
+ * @link       http://shrikeh.github.com/teapot
  */
 interface StatusCode
 {
