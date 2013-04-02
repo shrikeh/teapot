@@ -14,8 +14,12 @@
  */
 namespace Teapot\HttpResponse\StatusCode;
 
+use \ArrayAccess;
+use \ArrayObject;
 use \InvalidArgumentException;
+use \ReflectionClass;
 use \Teapot\HttpResponse\StatusCode\Validator\ValidatorInterface;
+
 /**
  * Validator for HTTP response codes.
  *
@@ -30,6 +34,7 @@ use \Teapot\HttpResponse\StatusCode\Validator\ValidatorInterface;
  * @link       http://shrikeh.github.com/teapot
  */
 class Validator implements ValidatorInterface
+
 {
     /**
      * Storage for the error codes and constants.
@@ -38,7 +43,7 @@ class Validator implements ValidatorInterface
      */
     protected $storage;
 
-    public function __construct(\ArrayAccess $storage = null)
+    public function __construct(ArrayAccess $storage = null)
     {
         $this->storage = $storage;
     }

@@ -164,7 +164,8 @@ interface StatusCode
      * include all of the entity-headers that would have been returned with a
      * 200 (OK) response to the same request.
      * A cache MUST NOT combine a 206 response with other previously cached
-     * content if the ETag or Last-Modified headers do not match exactly, see 13.5.4.
+     * content if the ETag or Last-Modified headers do not match exactly, see
+     * 13.5.4.
      *
      * A cache that does not support the Range and Content-Range headers
      * MUST NOT cache 206 (Partial) responses.

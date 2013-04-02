@@ -1,4 +1,23 @@
 <?php
+/**
+ * Interface representing standard HTTP status codes. These codes are
+ * represented as an interface so that developers may implement it and then use
+ * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
+ * and override their default description.
+ *
+ * This allows for codes to be repurposed in a natural way where the core,
+ * traditional use would not be meaningful.
+ *
+ * PHP version 5.3
+ *
+ * @category   StatusCode
+ * @package    Teapot
+ * @subpackage HttpResponse
+ * @author     Barney Hanlon <barney@shrikeh.net>
+ * @copyright  2013 B Hanlon. All rights reserved.
+ * @license    MIT http://opensource.org/licenses/MIT
+ * @link       http://shrikeh.github.com/teapot
+ */
 namespace Teapot;
 
 use \ArrayAccess;
@@ -8,12 +27,40 @@ use \Teapot\HttpResponse\HttpResponseException;
 use \Teapot\HttpResponse\StatusCode;
 use \Teapot\HttpResponse\StatusCode\Validator;
 
+/**
+ * Interface representing standard HTTP status codes. These codes are
+ * represented as an interface so that developers may implement it and then use
+ * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
+ * and override their default description.
+ *
+ * This allows for codes to be repurposed in a natural way where the core,
+ * traditional use would not be meaningful.
+ *
+ * @category   StatusCode
+ * @package    Teapot
+ * @subpackage HttpResponse
+ * @author     Barney Hanlon <barney@shrikeh.net>
+ * @copyright  2013 B Hanlon. All rights reserved.
+ * @license    MIT http://opensource.org/licenses/MIT
+ * @link       http://shrikeh.github.com/teapot
+ */
 class HttpResponse implements StatusCode, ArrayAccess, IteratorAggregate
 {
-    protected $storage;
 
+    protected $statusStorage;
+
+    /**
+     * An instance of a status code validator.
+     *
+     * @var \Teapot\HttpResponse\StatusCode\ValidatorInterface
+     */
     protected $validator;
 
+    /**
+     * For use as a static singleton.
+     *
+     * @var \Teapot\HttpResponse
+     */
     protected static $instance;
 
     /**
@@ -22,8 +69,10 @@ class HttpResponse implements StatusCode, ArrayAccess, IteratorAggregate
      */
     protected $exceptionClass = '\Teapot\HttpResponse\HttpResponseException';
 
-
     /**
+     * I'm not a big fan of static singletons, but some people like them,
+     * and the role of this library is to make life easier, so for completeness
+     * a static singleton factory is included.
      *
      * @return \Teapot\HttpResponse
      */
@@ -35,19 +84,62 @@ class HttpResponse implements StatusCode, ArrayAccess, IteratorAggregate
         return self::$instance;
     }
 
-
-    public function __construct()
+    public function __construct(
+        $statusCodes = null,
+        $validator = null,
+        $exceptionClass = null
+    )
     {
 
     }
 
     /**
+     * Method overloading so you can go $httpResponse->movedPermanently() or
+     * $httpResponse->moved_permanently()
+     *
+     * @param string $method
+     * @param string $vars
+     */
+    public function __call($method, $vars)
+    {
+        $constant = $this->normalizeConstant($method);
+    }
+
+    /**
+     * Method overloading so you can go $httpResponse->movedPermanently or
+     * $httpResponse->moved_permanently
+     *
+     * @param string $var
+     */
+    public function __set($var, $message)
+    {
+        $constant = $this->normalizeConstant($var);
+    }
+
+    /**
+     * Method overloading so you can go $httpResponse->movedPermanently or
+     * $httpResponse->moved_permanently
      *
      * @param string $var
      */
     public function __get($var)
     {
+        $constant = $this->normalizeConstant($var);
+    }
 
+    /**
+     * Take a camel-cased or underscored name and turn it into a constant.
+     *
+     * @param string $constant
+     * @return string the normalized constant name in upper case
+     */
+    protected function normalizeConstant($constant)
+    {
+        return preg_replace(
+            '/([A-Z])([A-Z][a-z])|([a-z0-9])([A-Z])/',
+            "$1$3_$2$4",
+            $constant
+        );
     }
 
 
@@ -60,7 +152,6 @@ class HttpResponse implements StatusCode, ArrayAccess, IteratorAggregate
     {
         return $this->getValidator()->isValid($statusCode);
     }
-
 
     /**
      * Return (or instantiate, and then return) a status code validator.
@@ -90,7 +181,13 @@ class HttpResponse implements StatusCode, ArrayAccess, IteratorAggregate
         return 'OK';
     }
 
-
+    /**
+     * Set the message associated with this response code.
+     *
+     * @param integer $statusCode
+     * @throws OutOfRangeException
+     * @return string
+     */
     public function setMessage($statusCode, $message)
     {
         if (!$this->isValid($statusCode)) {
@@ -132,39 +229,64 @@ class HttpResponse implements StatusCode, ArrayAccess, IteratorAggregate
      *
      * @return \ArrayAccess
      */
-
     public function getIterator()
     {
-        if (!$this->storage) {
-            $this->storage = new \ArrayObject(array());
+        if (!$this->statusStorage) {
+            $this->statusStorage = new \ArrayObject(array());
             // reflection is costly, so we try and do this only once.
             $reflector = new \ReflectionClass('\Teapot\HttpResponse\StatusCode');
 
             foreach ($reflector->getConstants() as $constant => $statusCode) {
-                $this->storage->offsetSet($statusCode, $constant);
+                $this->statusStorage->offsetSet($statusCode, $constant);
             }
         }
-        return $this->storage;
+        return $this->statusStorage;
     }
 
-
+    /**
+     * Implementation of ArrayAccess interface.
+     *
+     * @see \ArrayAccess::offsetExists()
+     * @param integer $statusCode
+     * @return boolean
+     */
     public function offsetExists($statusCode)
     {
         return $this->isValid($statusCode);
     }
 
+    /**
+     * Implementation of ArrayAccess interface.
+     *
+     * @see \ArrayAccess::offsetUnset()
+     * @param integer $statusCode
+     * @return string The status message
+     */
     public function offsetGet($statusCode)
     {
         return $this->getMessage($statusCode);
     }
 
+    /**
+     * Implementation of ArrayAccess interface.
+     *
+     * @see \ArrayAccess::offsetSet()
+     * @param integer $statusCode The status code.
+     * @param string $message The status message
+     */
     public function offsetSet($statusCode, $message)
     {
         return $this->setMessage($statusCode, $message);
     }
 
+    /**
+     * Implementation of ArrayAccess interface.
+     *
+     * @see \ArrayAccess::offsetUnset()
+     * @param integer $statusCode
+     */
     public function offsetUnset($statusCode)
     {
-        $this->getIterator()->offsetUnset($statusCode);
+        return $this->getIterator()->offsetUnset($statusCode);
     }
 }
