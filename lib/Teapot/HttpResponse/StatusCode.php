@@ -361,6 +361,7 @@ interface StatusCode
     const UNAUTHORIZED = 401;
 
     /**
+      * This code is reserved for future use.
       *
       * @var integer
       */
