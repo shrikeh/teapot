@@ -21,3 +21,4 @@ atlassian-ide-plugin.xml
 composer.lock
 vendor/
 !/.gitignore
+!/.travis.yml
