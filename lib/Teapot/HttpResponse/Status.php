@@ -21,7 +21,6 @@
 namespace Teapot\HttpResponse;
 
 use \ArrayAccess;
-use \Teapot\HttpResponse\StatusCode;
 
 /**
  * Interface representing standard HTTP status codes. These codes are
@@ -40,7 +39,7 @@ use \Teapot\HttpResponse\StatusCode;
  * @license    MIT http://opensource.org/licenses/MIT
  * @link       http://shrikeh.github.com/teapot
  */
-class Status implements StatusCode, ArrayAccess
+class Status implements ArrayAccess
 {
     protected $code;
 
@@ -62,11 +61,6 @@ class Status implements StatusCode, ArrayAccess
         return $this->$var;
     }
 
-    public function __toString()
-    {
-        return $this->render();
-    }
-
     public function getCode()
     {
         return $this->code;
@@ -74,7 +68,7 @@ class Status implements StatusCode, ArrayAccess
 
     public function getMessage()
     {
-        return $this->message();
+        return $this->message;
     }
 
     /**
@@ -111,6 +105,20 @@ class Status implements StatusCode, ArrayAccess
      * @throws \BadMethodCallException
      */
     public function offsetSet($var, $val)
+    {
+        throw new \BadMethodCallException(
+            'The status object is immutable, values must be set at instantiation'
+        );
+    }
+
+    /**
+     * Implementation of ArrayAccess interface.
+     *
+     * @see \ArrayAccess::offsetUnset()
+     * @param string $var
+     * @throws \BadMethodCallException
+     */
+    public function offsetUnset($var)
     {
         throw new \BadMethodCallException(
             'The status object is immutable, values must be set at instantiation'

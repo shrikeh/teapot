@@ -25,9 +25,10 @@ use \ArrayObject;
 use \IteratorAggregate;
 use \OutOfRangeException;
 use \Teapot\HttpResponse\HttpResponseException;
-use \Teapot\HttpResponse\StatusCode;
-use \Teapot\HttpResponse\StatusCode\Validator;
-use \Teapot\HttpResponse\StatusCode\Validator\ValidatorInterface;
+use \Teapot\HttpResponse\Status;
+use \Teapot\HttpResponse\Status\StatusCode;
+use \Teapot\HttpResponse\Status\StatusCode\Validator;
+use \Teapot\HttpResponse\Status\StatusCode\Validator\ValidatorInterface;
 
 /**
  * Interface representing standard HTTP status codes. These codes are
@@ -46,9 +47,16 @@ use \Teapot\HttpResponse\StatusCode\Validator\ValidatorInterface;
  * @license    MIT http://opensource.org/licenses/MIT
  * @link       http://shrikeh.github.com/teapot
  */
-class HttpResponse implements StatusCode, ArrayAccess, IteratorAggregate
+class HttpResponse implements
+    StatusCode,
+    ArrayAccess,
+    IteratorAggregate
 {
 
+    /**
+    *
+    * @var \Iterator
+    */
     protected $statusStorage;
 
     /**
@@ -67,10 +75,11 @@ class HttpResponse implements StatusCode, ArrayAccess, IteratorAggregate
     protected static $instance;
 
     /**
+     * The full namespaced class name of the exception to use.
      *
      * @var string
      */
-    protected $exceptionClass = '\Teapot\HttpResponse\HttpResponseException';
+    protected $exceptionClass;
 
     /**
      * I'm not a big fan of static singletons, but some people like them,
@@ -89,6 +98,7 @@ class HttpResponse implements StatusCode, ArrayAccess, IteratorAggregate
 
     /**
      * Constructor.
+     *
      * @param array | null $statusCodes
      * @param string $validator
      * @param string $exceptionClass
@@ -96,10 +106,10 @@ class HttpResponse implements StatusCode, ArrayAccess, IteratorAggregate
     public function __construct(
         $statusCodes = null,
         ValidatorInterface $validator = null,
-        $exceptionClass = null
-    )
-    {
-
+        $exceptionClass = '\Teapot\HttpResponse\HttpResponseException'
+    ) {
+        $this->exceptionClass = $exceptionClass;
+        $this->validator = $validator;
     }
 
     /**
@@ -139,7 +149,7 @@ class HttpResponse implements StatusCode, ArrayAccess, IteratorAggregate
     /**
      * Take a camel-cased or underscored name and turn it into a constant.
      *
-     * @param string $constant
+     * @param  string $constant
      * @return string the normalized constant name in upper case
      */
     protected function normalizeConstant($constant)
@@ -151,11 +161,22 @@ class HttpResponse implements StatusCode, ArrayAccess, IteratorAggregate
         );
     }
 
+    /**
+     *
+     * @param  integer $code
+     * @param  string|null $message
+     * @return \Teapot\HttpResponse\Status
+     */
+    public function getStatus($code, $message = null)
+    {
+        return new Status($code, $message);
+    }
 
     /**
      * Helper method to proxy to the validator instance.
      *
-     * @param integer $statusCode
+     * @param  integer $statusCode
+     * @return boolean
      */
     public function isValid($statusCode)
     {
@@ -165,7 +186,7 @@ class HttpResponse implements StatusCode, ArrayAccess, IteratorAggregate
     /**
      * Return (or instantiate, and then return) a status code validator.
      *
-     * @return \Teapot\HttpResponse\StatusCode\Validator\ValidatorInterface
+     * @return \Teapot\HttpResponse\Status\StatusCode\Validator\ValidatorInterface
      */
     public function getValidator()
     {
@@ -178,14 +199,17 @@ class HttpResponse implements StatusCode, ArrayAccess, IteratorAggregate
     /**
      * Look up the message associated with this response code.
      *
-     * @param integer $statusCode
-     * @throws OutOfRangeException
+     * @param  integer $statusCode
+     * @throws \OutOfRangeException
      * @return string
      */
     public function getMessage($statusCode)
     {
         if (!$this->isValid($statusCode)) {
-            throw new OutOfRangeException(StatusCode::NOT_FOUND, 'The status code is not valid');
+            throw new OutOfRangeException(
+                StatusCode::NOT_FOUND,
+                'The status code is not valid'
+            );
         }
         return 'OK';
     }
@@ -193,8 +217,8 @@ class HttpResponse implements StatusCode, ArrayAccess, IteratorAggregate
     /**
      * Set the message associated with this response code.
      *
-     * @param integer $statusCode
-     * @throws OutOfRangeException
+     * @param  integer $statusCode
+     * @throws \OutOfRangeException
      * @return string
      */
     public function setMessage($statusCode, $message)
@@ -208,12 +232,11 @@ class HttpResponse implements StatusCode, ArrayAccess, IteratorAggregate
         return $this->getIterator()->offsetSet($statusCode, $message);
     }
 
-
     /**
      * Instantiate an HttpResponseException with pre-loaded response code and message.
      *
-     * @param string $code
-     * @param string $message
+     * @param  string $code
+     * @param  string $message
      * @return \Teapot\HttpResponse\HttpResponseException | \Exception
      */
     public function getException($code, $message = null)
@@ -227,8 +250,8 @@ class HttpResponse implements StatusCode, ArrayAccess, IteratorAggregate
     /**
      * Instantiate and throw an HttpResponseException exception.
      *
-     * @param integer $code
-     * @param string $message
+     * @param  integer $code
+     * @param  string $message
      * @throws \Teapot\HttpResponse\HttpResponseException | \Exception
      */
     public function throwException($code, $message = null)
@@ -246,7 +269,9 @@ class HttpResponse implements StatusCode, ArrayAccess, IteratorAggregate
         if (!$this->statusStorage) {
             $this->statusStorage = new ArrayObject(array());
             // reflection is costly, so we try and do this only once.
-            $reflector = new \ReflectionClass('\Teapot\HttpResponse\StatusCode');
+            $reflector = new \ReflectionClass(
+                '\Teapot\HttpResponse\Status\StatusCode'
+            );
 
             foreach ($reflector->getConstants() as $constant => $statusCode) {
                 $this->statusStorage->offsetSet($statusCode, $constant);
@@ -258,8 +283,8 @@ class HttpResponse implements StatusCode, ArrayAccess, IteratorAggregate
     /**
      * Implementation of ArrayAccess interface.
      *
-     * @see \ArrayAccess::offsetExists()
-     * @param integer $statusCode
+     * @see    \ArrayAccess::offsetExists()
+     * @param  integer $statusCode
      * @return boolean
      */
     public function offsetExists($statusCode)
@@ -270,8 +295,8 @@ class HttpResponse implements StatusCode, ArrayAccess, IteratorAggregate
     /**
      * Implementation of ArrayAccess interface.
      *
-     * @see \ArrayAccess::offsetUnset()
-     * @param integer $statusCode
+     * @see    \ArrayAccess::offsetUnset()
+     * @param  integer $statusCode
      * @return string The status message
      */
     public function offsetGet($statusCode)
@@ -282,7 +307,7 @@ class HttpResponse implements StatusCode, ArrayAccess, IteratorAggregate
     /**
      * Implementation of ArrayAccess interface.
      *
-     * @see \ArrayAccess::offsetSet()
+     * @see   \ArrayAccess::offsetSet()
      * @param integer $statusCode The status code.
      * @param string $message The status message
      */
@@ -294,7 +319,7 @@ class HttpResponse implements StatusCode, ArrayAccess, IteratorAggregate
     /**
      * Implementation of ArrayAccess interface.
      *
-     * @see \ArrayAccess::offsetUnset()
+     * @see   \ArrayAccess::offsetUnset()
      * @param integer $statusCode
      */
     public function offsetUnset($statusCode)

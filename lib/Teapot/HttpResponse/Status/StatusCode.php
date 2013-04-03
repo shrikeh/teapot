@@ -18,7 +18,7 @@
  * @license    MIT http://opensource.org/licenses/MIT
  * @link       http://shrikeh.github.com/teapot
  */
-namespace Teapot\HttpResponse;
+namespace Teapot\HttpResponse\Status;
 
 /**
  * Interface representing standard HTTP status codes. These codes are

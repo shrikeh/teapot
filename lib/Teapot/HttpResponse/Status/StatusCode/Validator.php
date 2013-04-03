@@ -12,13 +12,13 @@
  * @license    MIT http://opensource.org/licenses/MIT
  * @link       http://shrikeh.github.com/teapot
  */
-namespace Teapot\HttpResponse\StatusCode;
+namespace Teapot\HttpResponse\Status\StatusCode;
 
 use \ArrayAccess;
 use \ArrayObject;
 use \InvalidArgumentException;
 use \ReflectionClass;
-use \Teapot\HttpResponse\StatusCode\Validator\ValidatorInterface;
+use \Teapot\HttpResponse\Status\StatusCode\Validator\ValidatorInterface;
 
 /**
  * Validator for HTTP response codes.
@@ -34,7 +34,6 @@ use \Teapot\HttpResponse\StatusCode\Validator\ValidatorInterface;
  * @link       http://shrikeh.github.com/teapot
  */
 class Validator implements ValidatorInterface
-
 {
     /**
      * Storage for the error codes and constants.
@@ -57,7 +56,7 @@ class Validator implements ValidatorInterface
     public function isValid($code)
     {
         if (!is_integer($code)) {
-            throw new \InvalidArgumentException('Status code must be an integer');
+            throw new InvalidArgumentException('Status code must be an integer');
         }
         $storage = $this->getStorage();
 
@@ -74,7 +73,9 @@ class Validator implements ValidatorInterface
         if (!$this->storage) {
             $this->storage = new \ArrayObject(array());
             // reflection is costly, so we try and do this only once.
-            $reflector = new \ReflectionClass('\Teapot\HttpResponse\StatusCode');
+            $reflector = new \ReflectionClass(
+                '\Teapot\HttpResponse\Status\StatusCode'
+            );
 
             foreach ($reflector->getConstants() as $constant => $statusCode) {
                 $this->storage->offsetSet($statusCode, $constant);

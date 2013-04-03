@@ -1,9 +1,9 @@
 <?php
-namespace Tests\Teapot\HttpResponse\StatusCode;
+namespace TeapotTests\Teapot\HttpResponse\Status\StatusCode;
 
 use \ArrayObject;
 use \PHPUnit_Framework_TestCase as TestCase;
-use \Teapot\HttpResponse\StatusCode\Validator;
+use \Teapot\HttpResponse\Status\StatusCode\Validator;
 
 class ValidatorTest extends TestCase
 {
@@ -22,7 +22,7 @@ class ValidatorTest extends TestCase
      * @test
      * @group Validator
      * @group StatusCode
-     * @covers \Teapot\HttpResponse\StatusCode\Validator::isValid()
+     * @covers \Teapot\HttpResponse\Status\StatusCode\Validator::isValid()
      * @dataProvider providerStatusCodes
      * @param integer The status code
      * @param boolean Expected return value from the validator.
@@ -37,7 +37,7 @@ class ValidatorTest extends TestCase
      * @test
      * @group Validator
      * @group StatusCode
-     * @covers \Teapot\HttpResponse\StatusCode\Validator::getStorage()
+     * @covers \Teapot\HttpResponse\Status\StatusCode\Validator::getStorage()
      */
     public function testGetStorage()
     {
@@ -47,7 +47,6 @@ class ValidatorTest extends TestCase
         // test it lazily sets up the storage.
         $validator->isValid(200);
         $this->assertNotEquals(0, count($storage));
-
         $storage = new ArrayObject(array());
         $validator = new Validator($storage);
         $this->assertSame($storage, $validator->getStorage());

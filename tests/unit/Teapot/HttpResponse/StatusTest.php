@@ -20,9 +20,9 @@
  */
 namespace TeapotTests\Teapot;
 
-use \ArrayObject;
 use \PHPUnit_Framework_TestCase as TestCase;
-use \Teapot\HttpResponse;
+use \Teapot\HttpResponse\Status;
+use \Teapot\HttpResponse\Status\StatusCode;
 
 /**
  * Interface representing standard HTTP status codes. These codes are
@@ -41,50 +41,38 @@ use \Teapot\HttpResponse;
  * @license    MIT http://opensource.org/licenses/MIT
  * @link       http://shrikeh.github.com/teapot
  */
-class HttpResponseTest extends TestCase
+class StatusTest extends TestCase
 {
     /**
-     * Test that we get an instance of the HttpResponse object back and that it
-     * is the same instance when asked for again.
-     *
-     * @test
-     * @group HttpResponse
-     * @group Validator
-     */
-    public function testGetValidator()
+    * Test the various getters to make a Status helpful.
+    *
+    * @test
+    */
+    public function testGetValues()
     {
-        $httpResponse = new HttpResponse();
+        $code = StatusCode::OK;
+        $message = 'Foo';
+        $status = new Status($code, $message);
 
-        $this->assertInstanceOf(
-            '\Teapot\HttpResponse\Status\StatusCode\Validator\ValidatorInterface',
-            $httpResponse->getValidator()
-        );
+        $this->assertEquals($code, $status->getCode());
+        $this->assertEquals($code, $status->code);
+        $this->assertEquals($code, $status['code']);
+
+        $this->assertEquals($message, $status->getMessage());
+        $this->assertEquals($message, $status->message);
+        $this->assertEquals($message, $status['message']);
     }
 
     /**
-     * Test that we get an instance of the HttpResponse object back and that it
-     * is the smae instance when asked for again.
-     *
      * @test
-     * @group HttpResponse
      */
-    public function testStaticSingletonFactory()
+    public function testRender()
     {
-        $httpResponse = HttpResponse::getInstance();
-        $this->assertInstanceOf('\Teapot\HttpResponse', $httpResponse);
-        $this->assertSame($httpResponse, HttpResponse::getInstance());
-    }
+        $code = StatusCode::OK;
+        $message = 'Foo';
+        $status = new Status($code, $message);
 
-    /**
-     * Test that the HttpResponse object can be used as an array.
-     *
-     * @test
-     * @group HttpResponse
-     */
-    public function testArrayAccess()
-    {
-        $httpResponse = new HttpResponse();
-        $result = $httpResponse[HttpResponse::OK];
-        $this->assertNotNull($result);
+        $this->assertEquals("HTTP/1.1 $code $message", $status->render());
+        $this->assertEquals("HTTP/1.1 $code $message", (string) $status);
     }
 }

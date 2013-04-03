@@ -13,7 +13,7 @@
  * @license    MIT http://opensource.org/licenses/MIT
  * @link       http://shrikeh.github.com/teapot
  */
-namespace Teapot\HttpResponse\StatusCode\Validator;
+namespace Teapot\HttpResponse\Status\StatusCode\Validator;
 
 /**
  * Simple interface if people wish to write their own HttpResponse
