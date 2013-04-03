@@ -596,4 +596,11 @@ interface StatusCode
       * @var integer
       */
     const NOT_EXTENDED = 510;
+
+    /**
+     * The client needs to authenticate to gain network access.
+     *
+     * @var integer 
+     */
+    const NETWORK_AUTHENTICATION_REQUIRED = 511;
 }
