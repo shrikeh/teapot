@@ -21,11 +21,13 @@
 namespace Teapot;
 
 use \ArrayAccess;
+use \ArrayObject;
 use \IteratorAggregate;
 use \OutOfRangeException;
 use \Teapot\HttpResponse\HttpResponseException;
 use \Teapot\HttpResponse\StatusCode;
 use \Teapot\HttpResponse\StatusCode\Validator;
+use \Teapot\HttpResponse\StatusCode\Validator\ValidatorInterface;
 
 /**
  * Interface representing standard HTTP status codes. These codes are
@@ -57,7 +59,8 @@ class HttpResponse implements StatusCode, ArrayAccess, IteratorAggregate
     protected $validator;
 
     /**
-     * For use as a static singleton.
+     * Holder for static singleton method of using Teapot.
+     * Not recommended, but may help legacy code.
      *
      * @var \Teapot\HttpResponse
      */
@@ -84,9 +87,15 @@ class HttpResponse implements StatusCode, ArrayAccess, IteratorAggregate
         return self::$instance;
     }
 
+    /**
+     * Constructor.
+     * @param array | null $statusCodes
+     * @param string $validator
+     * @param string $exceptionClass
+     */
     public function __construct(
         $statusCodes = null,
-        $validator = null,
+        ValidatorInterface $validator = null,
         $exceptionClass = null
     )
     {
@@ -95,7 +104,7 @@ class HttpResponse implements StatusCode, ArrayAccess, IteratorAggregate
 
     /**
      * Method overloading so you can go $httpResponse->movedPermanently() or
-     * $httpResponse->moved_permanently()
+     * $httpResponse->moved_permanently() and still get a valid Status object.
      *
      * @param string $method
      * @param string $vars
@@ -191,9 +200,12 @@ class HttpResponse implements StatusCode, ArrayAccess, IteratorAggregate
     public function setMessage($statusCode, $message)
     {
         if (!$this->isValid($statusCode)) {
-            throw new OutOfRangeException(StatusCode::NOT_FOUND, 'The status code is not valid');
+            throw new OutOfRangeException(
+                StatusCode::NOT_FOUND,
+                'The status code is not valid'
+            );
         }
-        $this->getIterator()->offsetSet($statusCode, $message);
+        return $this->getIterator()->offsetSet($statusCode, $message);
     }
 
 
@@ -232,7 +244,7 @@ class HttpResponse implements StatusCode, ArrayAccess, IteratorAggregate
     public function getIterator()
     {
         if (!$this->statusStorage) {
-            $this->statusStorage = new \ArrayObject(array());
+            $this->statusStorage = new ArrayObject(array());
             // reflection is costly, so we try and do this only once.
             $reflector = new \ReflectionClass('\Teapot\HttpResponse\StatusCode');
 

@@ -1,9 +1,45 @@
 <?php
+/**
+ * Interface representing standard HTTP status codes. These codes are
+ * represented as an interface so that developers may implement it and then use
+ * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
+ * and override their default description.
+ *
+ * This allows for codes to be repurposed in a natural way where the core,
+ * traditional use would not be meaningful.
+ *
+ * PHP version 5.3
+ *
+ * @category   StatusCode
+ * @package    Teapot
+ * @subpackage HttpResponse
+ * @author     Barney Hanlon <barney@shrikeh.net>
+ * @copyright  2013 B Hanlon. All rights reserved.
+ * @license    MIT http://opensource.org/licenses/MIT
+ * @link       http://shrikeh.github.com/teapot
+ */
 namespace Teapot\HttpResponse;
 
 use \ArrayAccess;
 use \Teapot\HttpResponse\StatusCode;
 
+/**
+ * Interface representing standard HTTP status codes. These codes are
+ * represented as an interface so that developers may implement it and then use
+ * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
+ * and override their default description.
+ *
+ * This allows for codes to be repurposed in a natural way where the core,
+ * traditional use would not be meaningful.
+ *
+ * @category   StatusCode
+ * @package    Teapot
+ * @subpackage HttpResponse
+ * @author     Barney Hanlon <barney@shrikeh.net>
+ * @copyright  2013 B Hanlon. All rights reserved.
+ * @license    MIT http://opensource.org/licenses/MIT
+ * @link       http://shrikeh.github.com/teapot
+ */
 class Status implements StatusCode, ArrayAccess
 {
     protected $code;
@@ -13,7 +49,6 @@ class Status implements StatusCode, ArrayAccess
     public function __construct($code, $message)
     {
         $this->code = $code;
-
         $this->message = $message;
     }
 
@@ -27,6 +62,10 @@ class Status implements StatusCode, ArrayAccess
         return $this->$var;
     }
 
+    public function __toString()
+    {
+        return $this->render();
+    }
 
     public function getCode()
     {
@@ -38,6 +77,12 @@ class Status implements StatusCode, ArrayAccess
         return $this->message();
     }
 
+    /**
+     * Render a valid HTTP response header that you can use with header()
+     * directly.
+     *
+     * @return string
+     */
     public function render()
     {
         $code    = $this->getCode();
@@ -52,7 +97,6 @@ class Status implements StatusCode, ArrayAccess
      * @param string $var
      * @see \ArrayAccess::offsetGet()
      */
-
     public function offsetGet($var)
     {
         return $this->$var;
@@ -68,7 +112,9 @@ class Status implements StatusCode, ArrayAccess
      */
     public function offsetSet($var, $val)
     {
-        throw new \BadMethodCallException('The status object is immutable, values must be set at instantiation');
+        throw new \BadMethodCallException(
+            'The status object is immutable, values must be set at instantiation'
+        );
     }
 
     /**
