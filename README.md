@@ -1,9 +1,8 @@
-Teapot
-========
+## Teapot
 
-This is a very simple library that aims to aid verbosity in any Web-based application by defining clearly the HTTP 1.1 response codes as constants. It includes two files: an interface, which contains the constants, and an exception specifically for HTTP.
+This is a _very_ simple library that aims to aid verbosity in any Web-based application by defining clearly the HTTP 1.1 response codes as constants. It includes two files: an interface, which contains the constants, and an exception specifically for HTTP.
 
-## Using the StatusCodes interface
+### Using the StatusCodes interface
 
 Assuming for a moment a PHPUnit test on a cURL client response:
 
@@ -56,27 +55,34 @@ This may be beneficial in an abstract class, so that child classes don't need to
 
 All constants have doc blocks that use the official W3C descriptions of the status code, to aid IDEs and for reference.
 
-## Using the HttpException
+### Using the HttpResponseException
 
-The `HttpException` is very straightforward. It simply is a named exception to aid verbosity:
+The `HttpResponseException` is very straightforward. It simply is a named exception to aid verbosity:
 
 
     <?php
 
-    use \Teapot\HttpResponse\HttpException;
+    use \Teapot\HttpResponse\HttpResponseException;
     use \Teapot\HttpResponse\StatusCode;
 
-    throw new ResponseException('Sorry this page does not exist!', StatusCode::NOT_FOUND);
+    throw new HttpResponseException('Sorry this page does not exist!', StatusCode::NOT_FOUND);
 
 The exception itself uses the `StatusCode` interface, allowing you to avoid manually and explicitly importing it if you prefer:
 
     <?php
 
-    use \Teapot\HttpResponse\ResponseException;
+    use \Teapot\HttpResponse\HttpResponseException;
 
-    throw new ResponseException('Sorry this page does not exist!', ResponseException::NOT_FOUND);
+    throw new HttpResponseException('Sorry this page does not exist!', HttpResponseException::NOT_FOUND);
 
-## Coding Standards
+### Coding Standards
 
 The entire library is intended to be [PSR-0](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md "PSR-0"), [PSR-1](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md "PSR-1") and [PSR-2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md "PSR-2") compliant.
 
+### Roadmap
+
+You can see the plan on [Trello](https://trello.com/board/teapot/51523a7711dfd4c456000355 "Teapot Trello board").
+
+### Get in touch
+
+If you have any suggestions, feel free to email me at barney+teapot@shrikeh.net or ping me on Twitter with [@shrikeh](https://twitter.com/shrikeh).
