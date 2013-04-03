@@ -502,7 +502,6 @@ interface StatusCode
       */
     const FAILED_DEPENDENCY = 424;
 
-
     /**
       * The Upgrade response header field advertises possible protocol upgrades a server MAY accept. In conjunction with the "426 Upgrade Required"
       * status code, a server can advertise the exact protocol upgrades that a client MUST accept to complete the request. The server MAY include an
@@ -511,6 +510,26 @@ interface StatusCode
       * @var integer
       */
     const UPDATE_REQUIRED = 426;
+
+    /**
+     * The origin server requires the request to be conditional. Its typical use is to avoid the "lost update" problem, where a client GETs a 
+     * resource's state, modifies it, and PUTs it back to the server, when meanwhile a third party has modified the state on the server, leading to
+     * a conflict.  By requiring requests to be conditional, the server can assure that clients are working with the correct copies.
+     * 
+     */
+    const PRECONDITION_REQUIRED = 428;
+
+    /**
+     * The user has sent too many requests in a given amount of time.
+     * 
+     */
+    const TOO_MANY_REQUESTS = 429;
+
+    /**
+     * The server is unwilling to process the request because its header fields are too large.
+     * 
+     */
+    const REQUEST_HEADER_FIELDS_TOO_LARGE = 431;
 
     /**
      * The server encountered an unexpected condition which prevented it from fulfilling the request.
