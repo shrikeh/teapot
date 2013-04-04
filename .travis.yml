@@ -12,4 +12,4 @@ matrix:
         except:
           - master
           - stable
-          - PreRelease
+          - development
