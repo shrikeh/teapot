@@ -18,7 +18,10 @@ tmtagsHistory
 *.sublime-project
 *.sublime-workspace
 atlassian-ide-plugin.xml
+
 composer.lock
-vendor/
+vendor/*
+bin/*
+data/*
 !/.gitignore
 !/.travis.yml
