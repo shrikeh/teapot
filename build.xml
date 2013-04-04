@@ -47,7 +47,7 @@
     <target name="phpunit" depends="composer">
         <exec executable="bin/phpunit" failonerror="true">
             <arg value="-c" />
-            <arg path="${test.dir}/unit/"/>
+            <arg path="${phpunit.config}"/>
             <arg value="--log-junit" />
             <arg path="${report.dir}/phpunit.xml"/>
             <arg value="--coverage-clover" />
