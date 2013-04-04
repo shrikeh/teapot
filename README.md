@@ -2,7 +2,7 @@
 
 This is a _very_ simple library that aims to aid verbosity in any Web-based application by defining clearly the HTTP 1.1 response codes as constants. It includes two files: an interface, which contains the constants, and an exception specifically for HTTP.
 
-[![Build Status](https://travis-ci.org/shrikeh/teapot.png?branch=master](https://travis-ci.org/shrikeh/teapot)
+[![Build Status](https://travis-ci.org/shrikeh/teapot.png?branch=master)](https://travis-ci.org/shrikeh/teapot)
 
 ### Using the StatusCodes interface
 
