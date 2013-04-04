@@ -16,5 +16,6 @@
     },
     "autoload": {
         "psr-0": { "Teapot": "lib" }
-    }
+    },
+    "minimum-stability": "dev"
 }
