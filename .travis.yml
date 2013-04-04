@@ -8,7 +8,7 @@ before_script:
   - composer self-update
   - composer --dev install
 
-script: bin/phpunit tests/unit
+script: bin/phpunit tests/unit/
 
 matrix:
   allow_failures:
