@@ -20,6 +20,7 @@
         "squizlabs/php_codesniffer": "1.*",
         "pdepend/pdepend" : "1.1.0"
     },
+    "minimum-stability": "dev",
     "autoload": {
         "psr-0": { "Teapot": "lib" }
     }
