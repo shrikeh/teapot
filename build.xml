@@ -131,7 +131,7 @@
     </target>
 
     <target name="phpmd" description="Perform phpmd with human readable output" depends="composer">
-        <exec executable="phpmd">
+        <exec executable="${bin.dir}/phpmd">
             <arg path="${lib.dir}"/>
             <arg value="text"/>
             <arg value="codesize,unusedcode,naming,design" />
