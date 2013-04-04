@@ -45,7 +45,7 @@
     </target>
 
     <target name="phpunit" depends="composer">
-        <exec executable="bin/phpunit" failonerror="true">
+        <exec executable="${bin.dir}/phpunit" failonerror="true">
             <arg value="-c" />
             <arg path="${phpunit.config}"/>
             <arg value="--log-junit" />
@@ -57,7 +57,7 @@
 
     <!-- Generate jdepend.xml and software metrics charts -->
     <target name="pdepend" depends="composer">
-        <exec executable="pdepend">
+        <exec executable="${bin.dir}/pdepend">
             <arg value="--jdepend-xml=${build.dir}/logs/jdepend.xml" />
             <arg value="--jdepend-chart=${build.dir}/pdepend/dependencies.svg" />
             <arg value="--overview-pyramid=${build.dir}/pdepend/overview-pyramid.svg" />
@@ -66,7 +66,7 @@
     </target>
 
     <target name="phpmd-ci">
-        <exec executable="phpmd">
+        <exec executable="${bin.dir}/phpmd">
             <arg path="${lib.dir}" />
             <arg value="xml" />
             <arg value="codesize,unusedcode,naming,design" />
@@ -77,20 +77,20 @@
 
     <!-- Generate pmd-cpd.xml -->
     <target name="phpcpd">
-        <exec executable="phpcpd">
+        <exec executable="${bin.dir}/phpcpd">
             <arg line="--log-pmd ${build.dir}/logs/pmd-cpd.xml ${lib.dir}" />
         </exec>
     </target>
 
     <!-- Generate checkstyle.xml -->
     <target name="phpcs-ci">
-        <exec executable="phpcs" output="/dev/null">
+        <exec executable="${bin.dir}/phpcs" output="/dev/null">
             <arg line="--report=checkstyle --report-file=${build.dir}/logs/checkstyle.xml --standard=PSR2 ${lib.dir}" />
         </exec>
     </target>
 
     <target name="phploc" description="Generate phploc.csv" depends="composer">
-        <exec executable="phploc">
+        <exec executable="${bin.dir}/phploc">
         <arg value="--log-csv" />
         <arg value="${build.dir}/logs/phploc.csv" />
         <arg path="${lib.dir}" />
@@ -99,7 +99,7 @@
 
     <!-- Generate API documentation -->
     <target name="phpdoc">
-        <exec executable="phpdoc">
+        <exec executable="${bin.dir}/phpdoc">
             <arg line="run" />
             <arg line="-d ${lib.dir}/" />
             <arg line="-t ${build.dir}/docs" />
@@ -107,7 +107,7 @@
     </target>
 
     <target name="phpdoc-ci">
-        <exec executable="phpdoc">
+        <exec executable="${bin.dir}/phpdoc">
             <arg line="run" />
             <arg line="-d ${lib.dir}/" />
             <arg line="-t ${build.dir}/docs" />
@@ -116,7 +116,7 @@
     </target>
 
     <target name="phpcb" depends="composer">
-        <exec executable="phpcb">
+        <exec executable="${bin.dir}/phpcb">
             <arg line="--log ${build.dir}/logs
                     --source ${lib.dir}
                     --output ${build.dir}/code-browser" />
@@ -125,7 +125,7 @@
 
     <!-- Checkstyle with human output -->
     <target name="phpcs" depends="composer">
-        <exec executable="phpcs">
+        <exec executable="${bin.dir}/phpcs">
             <arg line="--standard=PSR2 ${lib.dir}" />
         </exec>
     </target>
