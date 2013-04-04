@@ -14,6 +14,20 @@
     "require": {
         "php": ">=5.3.3"
     },
+    "require-dev": {
+        "phpunit/phpunit": "3.8.*",
+        "phploc/phploc": ">=1.7.4",
+        "pdepend/pdepend": "*",
+        "shrink/phpcpd": "dev-master",
+        "zerkalica/php-code-browser": "dev-master",
+        "phpunit/php-invoker" : ">=1.2.0",
+        "phpmd/phpmd" : ">=1.4.0",
+        "squizlabs/php_codesniffer": "1.*",
+        "phpdocumentor/phpdocumentor": "2.*"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
     "autoload": {
         "psr-0": { "Teapot": "lib" }
     },
