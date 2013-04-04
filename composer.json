@@ -20,7 +20,6 @@
         "pdepend/pdepend": "*",
         "shrink/phpcpd": "dev-master",
         "zerkalica/php-code-browser": "dev-master",
-        "phpunit/php-invoker" : ">=1.2.0",
         "phpmd/phpmd" : ">=1.4.0",
         "squizlabs/php_codesniffer": "1.*",
         "phpdocumentor/phpdocumentor": "2.*"
