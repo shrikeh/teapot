@@ -15,12 +15,16 @@
         "php": ">=5.3.3"
     },
     "require-dev": {
-        "phpunit/phpunit": ">=3.7",
-        "phpunit/php-invoker": ">=1.1.0",
-        "phpmd/phpmd" : "1.4.0",
+        "phpunit/phpunit": "3.7.*",
+        "phploc/phploc": ">=1.7.4",
+        "pdepend/pdepend": "*",
+        "shrink/phpcpd": "dev-master",
+        "zerkalica/php-code-browser": "dev-master",
+        "phpmd/phpmd" : ">=1.4.0",
         "squizlabs/php_codesniffer": "1.*",
-        "pdepend/pdepend" : "1.1.0"
+        "phpdocumentor/phpdocumentor": "2.*"
     },
+    "minimum-stability": "dev",
     "config": {
         "bin-dir": "bin"
     },

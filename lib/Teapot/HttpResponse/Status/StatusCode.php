@@ -164,8 +164,7 @@ interface StatusCode
      * include all of the entity-headers that would have been returned with a
      * 200 (OK) response to the same request.
      * A cache MUST NOT combine a 206 response with other previously cached
-     * content if the ETag or Last-Modified headers do not match exactly, see
-     * 13.5.4.
+     * content if the ETag or Last-Modified headers do not match exactly, see 13.5.4.
      *
      * A cache that does not support the Range and Content-Range headers
      * MUST NOT cache 206 (Partial) responses.
@@ -674,6 +673,33 @@ interface StatusCode
       */
     const UPDATE_REQUIRED = 426;
 
+
+    /**
+     * The origin server requires the request to be conditional. Its typical
+     * use is to avoid the "lost update" problem, where a client GETs a
+     * resource's state, modifies it, and PUTs it back to the server, when
+     * meanwhile a third party has modified the state on the server, leading to
+     * a conflict.  By requiring requests to be conditional, the server can
+     * assure that clients are working with the correct copies.
+     *
+     * @var integer
+     */
+    const PRECONDITION_REQUIRED = 428;
+
+    /**
+     * The user has sent too many requests in a given amount of time.
+     *
+     * @var integer
+     */
+    const TOO_MANY_REQUESTS = 429;
+
+    /**
+     * The server is unwilling to process the request because its header fields
+     * are too large.
+     *
+     * @var integer
+     */
+    const REQUEST_HEADER_FIELDS_TOO_LARGE = 431;
     /**
      * The server encountered an unexpected condition which prevented it from
      * fulfilling the request.
@@ -780,4 +806,11 @@ interface StatusCode
       * @var integer
       */
     const NOT_EXTENDED = 510;
+
+    /**
+     * The client needs to authenticate to gain network access.
+     *
+     * @var integer
+     */
+    const NETWORK_AUTHENTICATION_REQUIRED = 511;
 }
