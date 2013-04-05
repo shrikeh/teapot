@@ -22,8 +22,8 @@
           <h2 id="project_tagline">Simple PHP library to improve verbosity in HTTP response codes</h2>
 
             <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/shrikeh/teapot/zipball/stable">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/shrikeh/teapot/tarball/stable">Download this project as a tar.gz file</a>
+              <a class="zip_download_link" href="https://github.com/shrikeh/teapot/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/shrikeh/teapot/tarball/master">Download this project as a tar.gz file</a>
             </section>
         </header>
     </div>
@@ -32,6 +32,8 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <p>This is a <em>very</em> simple library that aims to aid verbosity in any Web-based application by defining clearly the HTTP 1.1 response codes as constants. It includes two files: an interface, which contains the constants, and an exception specifically for HTTP.</p>
+
+<p><a href="https://travis-ci.org/shrikeh/teapot"><img src="https://travis-ci.org/shrikeh/teapot.png?branch=master" alt="Build Status"></a></p>
 
 <h3>Using the StatusCodes interface</h3>
 
@@ -63,11 +65,11 @@ $this-&gt;assertEquals(StatusCode:OK, $response-&gt;getStatusCode());
 
 <pre><code>&lt;?php
 use \Teapot\StatusCode;
-
-$this-&gt;assertEquals(StatusCode:NOT_FOUND, $response-&gt;getStatusCode());
-$this-&gt;assertEquals(StatusCode:FORBIDDEN, $response-&gt;getStatusCode());
-$this-&gt;assertEquals(StatusCode:MOVED_PERMANENTLY, $response-&gt;getStatusCode());
-$this-&gt;assertEquals(StatusCode:CREATED, $response-&gt;getStatusCode());
+$code = $response-&gt;getStatusCode();
+$this-&gt;assertNotEquals(StatusCode:NOT_FOUND, $code);
+$this-&gt;assertNotEquals(StatusCode:FORBIDDEN, $code);
+$this-&gt;assertNotEquals(StatusCode:MOVED_PERMANENTLY, $code);
+$this-&gt;assertEquals(StatusCode:CREATED, $code);
 </code></pre>
 
 <p>As <code>StatusCode</code> is an interface without any methods, you can directly implement it if you prefer:</p>
@@ -88,7 +90,7 @@ class FooController implements \Teapot\StatusCode
 
 <p>This may be beneficial in an abstract class, so that child classes don't need to explicitly use the interface.</p>
 
-<p>All constants have doc blocks that use the official W3C descriptions of the status code, to aid IDEs and for reference.</p>
+<p>All constants have doc blocks that use the official <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html" title="W3C Status Code Definitions">W3C</a>  and <a href="http://tools.ietf.org/html/rfc6585" title="IETF Additional HTTP Status Codes">IETF draft specification</a> descriptions of the status code, to aid IDEs and for reference.</p>
 
 <h3>Using the HttpException</h3>
 
@@ -99,7 +101,10 @@ class FooController implements \Teapot\StatusCode
 use \Teapot\HttpException;
 use \Teapot\StatusCode;
 
-throw new HttpException('Sorry this page does not exist!', StatusCode::NOT_FOUND);
+throw new HttpException(
+    'Sorry this page does not exist!', 
+    StatusCode::NOT_FOUND
+);
 </code></pre>
 
 <p>The exception itself uses the <code>StatusCode</code> interface, allowing you to avoid manually and explicitly importing it if you prefer:</p>
@@ -108,7 +113,10 @@ throw new HttpException('Sorry this page does not exist!', StatusCode::NOT_FOUND
 
 use \Teapot\HttpException;
 
-throw new HttpException('Sorry this page does not exist!', HttpException::NOT_FOUND);
+throw new HttpException(
+    'Sorry this page does not exist!', 
+    HttpException::NOT_FOUND
+);
 </code></pre>
 
 <h3>Coding Standards</h3>
@@ -133,7 +141,17 @@ throw new HttpException('Sorry this page does not exist!', HttpException::NOT_FO
       </footer>
     </div>
 
-    
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-39890160-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
 
   </body>
 </html>
