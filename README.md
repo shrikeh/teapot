@@ -32,11 +32,11 @@ While this is a trivial example, the additional verbosity of the code is clearer
 
     <?php
     use \Teapot\StatusCode;
-
-    $this->assertEquals(StatusCode:NOT_FOUND, $response->getStatusCode());
-    $this->assertEquals(StatusCode:FORBIDDEN, $response->getStatusCode());
-    $this->assertEquals(StatusCode:MOVED_PERMANENTLY, $response->getStatusCode());
-    $this->assertEquals(StatusCode:CREATED, $response->getStatusCode());
+    $code = $response->getStatusCode();
+    $this->assertNotEquals(StatusCode:NOT_FOUND, $code);
+    $this->assertNotEquals(StatusCode:FORBIDDEN, $code);
+    $this->assertNotEquals(StatusCode:MOVED_PERMANENTLY, $code);
+    $this->assertEquals(StatusCode:CREATED, $code);
 
 As `StatusCode` is an interface without any methods, you can directly implement it if you prefer:
 
@@ -55,7 +55,7 @@ As `StatusCode` is an interface without any methods, you can directly implement 
 
 This may be beneficial in an abstract class, so that child classes don't need to explicitly use the interface.
 
-All constants have doc blocks that use the official W3C descriptions of the status code, to aid IDEs and for reference.
+All constants have doc blocks that use the official [W3C](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html "W3C Status Code Definitions")  and [IETF draft specification](http://tools.ietf.org/html/rfc6585 "IETF Additional HTTP Status Codes") descriptions of the status code, to aid IDEs and for reference.
 
 ### Using the HttpException
 
@@ -67,7 +67,10 @@ The `HttpException` is very straightforward. It simply is a named exception to a
     use \Teapot\HttpException;
     use \Teapot\StatusCode;
 
-    throw new HttpException('Sorry this page does not exist!', StatusCode::NOT_FOUND);
+    throw new HttpException(
+        'Sorry this page does not exist!', 
+        StatusCode::NOT_FOUND
+    );
 
 The exception itself uses the `StatusCode` interface, allowing you to avoid manually and explicitly importing it if you prefer:
 
@@ -75,7 +78,10 @@ The exception itself uses the `StatusCode` interface, allowing you to avoid manu
 
     use \Teapot\HttpException;
 
-    throw new HttpException('Sorry this page does not exist!', HttpException::NOT_FOUND);
+    throw new HttpException(
+        'Sorry this page does not exist!', 
+        HttpException::NOT_FOUND
+    );
 
 ### Coding Standards
 
