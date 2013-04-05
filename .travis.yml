@@ -1,0 +1,15 @@
+language: php
+
+php:
+  - 5.3
+  - 5.4
+
+script: ant travis
+
+matrix:
+  allow_failures:
+    - branches:
+        except:
+          - master
+          - stable
+          - development
