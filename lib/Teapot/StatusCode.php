@@ -11,7 +11,7 @@
  * PHP version 5.3
  *
  * @category   StatusCode
- * @package    Teapot
+ * @package    TeapotTest
  * @subpackage HttpResponse
  * @author     Barney Hanlon <barney@shrikeh.net>
  * @copyright  2013 B Hanlon. All rights reserved.
