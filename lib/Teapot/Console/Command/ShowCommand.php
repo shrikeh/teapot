@@ -14,23 +14,23 @@ use \Symfony\Component\Console\Input\InputOption;
 class ShowCommand extends Command
 {
 
-     /**
-      *
-      */
-     protected function configure() {
-         $this
-             ->setName('show')
-             ->setDescription('Show documentation on response codes')
-             ->addArgument(
+    /**
+     *
+     */
+    protected function configure()
+    {
+        $this
+            ->setName('show')
+            ->setDescription('Show documentation on response codes')
+            ->addArgument(
                 'code',
                 InputArgument::OPTIONAL,
                 'Which code do you wish to see documentation on?'
             );
+    }
 
-     }
-
-     protected function execute(InputInterface $input, OutputInterface $output)
-     {
+    protected function execute(InputInterface $input, OutputInterface $output)
+    {
          $code = $input->getArgument('code');
 
          $reflector = new ReflectionClass('\Teapot\HttpResponse\Status\StatusCode');
@@ -41,14 +41,12 @@ class ShowCommand extends Command
 
          var_dump($phpDoc->getConstants());
 
-         if ($code) {
+        if ($code) {
              $text = 'Hello '. $code;
-         } else {
+        } else {
              $text = 'Hello';
-         }
-
-
+        }
 
          $output->writeln($text);
-     }
+    }
 }
