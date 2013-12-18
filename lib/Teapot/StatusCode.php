@@ -648,6 +648,16 @@ interface StatusCode
      */
     const POLICY_NOT_FULFILLED = 420;
 
+
+    /**
+     * Returned by the version 1 Search and Trends APIs when you are being rate 
+     * limited.
+     * 
+     * @see https://dev.twitter.com/docs/rate-limiting/1
+     * @var integer
+     */
+    const TWITTER_ENHANCE_YOUR_CALM = self::POLICY_NOT_FULFILLED;
+
     /**
      * The mappings indicated by one or more map attribute bags in the request
      * were not unique and mapped the same header field more than once.
@@ -697,6 +707,21 @@ interface StatusCode
      * @var integer
      */
     const FAILED_DEPENDENCY = 424;
+
+
+    /**
+     * Unordered Collection (Internet draft). 
+     * 
+     * The 425 (Unordered Collection) status code indicates that the client 
+     * attempted to set the position of an internal collection member in an
+     * unordered collection or in a collection with a server-maintained ordering.
+     * Defined in drafts of "WebDAV Advanced Collections Protocol", but not present 
+     * in  "Web Distributed Authoring and Versioning (WebDAV) Ordered Collections Protocol".
+     * 
+     * @see https://tools.ietf.org/html/draft-ietf-webdav-collection-protocol-04#section-7.2
+     * @var integer
+     */
+    const WEBDAV_UNORDERED_COLLECTION = 425;
 
 
     /**
@@ -785,6 +810,15 @@ interface StatusCode
     const REQUEST_HEADER_FIELDS_TOO_LARGE = 431;
 
     /**
+     * A Microsoft extension. Indicates that your session has expired.
+     * 
+     * @var integer
+     */
+    const MICROSOFT_LOGIN_TIMEOUT = 440;
+
+
+
+    /**
      * The server encountered an unexpected condition which prevented it from
      * fulfilling the request.
      *
@@ -865,6 +899,16 @@ interface StatusCode
      * @var integer
      */
     const VARIANT_ALSO_NEGOTIATES = 506;
+
+
+    /**
+     * The 506 (Loop Detected) status code indicates that the server detected 
+     * an infinite loop while processing a request with "Depth: infinity".
+     * 
+     * @see https://tools.ietf.org/html/draft-ietf-webdav-collection-protocol-04#section-7.1
+     * @var integer
+     */
+    const WEBDAV_LOOP_DETECTED = 506;
 
     /**
      * The server is unable to store the representation needed to complete the
