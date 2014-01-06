@@ -20,10 +20,10 @@
  */
 namespace Teapot\StatusCode;
 
-use \Teapot\StatusCode;
 use \Teapot\StatusCode\Http;
 use \Teapot\StatusCode\WebDAV;
 use \Teapot\StatusCode\RFC\Draft;
+use \Teapot\StatusCode\RFC\PEP;
 use \Teapot\StatusCode\RFC\RFC2295 as ContentNegotiation;
 use \Teapot\StatusCode\RFC\RFC2324 as HyperTextCoffeePotControlProtocol;
 use \Teapot\StatusCode\RFC\RFC2326 as Rtsp;
@@ -51,6 +51,8 @@ use \Teapot\StatusCode\RFC\RFC3229 as HttpDeltas;
 interface All extends
  Vendor,
  WebDAV,
+ Draft,
+ PEP,
  ContentNegotiation,
  HyperTextCoffeePotControlProtocol,
  Rtsp,
