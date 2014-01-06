@@ -55,7 +55,7 @@ interface RFC2616
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      * @var integer
      */
-    const CONTINUE = 100;
+    const CONTINUING = 100;
 
     /**
      * This means the requester has asked the server to switch protocols and

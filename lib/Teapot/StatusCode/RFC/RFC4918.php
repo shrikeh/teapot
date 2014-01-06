@@ -40,6 +40,7 @@ namespace Teapot\StatusCode\RFC;
 
 interface RFC4918
 {
+
     /**
      * The message body that follows is an XML message and can contain a
      * number of separate response codes, depending on how many sub-requests
@@ -92,4 +93,25 @@ interface RFC4918
      * @var integer
      */
     const METHOD_FAILURE = 424;
+
+    /**
+     * The 424 (Failed Dependency) status code means that the method could not
+     * be performed on the resource because the requested action
+     * depended on another action and that action failed. For example, if a
+     * command in a PROPPATCH method fails then, at minimum, the rest
+     * of the commands will also fail with 424 (Failed Dependency).
+     *
+     * @see http://www.ietf.org/rfc/rfc4918.txt
+     * @var integer
+     */
+    const FAILED_DEPENDENCY = 424;
+
+    /**
+     * The server is unable to store the representation needed to complete the
+     * request.
+     *
+     * @see http://www.ietf.org/rfc/rfc4918.txt
+     * @var integer
+     */
+    const INSUFFICIENT_STORAGE = 507;
 }

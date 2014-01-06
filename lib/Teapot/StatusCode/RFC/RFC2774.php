@@ -1,6 +1,6 @@
 <?php
 /**
- * Interface representing extended HTTP status codes for RFC5842. These codes are
+ * Interface representing extended HTTP status codes for RFC2274. These codes are
  * represented as an interface so that developers may implement it and then use
  * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
  * and override their default description.
@@ -21,7 +21,7 @@
 namespace Teapot\StatusCode\RFC;
 
 /**
- * Interface representing extended HTTP status codes for RFC5842. These codes are
+ * Interface representing extended HTTP status codes for RFC2274. These codes are
  * represented as an interface so that developers may implement it and then use
  * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
  * and override their default description.
@@ -38,32 +38,24 @@ namespace Teapot\StatusCode\RFC;
  * @link       http://shrikeh.github.com/teapot
  */
 
-interface RFC5842
+interface RFC2774
 {
     /**
-     * The members of a DAV binding have already been enumerated in a previous
-     * reply to this request, and are not being included again.
+     *    The policy for accessing the resource has not been met in the
+     * request.  The server should send back all the information necessary
+     * for the client to issue an extended request. It is outside the scope
+     * of this specification to specify how the extensions inform the client.
      *
-     * The 208 (Already Reported) status code can be used inside a DAV: propstat
-     * response element to avoid enumerating the internal members of multiple
-     * bindings to the same collection repeatedly.  For each binding to a
-     * collection inside the request's scope, only one will be reported with
-     * a 200 status, while subsequent DAV:response elements for all other
-     * bindings will use the 208 status, and no DAV:response elements for
-     * their descendants are included.
+     * If the 510 response contains information about extensions that were
+     * not present in the initial request then the client MAY repeat the
+     * request if it has reason to believe it can fulfill the extension
+     * policy by modifying the request according to the information provided
+     * in the 510 response. Otherwise the client MAY present any entity
+     * included in the 510 response to the user, since that entity may
+     * include relevant diagnostic information.
      *
-     * @see http://www.ietf.org/rfc/rfc5842.txt
+     * @see http://tools.ietf.org/search/rfc2774#section-7
      * @var integer
      */
-    const ALREADY_REPORTED = 208;
-
-    /**
-     * The 508 (Loop Detected) status code indicates that the server detected
-     * an infinite loop while processing a request with "Depth: infinity".
-     * (sent in lieu of 208).
-     *
-     * @see https://tools.ietf.org/html/draft-ietf-webdav-collection-protocol-04#section-7.1
-     * @var integer
-     */
-    const LOOP_DETECTED = 508;
+    const NOT_EXTENDED = 510;
 }

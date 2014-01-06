@@ -18,7 +18,7 @@
  * @license    MIT http://opensource.org/licenses/MIT
  * @link       http://shrikeh.github.com/teapot
  */
-namespace Teapot\StatusCode;
+namespace Teapot\StatusCode\Vendor;
 
 /**
  * Interface representing extended HTTP status codes for Microsoft. These codes are
@@ -42,42 +42,42 @@ interface Microsoft
 {
     /**
      * A Microsoft extension. Indicates that your session has expired.
-     * 
+     *
      * @var integer
      */
     const LOGIN_TIMEOUT = 440;
 
     /**
-     * A Microsoft extension. The request should be retried after performing 
-     * the appropriate action. The new extension status code is defined as follows 
-     * (using the Augmented Backus-Naur Form (ABNF) syntax, as specified in RFC2616 
+     * A Microsoft extension. The request should be retried after performing
+     * the appropriate action. The new extension status code is defined as follows
+     * (using the Augmented Backus-Naur Form (ABNF) syntax, as specified in RFC2616
      * section 2.1).
-     * 
-     * Often search-engines or custom applications will ignore required parameters. 
-     * Where no default action is appropriate, the Aviongoo website sends a 
-     * "HTTP/1.1 449 Retry with valid parameters: param1, param2, . . ." response. The 
+     *
+     * Often search-engines or custom applications will ignore required parameters.
+     * Where no default action is appropriate, the Aviongoo website sends a
+     * "HTTP/1.1 449 Retry with valid parameters: param1, param2, . . ." response. The
      * applications may choose to learn, or not.
-     * 
+     *
      * @see http://msdn.microsoft.com/en-us/library/dd891478.aspx
      * @var integer
      */
     const RETRY_WITH = 449;
 
     /**
-     * A Microsoft extension. This error is given when Windows Parental Controls are 
+     * A Microsoft extension. This error is given when Windows Parental Controls are
      * turned on and are blocking access to the given webpage.
-     * 
+     *
      * @var integer
      */
     const BLOCKED_BY_WINDOWS_PARENTAL_CONTROLS = 450;
 
     /**
-     * Used in Exchange ActiveSync if there either is a more efficient server 
+     * Used in Exchange ActiveSync if there either is a more efficient server
      * to use or the server can't access the users' mailbox.
-     * 
+     *
      * The client is supposed to re-run the HTTP Autodiscovery protocol to find
      * a better suited server.
-     * 
+     *
      * @var integer
      */
     const REDIRECT = 451;
