@@ -1,6 +1,6 @@
 <?php
 /**
- * Interface representing standard HTTP status codes. These codes are
+ * Interface representing standard and extended HTTP status codes. These codes are
  * represented as an interface so that developers may implement it and then use
  * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
  * and override their default description.
@@ -21,12 +21,14 @@
  * @license    MIT http://opensource.org/licenses/MIT
  * @link       http://shrikeh.github.com/teapot
  */
-namespace Teapot;
+namespace Teapot\StatusCode;
 
-use \Teapot\StatusCode\Http;
+use \Teapot\StatusCode\RFC\RFC2616;
+use \Teapot\StatusCode\RFC\RFC2324;
+use \Teapot\StatusCode\RFC\RFC2774;
 
 /**
- * Interface representing standard HTTP status codes. These codes are
+ * Interface representing standard and extended HTTP status codes. These codes are
  * represented as an interface so that developers may implement it and then use
  * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
  * and override their default description.
@@ -42,6 +44,6 @@ use \Teapot\StatusCode\Http;
  * @license    MIT http://opensource.org/licenses/MIT
  * @link       http://shrikeh.github.com/teapot
  */
-interface StatusCode extends Http
+interface Http extends RFC2616, RFC2324, RFC2774
 {
 }

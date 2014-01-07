@@ -1,15 +1,12 @@
 <?php
 /**
- * Interface representing standard HTTP status codes. These codes are
+ * Interface representing extended HTTP status codes for WebDAV. These codes are
  * represented as an interface so that developers may implement it and then use
  * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
  * and override their default description.
  *
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
- *
- * A list of status codes can be found here:
- * @see http://lists.w3.org/Archives/Public/public-web-perf/2013Apr/att-0007/WebRequestStatusCodes4.html
  *
  * PHP version 5.3
  *
@@ -21,12 +18,15 @@
  * @license    MIT http://opensource.org/licenses/MIT
  * @link       http://shrikeh.github.com/teapot
  */
-namespace Teapot;
+namespace Teapot\StatusCode;
 
-use \Teapot\StatusCode\Http;
+use \Teapot\StatusCode\RFC\RFC2518;
+use \Teapot\StatusCode\RFC\RFC3648;
+use \Teapot\StatusCode\RFC\RFC4918;
+use \Teapot\StatusCode\RFC\RFC5842;
 
 /**
- * Interface representing standard HTTP status codes. These codes are
+ * Interface representing extended HTTP status codes for WebDAV. These codes are
  * represented as an interface so that developers may implement it and then use
  * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
  * and override their default description.
@@ -42,6 +42,8 @@ use \Teapot\StatusCode\Http;
  * @license    MIT http://opensource.org/licenses/MIT
  * @link       http://shrikeh.github.com/teapot
  */
-interface StatusCode extends Http
+
+interface WebDAV extends RFC2518, RFC3648, RFC4918, RFC5842
 {
+
 }

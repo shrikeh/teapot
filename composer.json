@@ -25,9 +25,6 @@
         "phpdocumentor/phpdocumentor": "2.*"
     },
     "minimum-stability": "dev",
-    "config": {
-        "bin-dir": "bin"
-    },
     "autoload": {
         "psr-0": { "Teapot": "lib" }
     }
