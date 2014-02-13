@@ -139,7 +139,7 @@
         </exec>
     </target>
 
-    <target name="travis" description="Tests for travis-ci" depends="phpunit, phpmd, phpcs, phploc, pdepend">
+    <target name="travis" description="Tests for travis-ci" depends="phpmd, phpcs, phploc, pdepend">
 
     </target>
 </project>
