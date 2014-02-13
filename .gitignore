@@ -19,8 +19,9 @@ tmtagsHistory
 *.sublime-workspace
 atlassian-ide-plugin.xml
 
-vendor/*
-bin/*
-data/*
+vendor
+bin
+data
+build
 !/.gitignore
 !/.travis.yml

@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "3902b83dd2cd25f0085a0f6c5a2a9f45",
+    "hash": "b9aefab9e08cfdad716d01fe7c3ff770",
     "packages": [
 
     ],
@@ -565,41 +565,28 @@
         },
         {
             "name": "pdepend/pdepend",
-            "version": "dev-master",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pdepend/pdepend.git",
-                "reference": "57bc5a1fca868f9abd7c5deffd9ac57aea6adfd9"
+                "reference": "fbeaa10ee57114d790be5fb6778dcf0404267fef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pdepend/pdepend/zipball/57bc5a1fca868f9abd7c5deffd9ac57aea6adfd9",
-                "reference": "57bc5a1fca868f9abd7c5deffd9ac57aea6adfd9",
+                "url": "https://api.github.com/repos/pdepend/pdepend/zipball/fbeaa10ee57114d790be5fb6778dcf0404267fef",
+                "reference": "fbeaa10ee57114d790be5fb6778dcf0404267fef",
                 "shasum": ""
             },
             "require": {
-                "symfony/config": "@stable",
-                "symfony/dependency-injection": "@stable"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "@stable",
-                "squizlabs/php_codesniffer": "@stable"
+                "php": ">=5.2.3"
             },
             "bin": [
                 "src/bin/pdepend"
             ],
             "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "PDepend\\": "src/main/php/"
-                }
-            },
             "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
             "description": "Official version of pdepend to be handled with Composer",
-            "time": "2014-01-24 20:42:53"
+            "time": "2012-09-12 11:09:19"
         },
         {
             "name": "phpcollection/phpcollection",
@@ -1211,17 +1198,20 @@
         },
         {
             "name": "phpdocumentor/unified-asset-installer",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/UnifiedAssetInstaller.git",
-                "reference": "769daf20345494ae00f166a9a649086545c0cd79"
+                "reference": "241fb036268cd9da7d76da3db66e3eda66259c52"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/UnifiedAssetInstaller/zipball/769daf20345494ae00f166a9a649086545c0cd79",
-                "reference": "769daf20345494ae00f166a9a649086545c0cd79",
+                "url": "https://api.github.com/repos/phpDocumentor/UnifiedAssetInstaller/zipball/241fb036268cd9da7d76da3db66e3eda66259c52",
+                "reference": "241fb036268cd9da7d76da3db66e3eda66259c52",
                 "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "1.0.0"
             },
             "require-dev": {
                 "composer/composer": "~1.0@dev",
@@ -1251,7 +1241,7 @@
                 "plugins",
                 "templates"
             ],
-            "time": "2013-08-02 06:40:32"
+            "time": "2013-09-09 06:13:02"
         },
         {
             "name": "phploc/phploc",
@@ -1305,42 +1295,33 @@
         },
         {
             "name": "phpmd/phpmd",
-            "version": "dev-master",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpmd/phpmd.git",
-                "reference": "61595c1927796de53c0d26d3224b5c1b979c8c17"
+                "reference": "7d03a50e937811970751697ad1aea33a1089d66f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpmd/phpmd/zipball/61595c1927796de53c0d26d3224b5c1b979c8c17",
-                "reference": "61595c1927796de53c0d26d3224b5c1b979c8c17",
+                "url": "https://api.github.com/repos/phpmd/phpmd/zipball/7d03a50e937811970751697ad1aea33a1089d66f",
+                "reference": "7d03a50e937811970751697ad1aea33a1089d66f",
                 "shasum": ""
             },
             "require": {
-                "pdepend/pdepend": "dev-master",
+                "pdepend/pdepend": "*",
                 "php": ">=5.3.0"
             },
             "bin": [
                 "src/bin/phpmd"
             ],
             "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "PHP_PMD": "src/main/php",
-                    "PDepend\\": "vendor/pdepend/pdepend/src/main/php/"
-                }
-            },
             "notification-url": "https://packagist.org/downloads/",
             "include-path": [
                 "../../pdepend/pdepend/src/main/php",
                 "src/main/php"
             ],
-            "license": [
-                "BSD-3-Clause"
-            ],
             "description": "Official version of PHPMD handled with Composer.",
-            "time": "2014-01-24 20:49:59"
+            "time": "2012-12-14 12:25:09"
         },
         {
             "name": "phpoption/phpoption",
@@ -1847,65 +1828,6 @@
                 }
             ],
             "description": "Symfony Console Component",
-            "homepage": "http://symfony.com",
-            "time": "2014-02-11 13:52:21"
-        },
-        {
-            "name": "symfony/dependency-injection",
-            "version": "dev-master",
-            "target-dir": "Symfony/Component/DependencyInjection",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/DependencyInjection.git",
-                "reference": "8b078899a445bc39b867626f57be6281568f987f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/DependencyInjection/zipball/8b078899a445bc39b867626f57be6281568f987f",
-                "reference": "8b078899a445bc39b867626f57be6281568f987f",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "symfony/config": "~2.2",
-                "symfony/expression-language": "~2.4",
-                "symfony/yaml": "~2.0"
-            },
-            "suggest": {
-                "symfony/config": "",
-                "symfony/proxy-manager-bridge": "Generate service proxies to lazy load them",
-                "symfony/yaml": ""
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.5-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Symfony\\Component\\DependencyInjection\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony DependencyInjection Component",
             "homepage": "http://symfony.com",
             "time": "2014-02-11 13:52:21"
         },
