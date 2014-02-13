@@ -23,6 +23,9 @@
         "squizlabs/php_codesniffer": "1.*",
         "phpdocumentor/phpdocumentor": "2.*"
     },
+    "config": {
+        "bin-dir": "bin"
+    },
     "minimum-stability": "dev",
     "autoload": {
         "psr-0": { "Teapot": "lib" }
