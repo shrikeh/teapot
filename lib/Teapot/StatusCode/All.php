@@ -49,16 +49,16 @@ use \Teapot\StatusCode\RFC\RFC3229 as HttpDeltas;
  */
 
 interface All extends
- Vendor,
- WebDAV,
- Draft,
- PEP,
- ContentNegotiation,
- HyperTextCoffeePotControlProtocol,
- Rtsp,
- Http,
- TLS,
- HttpDeltas
+    Vendor,
+    WebDAV,
+    Draft,
+    PEP,
+    ContentNegotiation,
+    HyperTextCoffeePotControlProtocol,
+    Rtsp,
+    Http,
+    TLS,
+    HttpDeltas
 {
 
 }
