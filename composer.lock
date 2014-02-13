@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "b9aefab9e08cfdad716d01fe7c3ff770",
+    "hash": "329da998594685af94346e0811df7b44",
     "packages": [
 
     ],
@@ -450,6 +450,56 @@
                 "xml"
             ],
             "time": "2014-02-10 11:00:05"
+        },
+        {
+            "name": "mayflower/php-codebrowser",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Mayflower/PHP_CodeBrowser.git",
+                "reference": "9015b935179e8c1a3cc8cbae59990d4388875c12"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Mayflower/PHP_CodeBrowser/zipball/9015b935179e8c1a3cc8cbae59990d4388875c12",
+                "reference": "9015b935179e8c1a3cc8cbae59990d4388875c12",
+                "shasum": ""
+            },
+            "require": {
+                "monolog/monolog": "~1.7",
+                "phpunit/php-file-iterator": "~1.3",
+                "symfony/console": "~2.1"
+            },
+            "require-dev": {
+                "phploc/phploc": "*",
+                "phpmd/phpmd": "1.5.*",
+                "phpunit/phpunit": "3.7.*",
+                "sebastian/phpcpd": "*",
+                "squizlabs/php_codesniffer": "1.*"
+            },
+            "bin": [
+                "bin/phpcb"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PHPCodeBrowser\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Robin Gloster",
+                    "email": "robin.gloster@mayflower.de",
+                    "role": "developer"
+                }
+            ],
+            "description": "A code browser that augments the code with information from various QA tools.",
+            "homepage": "https://github.com/Mayflower/PHP_CodeBrowser",
+            "time": "2014-01-09 13:23:36"
         },
         {
             "name": "monolog/monolog",
@@ -1373,6 +1423,95 @@
             "time": "2014-01-09 22:37:17"
         },
         {
+            "name": "phpunit/php-file-iterator",
+            "version": "1.3.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/php-file-iterator.git",
+                "reference": "acd690379117b042d1c8af1fafd61bde001bf6bb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/acd690379117b042d1c8af1fafd61bde001bf6bb",
+                "reference": "acd690379117b042d1c8af1fafd61bde001bf6bb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "File/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "include-path": [
+                ""
+            ],
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sb@sebastian-bergmann.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "FilterIterator implementation that filters files based on a list of suffixes.",
+            "homepage": "https://github.com/sebastianbergmann/php-file-iterator/",
+            "keywords": [
+                "filesystem",
+                "iterator"
+            ],
+            "time": "2013-10-10 15:34:57"
+        },
+        {
+            "name": "phpunit/php-timer",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/php-timer.git",
+                "reference": "19689d4354b295ee3d8c54b4f42c3efb69cbc17c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/19689d4354b295ee3d8c54b4f42c3efb69cbc17c",
+                "reference": "19689d4354b295ee3d8c54b4f42c3efb69cbc17c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "PHP/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "include-path": [
+                ""
+            ],
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sb@sebastian-bergmann.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "Utility class for timing",
+            "homepage": "https://github.com/sebastianbergmann/php-timer/",
+            "keywords": [
+                "timer"
+            ],
+            "time": "2013-08-02 07:42:54"
+        },
+        {
             "name": "pimple/pimple",
             "version": "v1.0.2",
             "source": {
@@ -1549,6 +1688,57 @@
             "time": "2013-10-22 21:25:12"
         },
         {
+            "name": "sebastian/phpcpd",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/phpcpd.git",
+                "reference": "cc88ecb7c7a9eb6bf84d9a93f019cdc866812f30"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpcpd/zipball/cc88ecb7c7a9eb6bf84d9a93f019cdc866812f30",
+                "reference": "cc88ecb7c7a9eb6bf84d9a93f019cdc866812f30",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "phpunit/php-timer": ">=1.0.4",
+                "sebastian/finder-facade": ">=1.1.0",
+                "sebastian/version": ">=1.0.0",
+                "symfony/console": ">=2.2.0",
+                "theseer/fdomdocument": "~1.4"
+            },
+            "bin": [
+                "composer/bin/phpcpd"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "Copy/Paste Detector (CPD) for PHP code.",
+            "homepage": "https://github.com/sebastianbergmann/phpcpd",
+            "time": "2014-02-13 09:39:27"
+        },
+        {
             "name": "sebastian/version",
             "version": "dev-master",
             "source": {
@@ -1582,79 +1772,6 @@
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
             "homepage": "https://github.com/sebastianbergmann/version",
             "time": "2014-02-12 16:30:13"
-        },
-        {
-            "name": "shrink/finder-facade",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/shrink/finder-facade.git",
-                "reference": "b42946e2a709d6c60a03585445cc7e02fe2b4164"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/shrink/finder-facade/zipball/b42946e2a709d6c60a03585445cc7e02fe2b4164",
-                "reference": "b42946e2a709d6c60a03585445cc7e02fe2b4164",
-                "shasum": ""
-            },
-            "require": {
-                "theseer/fdomdocument": ">=1.3.1"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "src/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
-                }
-            ],
-            "description": "FinderFacade is a convenience wrapper for Symfony's Finder component.",
-            "homepage": "https://github.com/sebastianbergmann/finder-facade",
-            "time": "2013-03-15 23:17:58"
-        },
-        {
-            "name": "shrink/phpcpd",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/shrink/phpcpd.git",
-                "reference": "899c9d27da0b875d38a604d0984d36995bacff10"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/shrink/phpcpd/zipball/899c9d27da0b875d38a604d0984d36995bacff10",
-                "reference": "899c9d27da0b875d38a604d0984d36995bacff10",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3",
-                "shrink/finder-facade": "dev-master"
-            },
-            "bin": [
-                "phpcpd.php"
-            ],
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "src/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "Copy/Paste Detector (CPD) for PHP code.",
-            "homepage": "https://github.com/sebastianbergmann/phpcpd",
-            "time": "2013-03-15 23:19:17"
         },
         {
             "name": "squizlabs/php_codesniffer",
@@ -2271,16 +2388,16 @@
         },
         {
             "name": "theseer/fdomdocument",
-            "version": "dev-master",
+            "version": "1.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/theseer/fDOMDocument.git",
-                "reference": "f775192a2924fa3926f565f3c671aa46bd948e75"
+                "reference": "f0875e4331b092e6059dd5570e89c9455db90537"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/theseer/fDOMDocument/zipball/f775192a2924fa3926f565f3c671aa46bd948e75",
-                "reference": "f775192a2924fa3926f565f3c671aa46bd948e75",
+                "url": "https://api.github.com/repos/theseer/fDOMDocument/zipball/f0875e4331b092e6059dd5570e89c9455db90537",
+                "reference": "f0875e4331b092e6059dd5570e89c9455db90537",
                 "shasum": ""
             },
             "require": {
@@ -2307,7 +2424,7 @@
             ],
             "description": "The classes contained within this repository extend the standard DOM to use exceptions at all occasions of errors instead of PHP warnings or notices. They also add various custom methods and shortcuts for convenience and to simplify the usage of DOM.",
             "homepage": "https://github.com/theseer/fDOMDocument",
-            "time": "2014-02-07 22:46:04"
+            "time": "2013-12-20 21:32:08"
         },
         {
             "name": "twig/twig",
@@ -2868,31 +2985,6 @@
                 "zf2"
             ],
             "time": "2014-01-04 13:01:20"
-        },
-        {
-            "name": "zerkalica/php-code-browser",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/zerkalica/PHP_CodeBrowser.git",
-                "reference": "10943986942bf9d74966c2c54af730f8182fbb99"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/zerkalica/PHP_CodeBrowser/zipball/10943986942bf9d74966c2c54af730f8182fbb99",
-                "reference": "10943986942bf9d74966c2c54af730f8182fbb99",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "bin": [
-                "bin/phpcb"
-            ],
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "description": "Unofficial version of PHP_CodeBrowser to be handled with Composer",
-            "time": "2012-08-26 11:50:31"
         }
     ],
     "aliases": [
@@ -2900,8 +2992,7 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "shrink/phpcpd": 20,
-        "zerkalica/php-code-browser": 20
+        "sebastian/phpcpd": 20
     },
     "platform": {
         "php": ">=5.3.3"

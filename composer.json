@@ -18,7 +18,7 @@
         "phploc/phploc": ">=1.7.4",
         "pdepend/pdepend": "1.1.0",
         "sebastian/phpcpd": "2.0.*@dev",
-        "zerkalica/php-code-browser": "dev-master",
+        "mayflower/php-codebrowser": "~1.1",
         "phpmd/phpmd" : ">=1.4.0",
         "squizlabs/php_codesniffer": "1.*",
         "phpdocumentor/phpdocumentor": "2.*"
