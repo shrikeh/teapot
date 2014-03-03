@@ -47,7 +47,8 @@ interface Apache
      *
      * One potential cause could be that your web server is sending a response
      * header that exceeds CloudFlare's maximum response header size. This could
-     * be the case if you're sending an abnormally high number of cookies for example.
+     * be the case if you're sending an abnormally high number of cookies for
+     * example.
      *
      * @see https://support.cloudflare.com/hc/en-us/articles/200171936-Error-520
      * @var integer
@@ -55,17 +56,19 @@ interface Apache
     const ORIGIN_ERROR = 520;
 
     /**
-     * An Error 521 means that the origin web server refused the connection from CloudFlare.
+     * An Error 521 means that the origin web server refused the connection from
+     * CloudFlare.
      *
      * There are two main reasons why this would occur. In both cases, work with your
      * hosting provider to help resolve the issue.
      *
      * 1) The origin web server is not turned on
-     * 2) Something on the web server or hosting provider's network is blocking CloudFlare's
-     * requests. Since CloudFlare acts as a reverse proxy, all connections to your server come
-     * from a CloudFlare IP. Since the same amount of traffic now comes from a smaller number
-     * of IPs, server-side security solutions can mistake the increase in connections from this
-     * smaller set of IPs as an attack, when they are legitimate.
+     * 2) Something on the web server or hosting provider's network is blocking
+     * CloudFlare's requests. Since CloudFlare acts as a reverse proxy, all
+     * connections to your server come from a CloudFlare IP. Since the same amount
+     * of traffic now comes from a smaller number of IPs, server-side security
+     * solutions can mistake the increase in connections from this smaller set of
+     * IPs as an attack, when they are legitimate.
      *
      * @see https://support.cloudflare.com/hc/en-us/articles/200171916-Error-521
      * @var integer

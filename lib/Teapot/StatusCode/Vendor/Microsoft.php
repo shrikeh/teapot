@@ -55,8 +55,8 @@ interface Microsoft
      *
      * Often search-engines or custom applications will ignore required parameters.
      * Where no default action is appropriate, the Aviongoo website sends a
-     * "HTTP/1.1 449 Retry with valid parameters: param1, param2, . . ." response. The
-     * applications may choose to learn, or not.
+     * "HTTP/1.1 449 Retry with valid parameters: param1, param2, . . ." response.
+     * The applications may choose to learn, or not.
      *
      * @see http://msdn.microsoft.com/en-us/library/dd891478.aspx
      * @var integer

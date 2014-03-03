@@ -9,7 +9,8 @@
  * traditional use would not be meaningful.
  *
  * A list of status codes can be found here:
- * @see http://lists.w3.org/Archives/Public/public-web-perf/2013Apr/att-0007/WebRequestStatusCodes4.html
+ *
+ * http://lists.w3.org/Archives/Public/public-web-perf/2013Apr/att-0007/WebRequestStatusCodes4.html
  *
  * PHP version 5.3
  *

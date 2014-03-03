@@ -47,7 +47,8 @@ interface RFC3648
      * attempted to set the position of an internal collection member in an
      * unordered collection or in a collection with a server-maintained ordering.
      * Defined in drafts of "WebDAV Advanced Collections Protocol", but not present
-     * in  "Web Distributed Authoring and Versioning (WebDAV) Ordered Collections Protocol".
+     * in "Web Distributed Authoring and Versioning (WebDAV) Ordered Collections
+     * Protocol".
      *
      * @see https://tools.ietf.org/html/draft-ietf-webdav-collection-protocol-04#section-7.2
      * @var integer
