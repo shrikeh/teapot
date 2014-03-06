@@ -1,6 +1,6 @@
 <?php
 /**
- * Interface representing extended HTTP status codes for RFC2616. These codes are
+ * Interface representing extended HTTP status codes for RFC1945. These codes are
  * represented as an interface so that developers may implement it and then use
  * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
  * and override their default description.
