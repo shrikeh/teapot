@@ -1,0 +1,7 @@
+imports:
+    - php
+
+inherit: true
+
+filter:
+  paths: [src]
