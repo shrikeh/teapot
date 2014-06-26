@@ -38,7 +38,7 @@ namespace Teapot\StatusCode\Vendor;
  * @link       http://shrikeh.github.com/teapot
  */
 
-interface Apache
+interface Cloudflare
 {
     /**
      * This status code is not specified in any RFCs, but is used by Cloudflare's
