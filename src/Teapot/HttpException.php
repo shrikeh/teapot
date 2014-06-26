@@ -29,17 +29,6 @@ use \Teapot\StatusCode;
  */
 class HttpException extends \Exception implements StatusCode
 {
-    /**
-     * Constructor.
-     *
-     * @param string  $message    The exception message (status message)
-     * @param integer $statusCode A valid response code
-     */
-    public function __construct($message, $statusCode)
-    {
-        // status code is optional in \Exception, but not in here.
-        parent::__construct($message, $statusCode);
-    }
 
     /**
      * Simple magic so you can use the Exception directly as a string, for
