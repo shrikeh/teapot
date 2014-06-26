@@ -37,7 +37,7 @@ tools:
       use_statement_fixes: { enabled: true, remove_unused: true, preserve_multiple: false, preserve_blanklines: false, order_alphabetically: false }
   php_code_sniffer:
     config:
-      tab_width: '4'
+      tab_width: '0'
       standard: PSR2
       sniffs: { psr1: { classes: { class_declaration_sniff: true } }, generic: { code_analysis: { unused_function_parameter_sniff: true }, white_space: { disallow_tab_indent_sniff: true, scope_indent_sniff: true }, php: { disallow_short_open_tag_sniff: true }, formatting: { multiple_statement_alignment_sniff: true, space_after_cast_sniff: true, disallow_multiple_statements_sniff: true } }, psr2: { classes: { property_declaration_sniff: true, class_declaration_sniff: true }, methods: { method_declaration_sniff: true }, namespaces: { namespace_declaration_sniff: true, use_declaration_sniff: true }, files: { end_file_newline_sniff: true }, control_structures: { control_structure_spacing_sniff: true, switch_declaration_sniff: true, else_if_declaration_sniff: true } } }
   sensiolabs_security_checker: true
