@@ -153,5 +153,5 @@ interface RFC2326
      * @see http://www.ietf.org/rfc/rfc2326.txt
      * @var integer
      */
-    const DESTINATION_UNREACHABLE= 462;
+    const DESTINATION_UNREACHABLE = 462;
 }

@@ -65,7 +65,7 @@ class HttpException extends \Exception implements StatusCode
     public function render($prependHttp = true)
     {
         $string = $this->getCode() . ' ' . $this->getMessage();
-        if ($prependHttp) {
+        if (true === $prependHttp) {
             $string = 'HTTP/1.1 ' . $string;
         }
         return $string;
