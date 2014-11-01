@@ -28,6 +28,6 @@
     },
     "minimum-stability": "dev",
     "autoload": {
-        "psr-0": { "Teapot": "lib" }
+        "psr-0": { "Teapot": "src" }
     }
 }
