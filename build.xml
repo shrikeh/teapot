@@ -37,7 +37,12 @@
             <arg value="self-update" />
         </exec>
     </target>
-    <target name="composer" depends="composer-update" description="Install dependencies">
+    <target name="composer-validate" depends="composer-update" description="Validate composer" >
+        <exec executable="composer" failonerror="true">
+            <arg value="validate" />
+        </exec>
+    </target>
+    <target name="composer" depends="composer-update, composer-validate" description="Install dependencies">
             <exec executable="composer">
                 <arg value="--dev" />
                 <arg value="install" />
