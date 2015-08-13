@@ -29,17 +29,17 @@ This becomes:
     <?php
     use \Teapot\StatusCode;
     ...
-    $this->assertEquals(StatusCode:OK, $response->getStatusCode());
+    $this->assertEquals(StatusCode::OK, $response->getStatusCode());
 
 While this is a trivial example, the additional verbosity of the code is clearer with other HTTP status codes:
 
     <?php
     use \Teapot\StatusCode;
     $code = $response->getStatusCode();
-    $this->assertNotEquals(StatusCode:NOT_FOUND, $code);
-    $this->assertNotEquals(StatusCode:FORBIDDEN, $code);
-    $this->assertNotEquals(StatusCode:MOVED_PERMANENTLY, $code);
-    $this->assertEquals(StatusCode:CREATED, $code);
+    $this->assertNotEquals(StatusCode::NOT_FOUND, $code);
+    $this->assertNotEquals(StatusCode::FORBIDDEN, $code);
+    $this->assertNotEquals(StatusCode::MOVED_PERMANENTLY, $code);
+    $this->assertEquals(StatusCode::CREATED, $code);
 
 As `StatusCode` is an interface without any methods, you can directly implement it if you prefer:
 
