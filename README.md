@@ -2,7 +2,7 @@
 
 This is a _very_ simple library that aims to aid verbosity in any Web-based application by defining clearly the HTTP 1.1 response codes as constants. It includes two main components: an interface, which contains the constants, and an exception specifically for HTTP.
 
-[![Build Status](https://travis-ci.org/shrikeh/teapot.png?branch=master)](https://travis-ci.org/shrikeh/teapot)
+[![Build Status](https://travis-ci.org/shrikeh/teapot.svg?branch=master)](https://travis-ci.org/shrikeh/teapot)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/shrikeh/teapot/badges/quality-score.png?s=401b84c5188e1d2397dc52931f4ccb323770f6ef)](https://scrutinizer-ci.com/g/shrikeh/teapot/)
 [![Dependency Status](https://www.versioneye.com/user/projects/5314ea99ec13753e9900004b/badge.png)](https://www.versioneye.com/user/projects/5314ea99ec13753e9900004b)
 [![Latest Stable Version](https://poser.pugx.org/shrikeh/teapot/v/stable.png)](https://packagist.org/packages/shrikeh/teapot) [![Total Downloads](https://poser.pugx.org/shrikeh/teapot/downloads.png)](https://packagist.org/packages/shrikeh/teapot) [![Latest Unstable Version](https://poser.pugx.org/shrikeh/teapot/v/unstable.png)](https://packagist.org/packages/shrikeh/teapot) [![License](https://poser.pugx.org/shrikeh/teapot/license.png)](https://packagist.org/packages/shrikeh/teapot)
