@@ -34,13 +34,13 @@
     </target>
     <target name="composer-update" depends="prepare" description="Update composer">
         <exec executable="composer">
-            <arg value="self-update"></arg>
+            <arg value="self-update" />
         </exec>
     </target>
     <target name="composer" depends="composer-update" description="Install dependencies">
             <exec executable="composer">
-                <arg value="--dev"></arg>
-                <arg value="install"></arg>
+                <arg value="--dev" />
+                <arg value="install" />
             </exec>
     </target>
 
@@ -139,7 +139,5 @@
         </exec>
     </target>
 
-    <target name="travis" description="Tests for travis-ci" depends="phpmd, phpcs, phploc, pdepend">
-
-    </target>
+    <target name="travis" description="Tests for travis-ci" depends="phpmd, phpcs, phploc, pdepend" />
 </project>
