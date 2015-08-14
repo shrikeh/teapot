@@ -3,7 +3,8 @@ language: php
 sudo: false
 env:
   global:
-    secure: "EKu7/YeziJdJV9KpJxcK+tUcgjdqrgO0CpzmJ8eOGd0/HUS2X1eOrSbFjhgT83A/nLjLV15IQq0xCnokDLtfa3n9yjxJhnTqq32ocT8SqbbS29sUjj5ppdgnupKaudqx2qnTbuz5MizaStoPjx0HUsPXp0VJrCy7i//H5O2vl+c="
+    - GH_REF: github.com/shrikeh/teapot.git
+    - secure: "h8Q6F3ThS/pwBDMUg3Vj5zKqVhk2Birt1cZkbIxiFOMI2ptKHg+j6m9n3HTMRZq1jdEUrqnbqME3cCAAIs70dvw24ByeS7GJxzaBNLf/uA2nt6+6BiGvbAUqkVsCEMSyr7QqzsYMdbeGxEViuvgxhp3x6Fy9jIRz4kNdYJvzFUU="
 
 php:
   - 5.3
