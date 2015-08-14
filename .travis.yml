@@ -7,6 +7,10 @@ php:
   - 5.4
   - 5.5
 
+cache:
+  directories:
+    - $HOME/.composer/cache
+
 before_install:
   - composer self-update
   - composer validate
