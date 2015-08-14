@@ -12,22 +12,12 @@
         }
     ],
     "require": {
-        "php": ">=5.3.3"
+        "php": ">=5.3.3",
+        "squizlabs/php_codesniffer": "^2.3"
     },
-    "require-dev": {
-        "phploc/phploc": ">=1.7.4",
-        "pdepend/pdepend": "1.1.0",
-        "sebastian/phpcpd": "2.0.*@dev",
-        "mayflower/php-codebrowser": "~1.1",
-        "phpmd/phpmd" : ">=1.4.0",
-        "squizlabs/php_codesniffer": "1.*",
-        "phpdocumentor/phpdocumentor": "2.*"
-    },
-    "config": {
-        "bin-dir": "bin"
-    },
-    "minimum-stability": "dev",
     "autoload": {
-        "psr-0": { "Teapot": "src" }
+        "psr-0": {
+            "Teapot": "src"
+        }
     }
 }

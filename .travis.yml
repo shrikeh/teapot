@@ -5,12 +5,12 @@ php:
   - 5.4
   - 5.5
 
-script: ant travis
+before_install:
+  - composer self-update
+  - composer validate
 
-matrix:
-  allow_failures:
-    - branches:
-        except:
-          - master
-          - stable
-          - development
+install:
+  - composer install --prefer-dist
+
+script:
+  - vendor/bin/phpcs --standard=PSR2 src -p
