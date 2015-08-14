@@ -13,7 +13,4 @@ install:
   - composer install --prefer-dist
 
 script:
-  - bin/phpmd src text codesize,unusedcode,naming,design
-  - bin/phpcs --standard=PSR2 src
-  - bin/phploc --log-csv build/logs/phploc.csv src
-  - bin/pdepend --jdepend-xml=build/logs/jdepend.xml --jdepend-chart=build/pdepend/dependencies.svg --overview-pyramid=build/pdepend/overview-pyramid.svg src
+  - vendor/bin/phpcs --standard=PSR2 src -p
