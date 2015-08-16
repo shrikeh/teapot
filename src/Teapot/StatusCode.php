@@ -24,7 +24,7 @@
  */
 namespace Teapot;
 
-use \Teapot\StatusCode\Http;
+use Teapot\StatusCode\Http;
 
 /**
  * Interface representing standard HTTP status codes. These codes are

@@ -20,7 +20,7 @@
  */
 namespace Teapot\StatusCode\RFC;
 
-use \Teapot\StatusCode\RFC\RFC2616;
+use Teapot\StatusCode\RFC\RFC2616;
 
 /**
  * Interface representing extended HTTP status codes for Draft codes. These codes are
