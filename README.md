@@ -15,14 +15,14 @@ Assuming for a moment a PHPUnit test on a cURL client response:
 <?php
 
 /**
- * @test
  * @dataProvider someUrlProvider
- **/
+ */
 public function testResponseIsOK($url)
 {
     $client = new Client($url);
     $response = $client->get();
-    $this->assertEquals(200, $response->getStatusCode());
+    
+    $this->assertSame(200, $response->getStatusCode());
 }
 ```
 
@@ -30,21 +30,25 @@ This becomes:
 
 ```php
 <?php
-use \Teapot\StatusCode;
+
+use Teapot\StatusCode;
 ...
-$this->assertEquals(StatusCode::OK, $response->getStatusCode());
+$this->assertSame(StatusCode::OK, $response->getStatusCode());
 ```
 
 While this is a trivial example, the additional verbosity of the code is clearer with other HTTP status codes:
 
-```
+```php
 <?php
-use \Teapot\StatusCode;
+
+use Teapot\StatusCode;
+
 $code = $response->getStatusCode();
+
 $this->assertNotEquals(StatusCode::NOT_FOUND, $code);
 $this->assertNotEquals(StatusCode::FORBIDDEN, $code);
 $this->assertNotEquals(StatusCode::MOVED_PERMANENTLY, $code);
-$this->assertEquals(StatusCode::CREATED, $code);
+$this->assertSame(StatusCode::CREATED, $code);
 ```
 
 As `StatusCode` is an interface without any methods, you can directly implement it if you prefer:
@@ -52,7 +56,9 @@ As `StatusCode` is an interface without any methods, you can directly implement 
 ```php
 <?php
 
-class FooController implements \Teapot\StatusCode
+use Teapot\StatusCode;
+
+class FooController implements StatusCode
 {
     public function badAction()
     {
@@ -77,8 +83,8 @@ The `HttpException` is very straightforward. It simply is a named exception to a
 ```php
 <?php
 
-use \Teapot\HttpException;
-use \Teapot\StatusCode;
+use Teapot\HttpException;
+use Teapot\StatusCode;
 
 throw new HttpException(
     'Sorry this page does not exist!',
@@ -91,7 +97,7 @@ The exception itself uses the `StatusCode` interface, allowing you to avoid manu
 ```php
 <?php
 
-use \Teapot\HttpException;
+use Teapot\HttpException;
 
 throw new HttpException(
     'Sorry this page does not exist!',
