@@ -20,11 +20,10 @@
  */
 namespace Teapot\StatusCode;
 
-use \Teapot\StatusCode\Vendor\Apache;
-use \Teapot\StatusCode\Vendor\Cloudflare;
-use \Teapot\StatusCode\Vendor\Microsoft;
-use \Teapot\StatusCode\Vendor\Nginx;
-use \Teapot\StatusCode\Vendor\Twitter;
+use Teapot\StatusCode\Vendor\Apache;
+use Teapot\StatusCode\Vendor\Microsoft;
+use Teapot\StatusCode\Vendor\Nginx;
+use Teapot\StatusCode\Vendor\Twitter;
 
 /**
  * Interface representing extended HTTP status codes for vendor-specific codes.

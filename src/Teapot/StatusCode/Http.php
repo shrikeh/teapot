@@ -23,9 +23,9 @@
  */
 namespace Teapot\StatusCode;
 
-use \Teapot\StatusCode\RFC\RFC2616;
-use \Teapot\StatusCode\RFC\RFC2324;
-use \Teapot\StatusCode\RFC\RFC2774;
+use Teapot\StatusCode\RFC\RFC2616;
+use Teapot\StatusCode\RFC\RFC2324;
+use Teapot\StatusCode\RFC\RFC2774;
 
 /**
  * Interface representing standard and extended HTTP status codes. These codes are

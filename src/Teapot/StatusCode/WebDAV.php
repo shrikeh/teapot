@@ -20,10 +20,10 @@
  */
 namespace Teapot\StatusCode;
 
-use \Teapot\StatusCode\RFC\RFC2518;
-use \Teapot\StatusCode\RFC\RFC3648;
-use \Teapot\StatusCode\RFC\RFC4918;
-use \Teapot\StatusCode\RFC\RFC5842;
+use Teapot\StatusCode\RFC\RFC2518;
+use Teapot\StatusCode\RFC\RFC3648;
+use Teapot\StatusCode\RFC\RFC4918;
+use Teapot\StatusCode\RFC\RFC5842;
 
 /**
  * Interface representing extended HTTP status codes for WebDAV. These codes are

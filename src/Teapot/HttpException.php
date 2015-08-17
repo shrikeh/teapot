@@ -14,7 +14,7 @@
  */
 namespace Teapot;
 
-use \Teapot\StatusCode;
+use Teapot\StatusCode;
 
 /**
  * Simple Exception to represent http-based Exceptions
