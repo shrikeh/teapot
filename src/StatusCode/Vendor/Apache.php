@@ -1,9 +1,9 @@
 <?php
 /**
- * Interface representing extended HTTP status codes for vendor-specific codes.
- * These codes are represented as an interface so that developers may implement it
- * and then use parent::[CODE] to gain a code, or to extend the codes using
- * static::[CODE] and override their default description.
+ * Interface representing extended HTTP status codes for Apache. These codes are
+ * represented as an interface so that developers may implement it and then use
+ * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
+ * and override their default description.
  *
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
@@ -18,18 +18,13 @@
  * @license    MIT http://opensource.org/licenses/MIT
  * @link       http://shrikeh.github.com/teapot
  */
-namespace Teapot\StatusCode;
-
-use Teapot\StatusCode\Vendor\Apache;
-use Teapot\StatusCode\Vendor\Microsoft;
-use Teapot\StatusCode\Vendor\Nginx;
-use Teapot\StatusCode\Vendor\Twitter;
+namespace Teapot\StatusCode\Vendor;
 
 /**
- * Interface representing extended HTTP status codes for vendor-specific codes.
- * These codes are represented as an interface so that developers may implement it
- * and then use parent::[CODE] to gain a code, or to extend the codes using
- * static::[CODE] and override their default description.
+ * Interface representing extended HTTP status codes for Apache. These codes are
+ * represented as an interface so that developers may implement it and then use
+ * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
+ * and override their default description.
  *
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
@@ -42,8 +37,13 @@ use Teapot\StatusCode\Vendor\Twitter;
  * @license    MIT http://opensource.org/licenses/MIT
  * @link       http://shrikeh.github.com/teapot
  */
-
-interface Vendor extends Apache, Microsoft, Nginx, Twitter
+interface Apache
 {
-
+    /**
+     * This status code, while used by many servers, is not specified in any RFCs.
+     * Apache-specific.
+     *
+     * @var integer
+     */
+    const BANDWIDTH_LIMIT_EXCEEDED = 509;
 }
