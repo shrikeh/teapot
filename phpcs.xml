@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<ruleset name="Teapot">
+  <description>The coding standard for Teapot.</description>
+  <file>src</file>
+  <exclude-pattern>*/test/*</exclude-pattern>
+  <arg name="colors" />
+  <arg value="p" />
+  <rule ref="PSR1"/>
+  <rule ref="PSR2"/>
+  <rule ref="PEAR" />
+  <rule ref="Generic.Files.LineLength">
+   <properties>
+    <property name="lineLimit" value="80"/>
+   </properties>
+  </rule>
+</ruleset>
