@@ -37,7 +37,6 @@ namespace Teapot\StatusCode\Vendor;
  * @license    MIT http://opensource.org/licenses/MIT
  * @link       http://shrikeh.github.com/teapot
  */
-
 interface Nginx
 {
     /**

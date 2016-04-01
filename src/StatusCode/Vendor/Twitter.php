@@ -37,14 +37,13 @@ namespace Teapot\StatusCode\Vendor;
  * @license    MIT http://opensource.org/licenses/MIT
  * @link       http://shrikeh.github.com/teapot
  */
-
 interface Twitter
 {
     /**
      * Returned by the version 1 Search and Trends APIs when you are being rate
      * limited.
      *
-     * @see https://dev.twitter.com/docs/rate-limiting/1
+     * @link https://dev.twitter.com/docs/rate-limiting/1
      * @var integer
      */
     const ENHANCE_YOUR_CALM = 420;

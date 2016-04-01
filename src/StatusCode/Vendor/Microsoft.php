@@ -37,7 +37,6 @@ namespace Teapot\StatusCode\Vendor;
  * @license    MIT http://opensource.org/licenses/MIT
  * @link       http://shrikeh.github.com/teapot
  */
-
 interface Microsoft
 {
     /**
@@ -58,7 +57,7 @@ interface Microsoft
      * "HTTP/1.1 449 Retry with valid parameters: param1, param2, . . ." response.
      * The applications may choose to learn, or not.
      *
-     * @see http://msdn.microsoft.com/en-us/library/dd891478.aspx
+     * @link http://msdn.microsoft.com/en-us/library/dd891478.aspx
      * @var integer
      */
     const RETRY_WITH = 449;
