@@ -49,7 +49,8 @@ interface RFC2817
      * willingness to switch to any (combination) of the protocols listed.
      *
      * @see http://tools.ietf.org/search/rfc2817#section-3.3
-     * @var integer
+     *
+     * @var int
      */
     const UPDATE_REQUIRED = 426;
 }

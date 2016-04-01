@@ -47,7 +47,8 @@ interface RFC2326
      * contained in the request.
      *
      * @see http://www.ietf.org/rfc/rfc2326.txt
-     * @var integer
+     *
+     * @var int
      */
     const PARAMETER_NOT_UNDERSTOOD = 451;
 
@@ -56,7 +57,8 @@ interface RFC2326
      * media server.
      *
      * @see http://www.ietf.org/rfc/rfc2326.txt
-     * @var integer
+     *
+     * @var int
      */
     const CONFERENCE_NOT_FOUND = 452;
 
@@ -65,7 +67,8 @@ interface RFC2326
      * This may, for example, be the result of a resource reservation failure.
      *
      * @see http://www.ietf.org/rfc/rfc2326.txt
-     * @var integer
+     *
+     * @var int
      */
     const NOT_ENOUGH_BANDWIDTH = 453;
 
@@ -74,7 +77,8 @@ interface RFC2326
      * or has timed out.
      *
      * @see http://www.ietf.org/rfc/rfc2326.txt
-     * @var integer
+     *
+     * @var int
      */
     const SESSION_NOT_FOUND = 454;
 
@@ -84,7 +88,8 @@ interface RFC2326
      * easier.
      *
      * @see http://www.ietf.org/rfc/rfc2326.txt
-     * @var integer
+     *
+     * @var int
      */
     const METHOD_NOT_VALID_IN_THIS_STATE = 455;
 
@@ -94,7 +99,8 @@ interface RFC2326
      * seeking.
      *
      * @see http://www.ietf.org/rfc/rfc2326.txt
-     * @var integer
+     *
+     * @var int
      */
     const HEADER_FIELD_NOT_VALID_FOR_RESOURCE = 456;
 
@@ -103,7 +109,8 @@ interface RFC2326
      * presentation.
      *
      * @see http://www.ietf.org/rfc/rfc2326.txt
-     * @var integer
+     *
+     * @var int
      */
     const INVALID_RANGE = 457;
 
@@ -111,7 +118,8 @@ interface RFC2326
      * The parameter to be set by SET_PARAMETER can be read but not modified.
      *
      * @see http://www.ietf.org/rfc/rfc2326.txt
-     * @var integer
+     *
+     * @var int
      */
     const PARAMETER_IS_READ_ONLY = 458;
 
@@ -121,7 +129,8 @@ interface RFC2326
      * stream URL.
      *
      * @see http://www.ietf.org/rfc/rfc2326.txt
-     * @var integer
+     *
+     * @var int
      */
     const AGGREGATE_OPERATION_NOT_ALLOWED = 459;
 
@@ -131,7 +140,8 @@ interface RFC2326
      * presentation URL.
      *
      * @see http://www.ietf.org/rfc/rfc2326.txt
-     * @var integer
+     *
+     * @var int
      */
     const ONLY_AGGREGATE_OPERATION_ALLOWED = 460;
 
@@ -140,7 +150,8 @@ interface RFC2326
      * specification.
      *
      * @see http://www.ietf.org/rfc/rfc2326.txt
-     * @var integer
+     *
+     * @var int
      */
     const UNSUPPORTED_TRANSPORT = 461;
 
@@ -151,7 +162,8 @@ interface RFC2326
      * parameter in the Transport field.
      *
      * @see http://www.ietf.org/rfc/rfc2326.txt
-     * @var integer
+     *
+     * @var int
      */
     const DESTINATION_UNREACHABLE = 462;
 }

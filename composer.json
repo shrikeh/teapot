@@ -15,7 +15,11 @@
         "php": ">=5.3.3"
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "^2.3"
+        "squizlabs/php_codesniffer": "^2.3",
+        "fabpot/php-cs-fixer": "^1.11"
+    },
+    "config": {
+        "bin-dir": "bin"
     },
     "autoload": {
         "psr-4": {

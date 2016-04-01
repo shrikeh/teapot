@@ -55,7 +55,8 @@ interface RFC2774
      * include relevant diagnostic information.
      *
      * @see http://tools.ietf.org/search/rfc2774#section-7
-     * @var integer
+     *
+     * @var int
      */
     const NOT_EXTENDED = 510;
 }

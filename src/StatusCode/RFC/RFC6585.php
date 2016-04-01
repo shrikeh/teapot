@@ -55,7 +55,8 @@ interface RFC6585
      * Responses with the 428 status code MUST NOT be stored by a cache.
      *
      * @see http://tools.ietf.org/html/rfc6585
-     * @var integer
+     *
+     * @var int
      */
     const PRECONDITION_REQUIRED = 428;
 
@@ -93,7 +94,8 @@ interface RFC6585
      * Responses with the 429 status code MUST NOT be stored by a cache.
      *
      * @see http://tools.ietf.org/html/rfc6585
-     * @var integer
+     *
+     * @var int
      */
     const TOO_MANY_REQUESTS = 429;
 
@@ -108,10 +110,10 @@ interface RFC6585
      * was too large.
      *
      * @see http://tools.ietf.org/html/rfc6585
-     * @var integer
+     *
+     * @var int
      */
     const REQUEST_HEADER_FIELDS_TOO_LARGE = 431;
-
 
     /**
      * The 511 status code is designed to mitigate problems caused by
@@ -132,7 +134,8 @@ interface RFC6585
      * the login server itself.
      *
      * @see http://tools.ietf.org/html/rfc6585
-     * @var integer
+     *
+     * @var int
      */
     const NETWORK_AUTHENTICATION_REQUIRED = 511;
 }

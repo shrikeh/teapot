@@ -42,7 +42,7 @@ interface Microsoft
     /**
      * A Microsoft extension. Indicates that your session has expired.
      *
-     * @var integer
+     * @var int
      */
     const LOGIN_TIMEOUT = 440;
 
@@ -58,7 +58,8 @@ interface Microsoft
      * The applications may choose to learn, or not.
      *
      * @link http://msdn.microsoft.com/en-us/library/dd891478.aspx
-     * @var integer
+     *
+     * @var int
      */
     const RETRY_WITH = 449;
 
@@ -66,7 +67,7 @@ interface Microsoft
      * A Microsoft extension. This error is given when Windows Parental Controls are
      * turned on and are blocking access to the given webpage.
      *
-     * @var integer
+     * @var int
      */
     const BLOCKED_BY_WINDOWS_PARENTAL_CONTROLS = 450;
 
@@ -77,7 +78,7 @@ interface Microsoft
      * The client is supposed to re-run the HTTP Autodiscovery protocol to find
      * a better suited server.
      *
-     * @var integer
+     * @var int
      */
     const REDIRECT = 451;
 }

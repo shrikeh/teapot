@@ -44,14 +44,14 @@ interface Nginx
      * information to the client and closed the connection (useful as
      * a deterrent for malware).
      *
-     * @var integer
+     * @var int
      */
     const NO_RESPONSE = 444;
 
     /**
      * Nginx internal code similar to 431 but it was introduced earlier.
      *
-     * @var integer
+     * @var int
      */
     const REQUEST_HEADER_TOO_LARGE = 494;
 
@@ -59,7 +59,7 @@ interface Nginx
      * Nginx internal code used when SSL client certificate error occurred to
      * distinguish it from 4XX in a log and an error page redirection.
      *
-     * @var integer
+     * @var int
      */
     const CERT_ERROR = 495;
 
@@ -67,7 +67,7 @@ interface Nginx
      * Nginx internal code used when client didn't provide certificate to
      * distinguish it from 4XX in a log and an error page redirection.
      *
-     * @var integer
+     * @var int
      */
     const NO_CERT = 496;
 
@@ -76,7 +76,7 @@ interface Nginx
      * HTTPS port to distinguish it from 4XX in a log and an error page
      * redirection.
      *
-     * @var integer
+     * @var int
      */
     const HTTP_TO_HTTPS = 497;
 
@@ -85,7 +85,7 @@ interface Nginx
      * client while the server is still processing its request, making server
      * unable to send a status code back.
      *
-     * @var integer
+     * @var int
      */
     const CLIENT_CLOSED_REQUEST = 499;
 }

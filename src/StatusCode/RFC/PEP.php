@@ -73,7 +73,8 @@ interface PEP
      * transaction will succeed.
      *
      * @see http://www.w3.org/TR/WD-http-pep-971121.html#_Toc404743961
-     * @var integer
+     *
+     * @var int
      */
     const BAD_MAPPING = 421;
 }

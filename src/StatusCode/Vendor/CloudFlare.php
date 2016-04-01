@@ -50,7 +50,8 @@ interface CloudFlare
      * example.
      *
      * @link https://support.cloudflare.com/hc/en-us/articles/200171936-Error-520
-     * @var integer
+     *
+     * @var int
      */
     const ORIGIN_ERROR = 520;
 
@@ -70,7 +71,8 @@ interface CloudFlare
      * IPs as an attack, when they are legitimate.
      *
      * @link https://support.cloudflare.com/hc/en-us/articles/200171916-Error-521
-     * @var integer
+     *
+     * @var int
      */
     const ORIGIN_DECLINED_REQUEST = 521;
 
@@ -92,7 +94,8 @@ interface CloudFlare
      * cause would be the database or a slow application.
      *
      * @link https://support.cloudflare.com/hc/en-us/articles/200171906-Error-522
-     * @var integer
+     *
+     * @var int
      */
     const CONNECTION_TIMED_OUT = 522;
 
@@ -110,7 +113,8 @@ interface CloudFlare
      * to 5 minutes for it to take effect.
      *
      * @link https://support.cloudflare.com/hc/en-us/articles/200171946-Error-523
-     * @var integer
+     *
+     * @var int
      */
     const PROXY_DECLINED_REQUEST = 523;
 
@@ -131,7 +135,8 @@ interface CloudFlare
      * request times out.
      *
      * @link https://support.cloudflare.com/hc/en-us/articles/200171926-Error-524
-     * @var integer
+     *
+     * @var int
      */
     const TIMEOUT_OCCURRED = 524;
 }

@@ -54,7 +54,8 @@ interface RFC4918
      * destination resource URL appears with the 423 (Locked) status.
      *
      * @see http://www.ietf.org/rfc/rfc4918.txt
-     * @var integer
+     *
+     * @var int
      */
     const MULTI_STATUS = 207;
 
@@ -69,7 +70,8 @@ interface RFC4918
      * semantically erroneous, XML instructions.
      *
      * @see http://www.ietf.org/rfc/rfc4918.txt
-     * @var integer
+     *
+     * @var int
      */
     const UNPROCESSABLE_ENTITY = 422;
 
@@ -80,7 +82,8 @@ interface RFC4918
      * 'no-conflicting-lock'.
      *
      * @see http://www.ietf.org/rfc/rfc4918.txt
-     * @var integer
+     *
+     * @var int
      */
     const ENTITY_LOCKED = 423;
 
@@ -90,7 +93,8 @@ interface RFC4918
      * entire method to be aborted.
      *
      * @see http://www.ietf.org/rfc/rfc4918.txt
-     * @var integer
+     *
+     * @var int
      */
     const METHOD_FAILURE = 424;
 
@@ -102,7 +106,8 @@ interface RFC4918
      * of the commands will also fail with 424 (Failed Dependency).
      *
      * @see http://www.ietf.org/rfc/rfc4918.txt
-     * @var integer
+     *
+     * @var int
      */
     const FAILED_DEPENDENCY = 424;
 
@@ -111,7 +116,8 @@ interface RFC4918
      * request.
      *
      * @see http://www.ietf.org/rfc/rfc4918.txt
-     * @var integer
+     *
+     * @var int
      */
     const INSUFFICIENT_STORAGE = 507;
 }

@@ -45,7 +45,8 @@ interface RFC2324
      * stout. Demonstrations of this behaviour exist.
      *
      * @see http://www.ietf.org/rfc/rfc2324.txt
-     * @var integer
+     *
+     * @var int
      */
     const I_AM_A_TEAPOT = 418;
 }

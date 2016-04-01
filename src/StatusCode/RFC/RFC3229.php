@@ -63,7 +63,8 @@ interface RFC3229
      * cache entry for the current instance.
      *
      * @see http://www.ietf.org/rfc/rfc3229.txt
-     * @var integer
+     *
+     * @var int
      */
     const IM_USED = 226;
 }

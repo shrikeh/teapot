@@ -1,9 +1,9 @@
 <?php
 /**
- * Interface representing extended HTTP status codes for RFC5842. These codes are
- * represented as an interface so that developers may implement it and then use
- * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
- * and override their default description.
+ * Interface representing extended HTTP status codes for RFC5842. These codes
+ * are represented as an interface so that developers may implement it and then
+ * use parent::[CODE] to gain a code, or to extend the codes using
+ * static::[CODE] and override their default description.
  *
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
@@ -53,7 +53,8 @@ interface RFC5842
      * their descendants are included.
      *
      * @see http://www.ietf.org/rfc/rfc5842.txt
-     * @var integer
+     *
+     * @var int
      */
     const ALREADY_REPORTED = 208;
 
@@ -63,7 +64,8 @@ interface RFC5842
      * (sent in lieu of 208).
      *
      * @see https://tools.ietf.org/html/draft-ietf-webdav-collection-protocol-04#section-7.1
-     * @var integer
+     *
+     * @var int
      */
     const LOOP_DETECTED = 508;
 }

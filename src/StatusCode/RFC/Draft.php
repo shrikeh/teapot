@@ -1,9 +1,9 @@
 <?php
 /**
- * Interface representing extended HTTP status codes for Draft codes. These codes are
- * represented as an interface so that developers may implement it and then use
- * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
- * and override their default description.
+ * Interface representing extended HTTP status codes for Draft codes. These
+ * codes are represented as an interface so that developers may implement it and
+ * then use parent::[CODE] to gain a code, or to extend the codes using
+ * static::[CODE] and override their default description.
  *
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
@@ -61,7 +61,8 @@ interface Draft
      * it does not allow rewriting the request method from POST to GET.
      *
      * @see http://tools.ietf.org/html/draft-reschke-http-status-308-07#section-3
-     * @var integer
+     *
+     * @var int
      */
     const PERMANENT_REDIRECT = 308;
 
@@ -80,7 +81,8 @@ interface Draft
      * applies to.
      *
      * @see http://tools.ietf.org/html/draft-tbray-http-legally-restricted-status-00#section-3
-     * @var integer
+     *
+     * @var int
      */
     const UNAVAILABLE_FOR_LEGAL_REASONS = 451;
 }

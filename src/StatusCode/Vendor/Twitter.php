@@ -44,7 +44,8 @@ interface Twitter
      * limited.
      *
      * @link https://dev.twitter.com/docs/rate-limiting/1
-     * @var integer
+     *
+     * @var int
      */
     const ENHANCE_YOUR_CALM = 420;
 }

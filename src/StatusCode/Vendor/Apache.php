@@ -43,7 +43,7 @@ interface Apache
      * This status code, while used by many servers, is not specified in any RFCs.
      * Apache-specific.
      *
-     * @var integer
+     * @var int
      */
     const BANDWIDTH_LIMIT_EXCEEDED = 509;
 }

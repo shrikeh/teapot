@@ -45,7 +45,8 @@ interface RFC2295
      * reference.
      *
      * @see http://tools.ietf.org/search/rfc2295#section-8.1
-     * @var integer
+     *
+     * @var int
      */
     const VARIANT_ALSO_NEGOTIATES = 506;
 }

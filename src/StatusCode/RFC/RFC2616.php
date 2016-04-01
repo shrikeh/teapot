@@ -53,7 +53,8 @@ interface RFC2616
      * 417 Expectation Failed and not continue).
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const CONTINUING = 100;
 
@@ -68,7 +69,8 @@ interface RFC2616
      * and assuming the request was lost.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const SWITCHING_PROTOCOLS = 101;
 
@@ -84,7 +86,8 @@ interface RFC2616
      * server.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const OK = 200;
 
@@ -102,7 +105,8 @@ interface RFC2616
      * 202 (Accepted) response instead.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const CREATED = 201;
 
@@ -123,7 +127,8 @@ interface RFC2616
      * the request to be fulfilled.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const ACCEPTED = 202;
 
@@ -137,7 +142,8 @@ interface RFC2616
      * and is only appropriate when the response would otherwise be 200 (OK).
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const NON_AUTHORATIVE_INFORMATION = 203;
 
@@ -158,7 +164,8 @@ interface RFC2616
      * terminated by the first empty line after the header fields.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const NO_CONTENT = 204;
 
@@ -171,7 +178,8 @@ interface RFC2616
      * MUST NOT include an entity.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const RESET_CONTENT = 205;
 
@@ -209,7 +217,8 @@ interface RFC2616
      * MUST NOT cache 206 (Partial) responses.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const PARTIAL_CONTENT = 206;
 
@@ -233,7 +242,8 @@ interface RFC2616
      * unless indicated otherwise.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const MULTIPLE_CHOICES = 300;
 
@@ -258,7 +268,8 @@ interface RFC2616
      *     will erroneously change it into a GET request.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const MOVED_PERMANENTLY = 301;
 
@@ -285,7 +296,8 @@ interface RFC2616
      *     kind of reaction is expected of the client.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const FOUND = 302;
 
@@ -307,7 +319,8 @@ interface RFC2616
      *     to a 302 response as described here for 303.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const SEE_OTHER = 303;
 
@@ -325,7 +338,7 @@ interface RFC2616
      *     - ETag and/or Content-Location, if the header would have been sent
      *       in a 200 response to the same request
      *     - Expires, Cache-Control, and/or Vary, if the field-value might
-     *       differ from that sent in any previous response for the same variant
+     *       differ from that sent in any previous response for the same variant.
      *
      * If the conditional GET used a strong cache validator
      * (see section 13.3.3), the response SHOULD NOT include other
@@ -341,7 +354,8 @@ interface RFC2616
      * response.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const NOT_MODIFIED = 304;
 
@@ -356,7 +370,8 @@ interface RFC2616
      *     consequences.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const USE_PROXY = 305;
 
@@ -377,7 +392,8 @@ interface RFC2616
      * the conditions under which the request was issued.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const TEMPORARY_REDIRECT = 307;
 
@@ -386,7 +402,8 @@ interface RFC2616
      * syntax. The client SHOULD NOT repeat the request without modifications.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const BAD_REQUEST = 400;
 
@@ -405,7 +422,8 @@ interface RFC2616
      * "HTTP Authentication: Basic and Digest Access Authentication" [43].
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const UNAUTHORIZED = 401;
 
@@ -413,7 +431,8 @@ interface RFC2616
      * This code is reserved for future use.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const PAYMENT_REQUIRED = 402;
 
@@ -427,7 +446,8 @@ interface RFC2616
      * can be used instead.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const FORBIDDEN = 403;
 
@@ -442,7 +462,8 @@ interface RFC2616
      * response is applicable.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const NOT_FOUND = 404;
 
@@ -452,7 +473,8 @@ interface RFC2616
      * containing a list of valid methods for the requested resource.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const METHOD_NOT_ALLOWED = 405;
 
@@ -480,7 +502,8 @@ interface RFC2616
      * actions.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const NOT_ACCEPTABLE = 406;
 
@@ -494,7 +517,8 @@ interface RFC2616
      * in "HTTP Authentication: Basic and Digest Access Authentication" [43].
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const PROXY_AUTHENTICATION_REQUIRED = 407;
 
@@ -504,7 +528,8 @@ interface RFC2616
      * modifications at any later time.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const REQUEST_TIMEOUT = 408;
 
@@ -527,10 +552,10 @@ interface RFC2616
      * response Content-Type.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const CONFLICT = 409;
-
 
     /**
      * The requested resource is no longer available at the server and no
@@ -552,7 +577,8 @@ interface RFC2616
      * server owner.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const GONE = 410;
 
@@ -563,7 +589,8 @@ interface RFC2616
      * in the request message.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const LENGTH_REQUIRED = 411;
 
@@ -575,7 +602,8 @@ interface RFC2616
      * method from being applied to a resource other than the one intended.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const PRECONDITION_FAILED = 412;
 
@@ -588,9 +616,9 @@ interface RFC2616
      * client MAY try again.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
-
     const REQUEST_ENTITY_TOO_LARGE = 413;
 
     /**
@@ -605,7 +633,8 @@ interface RFC2616
      * manipulating the Request-URI.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const REQUEST_URI_TOO_LONG = 414;
 
@@ -615,7 +644,8 @@ interface RFC2616
      * requested method.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const UNSUPPORTED_MEDIA_TYPE = 415;
 
@@ -633,7 +663,8 @@ interface RFC2616
      * response MUST NOT use the multipart/byteranges content-type.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const REQUESTED_RANGE_NOT_SATISFIABLE = 416;
 
@@ -644,7 +675,8 @@ interface RFC2616
      * by the next-hop server.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const EXPECTATION_FAILED = 417;
 
@@ -653,7 +685,8 @@ interface RFC2616
      * fulfilling the request.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const INTERNAL_SERVER_ERROR = 500;
 
@@ -664,7 +697,8 @@ interface RFC2616
      * any resource.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const NOT_IMPLEMENTED = 501;
 
@@ -674,7 +708,8 @@ interface RFC2616
      * the request.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const BAD_GATEWAY = 502;
 
@@ -690,7 +725,8 @@ interface RFC2616
      *    simply refuse the connection.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const SERVICE_UNAVAILABLE = 503;
 
@@ -703,7 +739,8 @@ interface RFC2616
      *    return 400 or 500 when DNS lookups time out.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const GATEWAY_TIMEOUT = 504;
 
@@ -717,7 +754,8 @@ interface RFC2616
      * not supported and what other protocols are supported by that server.
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-     * @var integer
+     *
+     * @var int
      */
     const HTTP_VERSION_NOT_SUPPORTED = 505;
 }

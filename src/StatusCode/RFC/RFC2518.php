@@ -48,7 +48,8 @@ interface RFC2518
      * request, but no response is available yet.
      *
      * @see http://www.ietf.org/rfc/rfc2518.txt
-     * @var integer
+     *
+     * @var int
      */
     const PROCESSING = 102;
 }
