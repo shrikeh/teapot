@@ -10,19 +10,24 @@
  *
  * PHP version 5.3
  *
- * @category                  StatusCode
- * @package                   Teapot
- * @author                    Barney Hanlon <barney@shrikeh.net>
- * @copyright                 2013 B Hanlon. All rights reserved.
- * @license                   MIT http://opensource.org/licenses/MIT
- * @link                      http://shrikeh.github.com/teapot
- * @codingStandardsIgnoreLine
- * @link                      http://lists.w3.org/Archives/Public/public-web-perf/2013Apr/att-0007/WebRequestStatusCodes4.html
+ * @category StatusCode
+ *
+ * @package Teapot
+ *
+ * @author    Barney Hanlon <barney@shrikeh.net>
+ * @copyright 2013 B Hanlon. All rights reserved.
+ * @license   MIT http://opensource.org/licenses/MIT
+ *
+ * @codingStandardsIgnoreStart
+ *
+ * @link http://shrikeh.github.com/teapot
+ * @link http://lists.w3.org/Archives/Public/public-web-perf/2013Apr/att-0007/WebRequestStatusCodes4.html
+ * @codingStandardsIgnoreEnd
  */
 namespace Teapot\StatusCode;
 
-use Teapot\StatusCode\RFC\RFC2616;
 use Teapot\StatusCode\RFC\RFC2324;
+use Teapot\StatusCode\RFC\RFC2616;
 use Teapot\StatusCode\RFC\RFC2774;
 
 /**
@@ -34,14 +39,19 @@ use Teapot\StatusCode\RFC\RFC2774;
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
  *
- * @category                  StatusCode
- * @package                   Teapot
- * @author                    Barney Hanlon <barney@shrikeh.net>
- * @copyright                 2013 B Hanlon. All rights reserved.
- * @license                   MIT http://opensource.org/licenses/MIT
- * @link                      http://shrikeh.github.com/teapot
- * @codingStandardsIgnoreLine
- * @link                      http://lists.w3.org/Archives/Public/public-web-perf/2013Apr/att-0007/WebRequestStatusCodes4.html
+ * @category StatusCode
+ *
+ * @package Teapot
+ *
+ * @author    Barney Hanlon <barney@shrikeh.net>
+ * @copyright 2013 B Hanlon. All rights reserved.
+ * @license   MIT http://opensource.org/licenses/MIT
+ *
+ * @codingStandardsIgnoreStart
+ *
+ * @link http://shrikeh.github.com/teapot
+ * @link http://lists.w3.org/Archives/Public/public-web-perf/2013Apr/att-0007/WebRequestStatusCodes4.html
+ * @codingStandardsIgnoreEnd
  */
 interface Http extends RFC2616, RFC2324, RFC2774
 {

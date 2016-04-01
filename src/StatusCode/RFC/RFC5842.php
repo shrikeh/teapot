@@ -10,13 +10,16 @@
  *
  * PHP version 5.3
  *
- * @category   StatusCode
+ * @category StatusCode
+ *
  * @package    Teapot
  * @subpackage RFC
- * @author     Barney Hanlon <barney@shrikeh.net>
- * @copyright  2013 B Hanlon. All rights reserved.
- * @license    MIT http://opensource.org/licenses/MIT
- * @link       http://shrikeh.github.com/teapot
+ *
+ * @author    Barney Hanlon <barney@shrikeh.net>
+ * @copyright 2013 B Hanlon. All rights reserved.
+ * @license   MIT http://opensource.org/licenses/MIT
+ *
+ * @link http://shrikeh.github.com/teapot
  */
 namespace Teapot\StatusCode\RFC;
 
@@ -29,15 +32,17 @@ namespace Teapot\StatusCode\RFC;
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
  *
- * @category   StatusCode
+ * @category StatusCode
+ *
  * @package    Teapot
  * @subpackage RFC
- * @author     Barney Hanlon <barney@shrikeh.net>
- * @copyright  2013 B Hanlon. All rights reserved.
- * @license    MIT http://opensource.org/licenses/MIT
- * @link       http://shrikeh.github.com/teapot
+ *
+ * @author    Barney Hanlon <barney@shrikeh.net>
+ * @copyright 2013 B Hanlon. All rights reserved.
+ * @license   MIT http://opensource.org/licenses/MIT
+ *
+ * @link http://shrikeh.github.com/teapot
  */
-
 interface RFC5842
 {
     /**
@@ -62,8 +67,11 @@ interface RFC5842
      * The 508 (Loop Detected) status code indicates that the server detected
      * an infinite loop while processing a request with "Depth: infinity".
      * (sent in lieu of 208).
-     * @codingStandardsIgnoreLine
+     *
+     * @codingStandardsIgnoreStart
+     *
      * @link https://tools.ietf.org/html/draft-ietf-webdav-collection-protocol-04#section-7.1
+     * @codingStandardsIgnoreEnd
      *
      * @var int
      */

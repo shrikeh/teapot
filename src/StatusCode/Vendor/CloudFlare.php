@@ -10,13 +10,16 @@
  *
  * PHP version 5.3
  *
- * @category   StatusCode
+ * @category StatusCode
+ *
  * @package    Teapot
  * @subpackage HttpResponse
- * @author     Barney Hanlon <barney@shrikeh.net>
- * @copyright  2013 B Hanlon. All rights reserved.
- * @license    MIT http://opensource.org/licenses/MIT
- * @link       http://shrikeh.github.com/teapot
+ *
+ * @author    Barney Hanlon <barney@shrikeh.net>
+ * @copyright 2013 B Hanlon. All rights reserved.
+ * @license   MIT http://opensource.org/licenses/MIT
+ *
+ * @link http://shrikeh.github.com/teapot
  */
 namespace Teapot\StatusCode\Vendor;
 
@@ -29,13 +32,16 @@ namespace Teapot\StatusCode\Vendor;
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
  *
- * @category   StatusCode
+ * @category StatusCode
+ *
  * @package    Teapot
  * @subpackage HttpResponse
- * @author     Barney Hanlon <barney@shrikeh.net>
- * @copyright  2013 B Hanlon. All rights reserved.
- * @license    MIT http://opensource.org/licenses/MIT
- * @link       http://shrikeh.github.com/teapot
+ *
+ * @author    Barney Hanlon <barney@shrikeh.net>
+ * @copyright 2013 B Hanlon. All rights reserved.
+ * @license   MIT http://opensource.org/licenses/MIT
+ *
+ * @link http://shrikeh.github.com/teapot
  */
 interface CloudFlare
 {
@@ -49,8 +55,11 @@ interface CloudFlare
      * header that exceeds CloudFlare's maximum response header size. This could
      * be the case if you're sending an abnormally high number of cookies for
      * example.
-     * @codingStandardsIgnoreLine
+     *
+     * @codingStandardsIgnoreStart
+     *
      * @link https://support.cloudflare.com/hc/en-us/articles/200171936-Error-520
+     * @codingStandardsIgnoreEnd
      *
      * @var int
      */
@@ -70,8 +79,11 @@ interface CloudFlare
      * amount of traffic now comes from a smaller number of IPs, server-side
      * security solutions can mistake the increase in connections from this
      * smaller set of IPs as an attack, when they are legitimate.
-     * @codingStandardsIgnoreLine
+     *
+     * @codingStandardsIgnoreStart
+     *
      * @link https://support.cloudflare.com/hc/en-us/articles/200171916-Error-521
+     * @codingStandardsIgnoreEnd
      *
      * @var int
      */
@@ -93,8 +105,11 @@ interface CloudFlare
      * With a 524 error, the connection is made but then the request times out.
      * The likely cause is that a background task is timing out. The most common
      * cause would be the database or a slow application.
-     * @codingStandardsIgnoreLine
+     *
+     * @codingStandardsIgnoreStart
+     *
      * @link https://support.cloudflare.com/hc/en-us/articles/200171906-Error-522
+     * @codingStandardsIgnoreEnd
      *
      * @var int
      */
@@ -112,8 +127,11 @@ interface CloudFlare
      *
      * As soon as you make the change in your CloudFlare DNS Settings page, wait
      * up to 5 minutes for it to take effect.
-     * @codingStandardsIgnoreLine
+     *
+     * @codingStandardsIgnoreStart
+     *
      * @link https://support.cloudflare.com/hc/en-us/articles/200171946-Error-523
+     * @codingStandardsIgnoreEnd
      *
      * @var int
      */
@@ -134,8 +152,11 @@ interface CloudFlare
      * connection times out before the request is completed. This means that the
      * server is overloaded. With a 524 error, the connection is made but then
      * the request times out.
-     * @codingStandardsIgnoreLine
+     *
+     * @codingStandardsIgnoreStart
+     *
      * @link https://support.cloudflare.com/hc/en-us/articles/200171926-Error-524
+     * @codingStandardsIgnoreEnd
      *
      * @var int
      */

@@ -10,12 +10,15 @@
  *
  * PHP version 5.3
  *
- * @category  StatusCode
- * @package   Teapot
+ * @category StatusCode
+ *
+ * @package Teapot
+ *
  * @author    Barney Hanlon <barney@shrikeh.net>
  * @copyright 2013 B Hanlon. All rights reserved.
  * @license   MIT http://opensource.org/licenses/MIT
- * @link      http://shrikeh.github.com/teapot
+ *
+ * @link http://shrikeh.github.com/teapot
  */
 namespace Teapot\StatusCode;
 
@@ -38,14 +41,16 @@ use Teapot\StatusCode\WebDAV;
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
  *
- * @category  StatusCode
- * @package   Teapot
+ * @category StatusCode
+ *
+ * @package Teapot
+ *
  * @author    Barney Hanlon <barney@shrikeh.net>
  * @copyright 2013 B Hanlon. All rights reserved.
  * @license   MIT http://opensource.org/licenses/MIT
- * @link      http://shrikeh.github.com/teapot
+ *
+ * @link http://shrikeh.github.com/teapot
  */
-
 interface All extends
     WebDAV,
     Draft,
@@ -58,5 +63,4 @@ interface All extends
     HttpDeltas,
     Vendor
 {
-
 }

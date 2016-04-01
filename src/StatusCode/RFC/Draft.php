@@ -10,13 +10,16 @@
  *
  * PHP version 5.3
  *
- * @category   StatusCode
+ * @category StatusCode
+ *
  * @package    Teapot
  * @subpackage RFC
- * @author     Barney Hanlon <barney@shrikeh.net>
- * @copyright  2013 B Hanlon. All rights reserved.
- * @license    MIT http://opensource.org/licenses/MIT
- * @link       http://shrikeh.github.com/teapot
+ *
+ * @author    Barney Hanlon <barney@shrikeh.net>
+ * @copyright 2013 B Hanlon. All rights reserved.
+ * @license   MIT http://opensource.org/licenses/MIT
+ *
+ * @link http://shrikeh.github.com/teapot
  */
 namespace Teapot\StatusCode\RFC;
 
@@ -29,13 +32,16 @@ namespace Teapot\StatusCode\RFC;
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
  *
- * @category   StatusCode
+ * @category StatusCode
+ *
  * @package    Teapot
  * @subpackage RFC
- * @author     Barney Hanlon <barney@shrikeh.net>
- * @copyright  2013 B Hanlon. All rights reserved.
- * @license    MIT http://opensource.org/licenses/MIT
- * @link       http://shrikeh.github.com/teapot
+ *
+ * @author    Barney Hanlon <barney@shrikeh.net>
+ * @copyright 2013 B Hanlon. All rights reserved.
+ * @license   MIT http://opensource.org/licenses/MIT
+ *
+ * @link http://shrikeh.github.com/teapot
  */
 interface Draft
 {
@@ -59,8 +65,11 @@ interface Draft
      *
      * Note: This status code is similar to 301 Moved Permanently, except that
      * it does not allow rewriting the request method from POST to GET.
-     * @codingStandardsIgnoreLine
+     *
+     * @codingStandardsIgnoreStart
+     *
      * @link http://tools.ietf.org/html/draft-reschke-http-status-308-07#section-3
+     * @codingStandardsIgnoreEnd
      *
      * @var int
      */
@@ -79,8 +88,11 @@ interface Draft
      * the response body, of the details of the legal restriction; which
      * legal authority is imposing it, and what class of resources it
      * applies to.
-     * @codingStandardsIgnoreLine
+     *
+     * @codingStandardsIgnoreStart
+     *
      * @link http://tools.ietf.org/html/draft-tbray-http-legally-restricted-status-00#section-3
+     * @codingStandardsIgnoreEnd
      *
      * @var int
      */

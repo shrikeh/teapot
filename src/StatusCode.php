@@ -10,14 +10,19 @@
  *
  * PHP version 5.3
  *
- * @category                  StatusCode
- * @package                   Teapot
- * @author                    Barney Hanlon <barney@shrikeh.net>
- * @copyright                 2013 B Hanlon. All rights reserved.
- * @license                   MIT http://opensource.org/licenses/MIT
- * @link                      http://shrikeh.github.com/teapot
- * @codingStandardsIgnoreLine
- * @link                      http://lists.w3.org/Archives/Public/public-web-perf/2013Apr/att-0007/WebRequestStatusCodes4.html
+ * @category StatusCode
+ *
+ * @package Teapot
+ *
+ * @author    Barney Hanlon <barney@shrikeh.net>
+ * @copyright 2013 B Hanlon. All rights reserved.
+ * @license   MIT http://opensource.org/licenses/MIT
+ *
+ * @codingStandardsIgnoreStart
+ *
+ * @link http://lists.w3.org/Archives/Public/public-web-perf/2013Apr/att-0007/WebRequestStatusCodes4.html
+ * @link http://shrikeh.github.com/teapot
+ * @codingStandardsIgnoreEnd
  */
 namespace Teapot;
 
@@ -32,14 +37,19 @@ use Teapot\StatusCode\Http;
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
  *
- * @category                  StatusCode
- * @package                   Teapot
- * @author                    Barney Hanlon <barney@shrikeh.net>
- * @copyright                 2013 B Hanlon. All rights reserved.
- * @license                   MIT http://opensource.org/licenses/MIT
- * @link                      http://shrikeh.github.com/teapot
- * @codingStandardsIgnoreLine
- * @link                      http://lists.w3.org/Archives/Public/public-web-perf/2013Apr/att-0007/WebRequestStatusCodes4.html
+ * @category StatusCode
+ *
+ * @package Teapot
+ *
+ * @author    Barney Hanlon <barney@shrikeh.net>
+ * @copyright 2013 B Hanlon. All rights reserved.
+ * @license   MIT http://opensource.org/licenses/MIT
+ *
+ * @codingStandardsIgnoreStart
+ *
+ * @link http://lists.w3.org/Archives/Public/public-web-perf/2013Apr/att-0007/WebRequestStatusCodes4.html
+ * @link http://shrikeh.github.com/teapot
+ * @codingStandardsIgnoreEnd
  */
 interface StatusCode extends Http
 {

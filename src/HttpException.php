@@ -4,22 +4,25 @@
  *
  * PHP version 5.3
  *
- * @category  Exception
- * @package   Teapot
+ * @category Exception
+ *
+ * @package Teapot
+ *
  * @author    Barney Hanlon <barney@shrikeh.net>
  * @copyright 2013 B Hanlon. All rights reserved.
  * @license   MIT http://opensource.org/licenses/MIT
  *
  * @link http://shrikeh.github.com/teapot
  */
-
 namespace Teapot;
 
 /**
  * Simple Exception to represent http-based Exceptions.
  *
- * @category  Exception
- * @package   Teapot
+ * @category Exception
+ *
+ * @package Teapot
+ *
  * @author    Barney Hanlon <barney@shrikeh.net>
  * @copyright 2013 B Hanlon. All rights reserved.
  * @license   MIT http://opensource.org/licenses/MIT
@@ -45,15 +48,15 @@ class HttpException extends \Exception implements StatusCode
      * Render the code and message (in whole or in part) as a valid
      * response status header.
      *
-     * @param boolean $prependHttp Whether to prepend the HTTP/1.1 prefix
+     * @param bool $prependHttp Whether to prepend the HTTP/1.1 prefix
      *
      * @return string
      */
     public function render($prependHttp = true)
     {
-        $string = $this->getCode() . ' ' . $this->getMessage();
+        $string = $this->getCode().' '.$this->getMessage();
         if (true === $prependHttp) {
-            $string = 'HTTP/1.1 ' . $string;
+            $string = 'HTTP/1.1 '.$string;
         }
         return $string;
     }
