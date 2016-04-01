@@ -25,6 +25,7 @@ cache:
     - $HOME/.composer/cache
 
 before_install:
+  - phpenv config-rm xdebug.ini
   - composer self-update
   - composer validate
 
@@ -32,5 +33,5 @@ install:
   - composer install --prefer-dist
 
 script:
-  - bin/phpcs bin/phpcs --standard=phpcs.xml src
+  - bin/phpcs --standard=phpcs.xml src
 ...
