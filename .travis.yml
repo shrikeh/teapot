@@ -23,5 +23,5 @@ install:
   - composer install --prefer-dist
 
 script:
-  - vendor/bin/phpcs --standard=PSR2 src -p
+  - bin/phpcs bin/phpcs --standard=phpcs.xml
 ...
