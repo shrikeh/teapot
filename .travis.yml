@@ -12,6 +12,7 @@ matrix:
     - php: 5.4
     - php: 5.5
     - php: 5.6
+      before_install: config-rm xdebug.ini
     - php: hhvm
     - php: 7.0
   allow_failures:
@@ -25,7 +26,6 @@ cache:
     - $HOME/.composer/cache
 
 before_install:
-  - phpenv config-rm xdebug.ini
   - composer self-update
   - composer validate
 
