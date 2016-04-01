@@ -16,8 +16,10 @@
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^2.3",
-        "fabpot/php-cs-fixer": "^1.11",
         "escapestudios/symfony2-coding-standard": "~2.0"
+    },
+    "suggest": {
+        "fabpot/php-cs-fixer": "^1.11 - For easy CS fixing"
     },
     "config": {
         "bin-dir": "bin"
