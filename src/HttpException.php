@@ -32,6 +32,12 @@ namespace Teapot;
 class HttpException extends \Exception implements StatusCode
 {
     /**
+     * The standard HTTP 1.1 prefix.
+     *
+     * @var string
+     */
+    const HTTP1_1_PREFIX = 'HTTP/1.1';
+    /**
      * Simple magic so you can use the Exception directly as a string, for
      * example in header();.
      *
@@ -56,8 +62,9 @@ class HttpException extends \Exception implements StatusCode
     {
         $string = $this->getCode().' '.$this->getMessage();
         if (true === $prependHttp) {
-            $string = 'HTTP/1.1 '.$string;
+            $string = self::HTTP1_1_PREFIX.' '.$string;
         }
+
         return $string;
     }
 }

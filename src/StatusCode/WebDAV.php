@@ -12,7 +12,7 @@
  *
  * @category StatusCode
  *
- * @package Teapot
+ * @package Teapot\StatusCode
  *
  * @author    Barney Hanlon <barney@shrikeh.net>
  * @copyright 2013 B Hanlon. All rights reserved.
@@ -38,7 +38,7 @@ use Teapot\StatusCode\RFC\RFC5842;
  *
  * @category StatusCode
  *
- * @package Teapot
+ * @package Teapot\StatusCode
  *
  * @author    Barney Hanlon <barney@shrikeh.net>
  * @copyright 2013 B Hanlon. All rights reserved.
