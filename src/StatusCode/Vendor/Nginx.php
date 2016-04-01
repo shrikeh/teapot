@@ -12,8 +12,7 @@
  *
  * @category StatusCode
  *
- * @package    Teapot
- * @subpackage HttpResponse
+ * @package Teapot\StatusCode\Vendor
  *
  * @author    Barney Hanlon <barney@shrikeh.net>
  * @copyright 2013 B Hanlon. All rights reserved.
@@ -34,8 +33,7 @@ namespace Teapot\StatusCode\Vendor;
  *
  * @category StatusCode
  *
- * @package    Teapot
- * @subpackage HttpResponse
+ * @package Teapot\StatusCode\Vendor
  *
  * @author    Barney Hanlon <barney@shrikeh.net>
  * @copyright 2013 B Hanlon. All rights reserved.

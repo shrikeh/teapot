@@ -13,8 +13,7 @@
  *
  * @category StatusCode
  *
- * @package    Teapot
- * @subpackage RFC
+ * @package Teapot\StatusCode\RFC
  *
  * @author    Barney Hanlon <barney@shrikeh.net>
  * @copyright 2013 B Hanlon. All rights reserved.
@@ -36,8 +35,7 @@ namespace Teapot\StatusCode\RFC;
  *
  * @category StatusCode
  *
- * @package    Teapot
- * @subpackage RFC
+ * @package Teapot\StatusCode\RFC
  *
  * @author    Barney Hanlon <barney@shrikeh.net>
  * @copyright 2013 B Hanlon. All rights reserved.
