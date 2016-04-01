@@ -23,5 +23,5 @@ install:
   - composer install --prefer-dist
 
 script:
-  - bin/phpcs bin/phpcs --standard=phpcs.xml
+  - bin/phpcs bin/phpcs --standard=phpcs.xml src
 ...
