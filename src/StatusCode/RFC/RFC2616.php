@@ -1,9 +1,9 @@
 <?php
 /**
- * Interface representing extended HTTP status codes for RFC2616. These codes are
- * represented as an interface so that developers may implement it and then use
- * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
- * and override their default description.
+ * Interface representing extended HTTP status codes for RFC2616. These codes
+ * are represented as an interface so that developers may implement it and then
+ * use parent::[CODE] to gain a code, or to extend the codes using
+ * static::[CODE] and override their default description.
  *
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
@@ -12,7 +12,7 @@
  *
  * @category   StatusCode
  * @package    Teapot
- * @subpackage HttpResponse
+ * @subpackage RFC
  * @author     Barney Hanlon <barney@shrikeh.net>
  * @copyright  2013 B Hanlon. All rights reserved.
  * @license    MIT http://opensource.org/licenses/MIT
@@ -21,17 +21,17 @@
 namespace Teapot\StatusCode\RFC;
 
 /**
- * Interface representing extended HTTP status codes for RFC2616. These codes are
- * represented as an interface so that developers may implement it and then use
- * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
- * and override their default description.
+ * Interface representing extended HTTP status codes for RFC2616. These codes
+ * are represented as an interface so that developers may implement it and then
+ * use parent::[CODE] to gain a code, or to extend the codes using
+ * static::[CODE] and override their default description.
  *
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
  *
  * @category   StatusCode
  * @package    Teapot
- * @subpackage HttpResponse
+ * @subpackage RFC
  * @author     Barney Hanlon <barney@shrikeh.net>
  * @copyright  2013 B Hanlon. All rights reserved.
  * @license    MIT http://opensource.org/licenses/MIT
@@ -52,7 +52,7 @@ interface RFC2616
      * is received in response before continuing (or receive
      * 417 Expectation Failed and not continue).
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -68,7 +68,7 @@ interface RFC2616
      * no response is available yet.[3] This prevents the client from timing out
      * and assuming the request was lost.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -85,7 +85,7 @@ interface RFC2616
      * TRACE an entity containing the request message as received by the end
      * server.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -104,7 +104,7 @@ interface RFC2616
      * action cannot be carried out immediately, the server SHOULD respond with
      * 202 (Accepted) response instead.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -126,7 +126,7 @@ interface RFC2616
      * pointer to a status monitor or some estimate of when the user can expect
      * the request to be fulfilled.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -141,7 +141,7 @@ interface RFC2616
      * known by the origin server. Use of this response code is not required
      * and is only appropriate when the response would otherwise be 200 (OK).
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -163,7 +163,7 @@ interface RFC2616
      * The 204 response MUST NOT include a message-body, and thus is always
      * terminated by the first empty line after the header fields.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -177,7 +177,7 @@ interface RFC2616
      * so that the user can easily initiate another input action. The response
      * MUST NOT include an entity.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -211,12 +211,13 @@ interface RFC2616
      * include all of the entity-headers that would have been returned with a
      * 200 (OK) response to the same request.
      * A cache MUST NOT combine a 206 response with other previously cached
-     * content if the ETag or Last-Modified headers do not match exactly, see 13.5.4.
+     * content if the ETag or Last-Modified headers do not match exactly, see
+     * 13.5.4.
      *
      * A cache that does not support the Range and Content-Range headers
      * MUST NOT cache 206 (Partial) responses.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -241,7 +242,7 @@ interface RFC2616
      * field value for automatic redirection. This response is cacheable
      * unless indicated otherwise.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -267,7 +268,7 @@ interface RFC2616
      *     receiving a 301 status code, some existing HTTP/1.0 user agents
      *     will erroneously change it into a GET request.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -295,7 +296,7 @@ interface RFC2616
      *     been added for servers that wish to make unambiguously clear which
      *     kind of reaction is expected of the client.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -318,7 +319,7 @@ interface RFC2616
      *     302 status code may be used instead, since most user agents react
      *     to a 302 response as described here for 303.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -338,7 +339,8 @@ interface RFC2616
      *     - ETag and/or Content-Location, if the header would have been sent
      *       in a 200 response to the same request
      *     - Expires, Cache-Control, and/or Vary, if the field-value might
-     *       differ from that sent in any previous response for the same variant.
+     *       differ from that sent in any previous response for the same
+     *       variant.
      *
      * If the conditional GET used a strong cache validator
      * (see section 13.3.3), the response SHOULD NOT include other
@@ -353,7 +355,7 @@ interface RFC2616
      * cache MUST update the entry to reflect any new field values given in the
      * response.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -369,7 +371,7 @@ interface RFC2616
      *     Not observing these limitations has significant security
      *     consequences.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -391,7 +393,7 @@ interface RFC2616
      * request unless it can be confirmed by the user, since this might change
      * the conditions under which the request was issued.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -401,7 +403,7 @@ interface RFC2616
      * The request could not be understood by the server due to malformed
      * syntax. The client SHOULD NOT repeat the request without modifications.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -421,7 +423,7 @@ interface RFC2616
      * diagnostic information. HTTP access authentication is explained in
      * "HTTP Authentication: Basic and Digest Access Authentication" [43].
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -430,7 +432,7 @@ interface RFC2616
     /**
      * This code is reserved for future use.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -445,7 +447,7 @@ interface RFC2616
      * information available to the client, the status code 404 (Not Found)
      * can be used instead.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -461,7 +463,7 @@ interface RFC2616
      * reveal exactly why the request has been refused, or when no other
      * response is applicable.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -472,7 +474,7 @@ interface RFC2616
      * identified by the Request-URI. The response MUST include an Allow header
      * containing a list of valid methods for the requested resource.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -501,7 +503,7 @@ interface RFC2616
      * stop receipt of more data and query the user for a decision on further
      * actions.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -516,7 +518,7 @@ interface RFC2616
      * header field (section 14.34). HTTP access authentication is explained
      * in "HTTP Authentication: Basic and Digest Access Authentication" [43].
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -527,7 +529,7 @@ interface RFC2616
      * was prepared to wait. The client MAY repeat the request without
      * modifications at any later time.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -551,7 +553,7 @@ interface RFC2616
      * differences between the two versions in a format defined by the
      * response Content-Type.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -576,7 +578,7 @@ interface RFC2616
      * mark for any length of time -- that is left to the discretion of the
      * server owner.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -588,7 +590,7 @@ interface RFC2616
      * Content-Length header field containing the length of the message-body
      * in the request message.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -601,7 +603,7 @@ interface RFC2616
      * metainformation (header field data) and thus prevent the requested
      * method from being applied to a resource other than the one intended.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -615,7 +617,7 @@ interface RFC2616
      * header field to indicate that it is temporary and after what time the
      * client MAY try again.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -632,7 +634,7 @@ interface RFC2616
      * present in some servers using fixed-length buffers for reading or
      * manipulating the Request-URI.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -643,7 +645,7 @@ interface RFC2616
      * request is in a format not supported by the requested resource for the
      * requested method.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -662,7 +664,7 @@ interface RFC2616
      * the current length of the selected resource (see section 14.16). This
      * response MUST NOT use the multipart/byteranges content-type.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -674,7 +676,7 @@ interface RFC2616
      * the server has unambiguous evidence that the request could not be met
      * by the next-hop server.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -684,7 +686,7 @@ interface RFC2616
      * The server encountered an unexpected condition which prevented it from
      * fulfilling the request.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -696,7 +698,7 @@ interface RFC2616
      * recognize the request method and is not capable of supporting it for
      * any resource.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -707,7 +709,7 @@ interface RFC2616
      * response from the upstream server it accessed in attempting to fulfill
      * the request.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -724,7 +726,7 @@ interface RFC2616
      *    server must use it when becoming overloaded. Some servers may wish to
      *    simply refuse the connection.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -738,7 +740,7 @@ interface RFC2616
      *    Note: Note to implementors: some deployed proxies are known to
      *    return 400 or 500 when DNS lookups time out.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */
@@ -753,7 +755,7 @@ interface RFC2616
      * The response SHOULD contain an entity describing why that version is
      * not supported and what other protocols are supported by that server.
      *
-     * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
      *
      * @var int
      */

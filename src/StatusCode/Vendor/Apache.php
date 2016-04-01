@@ -40,7 +40,8 @@ namespace Teapot\StatusCode\Vendor;
 interface Apache
 {
     /**
-     * This status code, while used by many servers, is not specified in any RFCs.
+     * This status code, while used by many servers, is not specified in any
+     * RFCs.
      * Apache-specific.
      *
      * @var int

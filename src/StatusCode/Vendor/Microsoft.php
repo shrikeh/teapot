@@ -1,9 +1,9 @@
 <?php
 /**
- * Interface representing extended HTTP status codes for Microsoft. These codes are
- * represented as an interface so that developers may implement it and then use
- * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
- * and override their default description.
+ * Interface representing extended HTTP status codes for Microsoft. These codes
+ * are represented as an interface so that developers may implement it and then
+ * use parent::[CODE] to gain a code, or to extend the codes using
+ * static::[CODE] and override their default description.
  *
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
@@ -21,10 +21,10 @@
 namespace Teapot\StatusCode\Vendor;
 
 /**
- * Interface representing extended HTTP status codes for Microsoft. These codes are
- * represented as an interface so that developers may implement it and then use
- * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
- * and override their default description.
+ * Interface representing extended HTTP status codes for Microsoft. These codes
+ * are represented as an interface so that developers may implement it and then
+ * use parent::[CODE] to gain a code, or to extend the codes using
+ * static::[CODE] and override their default description.
  *
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
@@ -48,14 +48,14 @@ interface Microsoft
 
     /**
      * A Microsoft extension. The request should be retried after performing
-     * the appropriate action. The new extension status code is defined as follows
-     * (using the Augmented Backus-Naur Form (ABNF) syntax, as specified in RFC2616
-     * section 2.1).
+     * the appropriate action. The new extension status code is defined as
+     * follows (using the Augmented Backus-Naur Form (ABNF) syntax, as specified
+     * in RFC2616 section 2.1).
      *
-     * Often search-engines or custom applications will ignore required parameters.
-     * Where no default action is appropriate, the Aviongoo website sends a
-     * "HTTP/1.1 449 Retry with valid parameters: param1, param2, . . ." response.
-     * The applications may choose to learn, or not.
+     * Often search-engines or custom applications will ignore required
+     * parameters. Where no default action is appropriate, the Aviongoo website
+     * sends a "HTTP/1.1 449 Retry with valid parameters: param1, param2, . . ."
+     * response. The applications may choose to learn, or not.
      *
      * @link http://msdn.microsoft.com/en-us/library/dd891478.aspx
      *
@@ -64,8 +64,8 @@ interface Microsoft
     const RETRY_WITH = 449;
 
     /**
-     * A Microsoft extension. This error is given when Windows Parental Controls are
-     * turned on and are blocking access to the given webpage.
+     * A Microsoft extension. This error is given when Windows Parental Controls
+     * are turned on and are blocking access to the given webpage.
      *
      * @var int
      */

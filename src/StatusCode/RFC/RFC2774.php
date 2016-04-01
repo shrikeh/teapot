@@ -1,9 +1,9 @@
 <?php
 /**
- * Interface representing extended HTTP status codes for RFC2274. These codes are
- * represented as an interface so that developers may implement it and then use
- * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
- * and override their default description.
+ * Interface representing extended HTTP status codes for RFC2274. These codes
+ * are represented as an interface so that developers may implement it and then
+ * use parent::[CODE] to gain a code, or to extend the codes using
+ * static::[CODE] and override their default description.
  *
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
@@ -12,7 +12,7 @@
  *
  * @category   StatusCode
  * @package    Teapot
- * @subpackage HttpResponse
+ * @subpackage RFC
  * @author     Barney Hanlon <barney@shrikeh.net>
  * @copyright  2013 B Hanlon. All rights reserved.
  * @license    MIT http://opensource.org/licenses/MIT
@@ -21,17 +21,17 @@
 namespace Teapot\StatusCode\RFC;
 
 /**
- * Interface representing extended HTTP status codes for RFC2274. These codes are
- * represented as an interface so that developers may implement it and then use
- * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
- * and override their default description.
+ * Interface representing extended HTTP status codes for RFC2274. These codes
+ * are represented as an interface so that developers may implement it and then
+ * use parent::[CODE] to gain a code, or to extend the codes using
+ * static::[CODE] and override their default description.
  *
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
  *
  * @category   StatusCode
  * @package    Teapot
- * @subpackage HttpResponse
+ * @subpackage RFC
  * @author     Barney Hanlon <barney@shrikeh.net>
  * @copyright  2013 B Hanlon. All rights reserved.
  * @license    MIT http://opensource.org/licenses/MIT
@@ -54,7 +54,7 @@ interface RFC2774
      * included in the 510 response to the user, since that entity may
      * include relevant diagnostic information.
      *
-     * @see http://tools.ietf.org/search/rfc2774#section-7
+     * @link http://tools.ietf.org/search/rfc2774#section-7
      *
      * @var int
      */

@@ -1,9 +1,9 @@
 <?php
 /**
- * Interface representing extended HTTP status codes for RFC6585. These codes are
- * represented as an interface so that developers may implement it and then use
- * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
- * and override their default description.
+ * Interface representing extended HTTP status codes for RFC6585. These codes
+ * are represented as an interface so that developers may implement it and then
+ * use parent::[CODE] to gain a code, or to extend the codes using
+ * static::[CODE] and override their default description.
  *
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
@@ -12,7 +12,7 @@
  *
  * @category   StatusCode
  * @package    Teapot
- * @subpackage HttpResponse
+ * @subpackage RFC
  * @author     Barney Hanlon <barney@shrikeh.net>
  * @copyright  2013 B Hanlon. All rights reserved.
  * @license    MIT http://opensource.org/licenses/MIT
@@ -21,17 +21,17 @@
 namespace Teapot\StatusCode\RFC;
 
 /**
- * Interface representing extended HTTP status codes for RFC6585. These codes are
- * represented as an interface so that developers may implement it and then use
- * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
- * and override their default description.
+ * Interface representing extended HTTP status codes for RFC6585. These codes
+ * are represented as an interface so that developers may implement it and then
+ * use parent::[CODE] to gain a code, or to extend the codes using
+ * static::[CODE] and override their default description.
  *
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
  *
  * @category   StatusCode
  * @package    Teapot
- * @subpackage HttpResponse
+ * @subpackage RFC
  * @author     Barney Hanlon <barney@shrikeh.net>
  * @copyright  2013 B Hanlon. All rights reserved.
  * @license    MIT http://opensource.org/licenses/MIT
@@ -54,7 +54,7 @@ interface RFC6585
      *
      * Responses with the 428 status code MUST NOT be stored by a cache.
      *
-     * @see http://tools.ietf.org/html/rfc6585
+     * @link http://tools.ietf.org/html/rfc6585
      *
      * @var int
      */
@@ -93,7 +93,7 @@ interface RFC6585
      *
      * Responses with the 429 status code MUST NOT be stored by a cache.
      *
-     * @see http://tools.ietf.org/html/rfc6585
+     * @link http://tools.ietf.org/html/rfc6585
      *
      * @var int
      */
@@ -109,7 +109,7 @@ interface RFC6585
      * case, the response representation SHOULD specify which header field
      * was too large.
      *
-     * @see http://tools.ietf.org/html/rfc6585
+     * @link http://tools.ietf.org/html/rfc6585
      *
      * @var int
      */
@@ -133,7 +133,7 @@ interface RFC6585
      * dedicated to "logging in" unknown clients, and of course traffic to
      * the login server itself.
      *
-     * @see http://tools.ietf.org/html/rfc6585
+     * @link http://tools.ietf.org/html/rfc6585
      *
      * @var int
      */

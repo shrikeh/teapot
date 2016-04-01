@@ -12,7 +12,7 @@
  *
  * @category   StatusCode
  * @package    Teapot
- * @subpackage HttpResponse
+ * @subpackage RFC
  * @author     Barney Hanlon <barney@shrikeh.net>
  * @copyright  2013 B Hanlon. All rights reserved.
  * @license    MIT http://opensource.org/licenses/MIT
@@ -21,17 +21,17 @@
 namespace Teapot\StatusCode\RFC;
 
 /**
- * Interface representing extended HTTP status codes for RFC5842. These codes are
- * represented as an interface so that developers may implement it and then use
- * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
- * and override their default description.
+ * Interface representing extended HTTP status codes for RFC5842. These codes
+ * are represented as an interface so that developers may implement it and then
+ * use parent::[CODE] to gain a code, or to extend the codes using
+ * static::[CODE] and override their default description.
  *
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
  *
  * @category   StatusCode
  * @package    Teapot
- * @subpackage HttpResponse
+ * @subpackage RFC
  * @author     Barney Hanlon <barney@shrikeh.net>
  * @copyright  2013 B Hanlon. All rights reserved.
  * @license    MIT http://opensource.org/licenses/MIT
@@ -52,7 +52,7 @@ interface RFC5842
      * bindings will use the 208 status, and no DAV:response elements for
      * their descendants are included.
      *
-     * @see http://www.ietf.org/rfc/rfc5842.txt
+     * @link http://www.ietf.org/rfc/rfc5842.txt
      *
      * @var int
      */
@@ -62,8 +62,8 @@ interface RFC5842
      * The 508 (Loop Detected) status code indicates that the server detected
      * an infinite loop while processing a request with "Depth: infinity".
      * (sent in lieu of 208).
-     *
-     * @see https://tools.ietf.org/html/draft-ietf-webdav-collection-protocol-04#section-7.1
+     * @codingStandardsIgnoreLine
+     * @link https://tools.ietf.org/html/draft-ietf-webdav-collection-protocol-04#section-7.1
      *
      * @var int
      */

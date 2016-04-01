@@ -1,9 +1,9 @@
 <?php
 /**
- * Interface representing extended HTTP status codes for RFC4918. These codes are
- * represented as an interface so that developers may implement it and then use
- * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
- * and override their default description.
+ * Interface representing extended HTTP status codes for RFC4918. These codes
+ * are represented as an interface so that developers may implement it and then
+ * use parent::[CODE] to gain a code, or to extend the codes using
+ * static::[CODE] and override their default description.
  *
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
@@ -12,7 +12,7 @@
  *
  * @category   StatusCode
  * @package    Teapot
- * @subpackage HttpResponse
+ * @subpackage RFC
  * @author     Barney Hanlon <barney@shrikeh.net>
  * @copyright  2013 B Hanlon. All rights reserved.
  * @license    MIT http://opensource.org/licenses/MIT
@@ -21,17 +21,17 @@
 namespace Teapot\StatusCode\RFC;
 
 /**
- * Interface representing extended HTTP status codes for RFC4918. These codes are
- * represented as an interface so that developers may implement it and then use
- * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
- * and override their default description.
+ * Interface representing extended HTTP status codes for RFC4918. These codes
+ * are represented as an interface so that developers may implement it and then
+ * use parent::[CODE] to gain a code, or to extend the codes using
+ * static::[CODE] and override their default description.
  *
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
  *
  * @category   StatusCode
  * @package    Teapot
- * @subpackage HttpResponse
+ * @subpackage RFC
  * @author     Barney Hanlon <barney@shrikeh.net>
  * @copyright  2013 B Hanlon. All rights reserved.
  * @license    MIT http://opensource.org/licenses/MIT
@@ -53,7 +53,7 @@ interface RFC4918
      * destination resource was locked and could not be overwritten, then the
      * destination resource URL appears with the 423 (Locked) status.
      *
-     * @see http://www.ietf.org/rfc/rfc4918.txt
+     * @link http://www.ietf.org/rfc/rfc4918.txt
      *
      * @var int
      */
@@ -69,7 +69,7 @@ interface RFC4918
      * request body contains well-formed (i.e., syntactically correct), but
      * semantically erroneous, XML instructions.
      *
-     * @see http://www.ietf.org/rfc/rfc4918.txt
+     * @link http://www.ietf.org/rfc/rfc4918.txt
      *
      * @var int
      */
@@ -81,7 +81,7 @@ interface RFC4918
      * precondition or post-condition code, such as 'lock-token-submitted' or
      * 'no-conflicting-lock'.
      *
-     * @see http://www.ietf.org/rfc/rfc4918.txt
+     * @link http://www.ietf.org/rfc/rfc4918.txt
      *
      * @var int
      */
@@ -92,7 +92,7 @@ interface RFC4918
      * its scope because some part of the method's execution failed causing the
      * entire method to be aborted.
      *
-     * @see http://www.ietf.org/rfc/rfc4918.txt
+     * @link http://www.ietf.org/rfc/rfc4918.txt
      *
      * @var int
      */
@@ -105,7 +105,7 @@ interface RFC4918
      * command in a PROPPATCH method fails then, at minimum, the rest
      * of the commands will also fail with 424 (Failed Dependency).
      *
-     * @see http://www.ietf.org/rfc/rfc4918.txt
+     * @link http://www.ietf.org/rfc/rfc4918.txt
      *
      * @var int
      */
@@ -115,7 +115,7 @@ interface RFC4918
      * The server is unable to store the representation needed to complete the
      * request.
      *
-     * @see http://www.ietf.org/rfc/rfc4918.txt
+     * @link http://www.ietf.org/rfc/rfc4918.txt
      *
      * @var int
      */

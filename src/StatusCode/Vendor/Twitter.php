@@ -1,8 +1,8 @@
 <?php
 /**
  * Interface representing extended HTTP status codes for vendor-specific codes.
- * These codes are represented as an interface so that developers may implement it
- * and then use parent::[CODE] to gain a code, or to extend the codes using
+ * These codes are represented as an interface so that developers may implement
+ * it and then use parent::[CODE] to gain a code, or to extend the codes using
  * static::[CODE] and override their default description.
  *
  * This allows for codes to be repurposed in a natural way where the core,
@@ -22,8 +22,8 @@ namespace Teapot\StatusCode\Vendor;
 
 /**
  * Interface representing extended HTTP status codes for vendor-specific codes.
- * These codes are represented as an interface so that developers may implement it
- * and then use parent::[CODE] to gain a code, or to extend the codes using
+ * These codes are represented as an interface so that developers may implement
+ * it and then use parent::[CODE] to gain a code, or to extend the codes using
  * static::[CODE] and override their default description.
  *
  * This allows for codes to be repurposed in a natural way where the core,

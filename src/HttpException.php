@@ -4,13 +4,13 @@
  *
  * PHP version 5.3
  *
- * @category   StatusCode
+ * @category  Exception
+ * @package   Teapot
+ * @author    Barney Hanlon <barney@shrikeh.net>
+ * @copyright 2013 B Hanlon. All rights reserved.
+ * @license   MIT http://opensource.org/licenses/MIT
  *
- * @author     Barney Hanlon <barney@shrikeh.net>
- * @copyright  2013 B Hanlon. All rights reserved.
- * @license    MIT http://opensource.org/licenses/MIT
- *
- * @link       http://shrikeh.github.com/teapot
+ * @link http://shrikeh.github.com/teapot
  */
 
 namespace Teapot;
@@ -18,13 +18,13 @@ namespace Teapot;
 /**
  * Simple Exception to represent http-based Exceptions.
  *
- * @category   StatusCode
+ * @category  Exception
+ * @package   Teapot
+ * @author    Barney Hanlon <barney@shrikeh.net>
+ * @copyright 2013 B Hanlon. All rights reserved.
+ * @license   MIT http://opensource.org/licenses/MIT
  *
- * @author     Barney Hanlon <barney@shrikeh.net>
- * @copyright  2013 B Hanlon. All rights reserved.
- * @license    MIT http://opensource.org/licenses/MIT
- *
- * @link       http://shrikeh.github.com/teapot
+ * @link http://shrikeh.github.com/teapot
  */
 class HttpException extends \Exception implements StatusCode
 {
