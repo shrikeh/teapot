@@ -1,43 +1,46 @@
 <?php
 /**
- * Interface representing extended HTTP status codes for RFC3229. These codes are
- * represented as an interface so that developers may implement it and then use
- * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
- * and override their default description.
+ * Interface representing extended HTTP status codes for RFC3229. These codes
+ * are represented as an interface so that developers may implement it and then
+ * use parent::[CODE] to gain a code, or to extend the codes using
+ * static::[CODE] and override their default description.
  *
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
  *
  * PHP version 5.3
  *
- * @category   StatusCode
- * @package    Teapot
- * @subpackage HttpResponse
- * @author     Barney Hanlon <barney@shrikeh.net>
- * @copyright  2013 B Hanlon. All rights reserved.
- * @license    MIT http://opensource.org/licenses/MIT
- * @link       http://shrikeh.github.com/teapot
+ * @category StatusCode
+ *
+ * @package Teapot\StatusCode\RFC
+ *
+ * @author    Barney Hanlon <barney@shrikeh.net>
+ * @copyright 2013 B Hanlon. All rights reserved.
+ * @license   MIT http://opensource.org/licenses/MIT
+ *
+ * @link http://shrikeh.github.com/teapot
  */
 namespace Teapot\StatusCode\RFC;
 
 /**
- * Interface representing extended HTTP status codes for RFC3229. These codes are
- * represented as an interface so that developers may implement it and then use
- * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
- * and override their default description.
+ * Interface representing extended HTTP status codes for RFC3229. These codes
+ * are represented as an interface so that developers may implement it and then
+ * use parent::[CODE] to gain a code, or to extend the codes using
+ * static::[CODE] and override their default description.
  *
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
  *
- * @category   StatusCode
- * @package    Teapot
- * @subpackage HttpResponse
- * @author     Barney Hanlon <barney@shrikeh.net>
- * @copyright  2013 B Hanlon. All rights reserved.
- * @license    MIT http://opensource.org/licenses/MIT
- * @link       http://shrikeh.github.com/teapot
+ * @category StatusCode
+ *
+ * @package Teapot\StatusCode\RFC
+ *
+ * @author    Barney Hanlon <barney@shrikeh.net>
+ * @copyright 2013 B Hanlon. All rights reserved.
+ * @license   MIT http://opensource.org/licenses/MIT
+ *
+ * @link http://shrikeh.github.com/teapot
  */
-
 interface RFC3229
 {
     /**
@@ -62,8 +65,9 @@ interface RFC3229
      * in conjunction with a cache entry for the base instance, to create a
      * cache entry for the current instance.
      *
-     * @see http://www.ietf.org/rfc/rfc3229.txt
-     * @var integer
+     * @link http://www.ietf.org/rfc/rfc3229.txt
+     *
+     * @var int
      */
     const IM_USED = 226;
 }

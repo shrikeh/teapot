@@ -1,41 +1,45 @@
 <?php
 /**
- * Interface representing extended HTTP status codes for Draft codes. These codes are
- * represented as an interface so that developers may implement it and then use
- * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
- * and override their default description.
+ * Interface representing extended HTTP status codes for Draft codes. These
+ * codes are represented as an interface so that developers may implement it and
+ * then use parent::[CODE] to gain a code, or to extend the codes using
+ * static::[CODE] and override their default description.
  *
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
  *
  * PHP version 5.3
  *
- * @category   StatusCode
- * @package    Teapot
- * @subpackage HttpResponse
- * @author     Barney Hanlon <barney@shrikeh.net>
- * @copyright  2013 B Hanlon. All rights reserved.
- * @license    MIT http://opensource.org/licenses/MIT
- * @link       http://shrikeh.github.com/teapot
+ * @category StatusCode
+ *
+ * @package Teapot\StatusCode\RFC
+ *
+ * @author    Barney Hanlon <barney@shrikeh.net>
+ * @copyright 2013 B Hanlon. All rights reserved.
+ * @license   MIT http://opensource.org/licenses/MIT
+ *
+ * @link http://shrikeh.github.com/teapot
  */
 namespace Teapot\StatusCode\RFC;
 
 /**
- * Interface representing extended HTTP status codes for Draft codes. These codes are
- * represented as an interface so that developers may implement it and then use
- * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
- * and override their default description.
+ * Interface representing extended HTTP status codes for Draft codes. These
+ * codes are represented as an interface so that developers may implement it and
+ * then use parent::[CODE] to gain a code, or to extend the codes using
+ * static::[CODE] and override their default description.
  *
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
  *
- * @category   StatusCode
- * @package    Teapot
- * @subpackage HttpResponse
- * @author     Barney Hanlon <barney@shrikeh.net>
- * @copyright  2013 B Hanlon. All rights reserved.
- * @license    MIT http://opensource.org/licenses/MIT
- * @link       http://shrikeh.github.com/teapot
+ * @category StatusCode
+ *
+ * @package Teapot\StatusCode\RFC
+ *
+ * @author    Barney Hanlon <barney@shrikeh.net>
+ * @copyright 2013 B Hanlon. All rights reserved.
+ * @license   MIT http://opensource.org/licenses/MIT
+ *
+ * @link http://shrikeh.github.com/teapot
  */
 interface Draft
 {
@@ -60,8 +64,12 @@ interface Draft
      * Note: This status code is similar to 301 Moved Permanently, except that
      * it does not allow rewriting the request method from POST to GET.
      *
-     * @see http://tools.ietf.org/html/draft-reschke-http-status-308-07#section-3
-     * @var integer
+     * @codingStandardsIgnoreStart
+     *
+     * @link http://tools.ietf.org/html/draft-reschke-http-status-308-07#section-3
+     * @codingStandardsIgnoreEnd
+     *
+     * @var int
      */
     const PERMANENT_REDIRECT = 308;
 
@@ -79,8 +87,12 @@ interface Draft
      * legal authority is imposing it, and what class of resources it
      * applies to.
      *
-     * @see http://tools.ietf.org/html/draft-tbray-http-legally-restricted-status-00#section-3
-     * @var integer
+     * @codingStandardsIgnoreStart
+     *
+     * @link http://tools.ietf.org/html/draft-tbray-http-legally-restricted-status-00#section-3
+     * @codingStandardsIgnoreEnd
+     *
+     * @var int
      */
     const UNAVAILABLE_FOR_LEGAL_REASONS = 451;
 }

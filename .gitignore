@@ -1,27 +1,37 @@
+# All dot (e.g. .htaccess) files #
+#######################
 .*
+.*/*
+
 # OS generated files #
 ######################
-.DS_Store
 ehthumbs.db
 Icon
 Thumbs.db
-.tmtags
 tags
 vendor.tags
 tmtagsHistory
+
+
 # IDE generated files #
 #######################
-
 .project
-*.iml
-.idea/
 *.sublime-project
 *.sublime-workspace
 atlassian-ide-plugin.xml
 
+# PHP-specific files #
+#######################
 vendor
 bin
 data
 build
-!/.gitignore
+composer.phar
+
+# Dot files we want to keep #
+#######################
+!/.git*
 !/.travis.yml
+!/.php_cs
+!/.scrutinizer.yml
+!/.editorconfig

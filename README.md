@@ -21,7 +21,7 @@ public function testResponseIsOK($url)
 {
     $client = new Client($url);
     $response = $client->get();
-    
+
     $this->assertSame(200, $response->getStatusCode());
 }
 ```
@@ -120,4 +120,4 @@ The entire library is intended to be [PSR-1](https://github.com/php-fig/fig-stan
 
 ### Get in touch
 
-If you have any suggestions, feel free to email me at barney+teapot@shrikeh.net or ping me on Twitter with [@shrikeh](https://twitter.com/shrikeh).
+If you have any suggestions, feel free to email me at barney+teapot@shrikeh.net or ping me on Twitter with [@barney_hanlon](https://twitter.com/barney_hanlon).

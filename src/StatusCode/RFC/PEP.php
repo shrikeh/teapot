@@ -1,45 +1,48 @@
 <?php
 /**
  * Interface representing extended HTTP status codes for PEP
- * (Protocol Extension Protocol: http://www.w3.org/TR/WD-http-pep). These codes are
- * represented as an interface so that developers may implement it and then use
- * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
- * and override their default description.
+ * (Protocol Extension Protocol: http://www.w3.org/TR/WD-http-pep). These codes
+ * are represented as an interface so that developers may implement it and then
+ * use parent::[CODE] to gain a code, or to extend the codes using
+ * static::[CODE] and override their default description.
  *
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
  *
  * PHP version 5.3
  *
- * @category   StatusCode
- * @package    Teapot
- * @subpackage HttpResponse
- * @author     Barney Hanlon <barney@shrikeh.net>
- * @copyright  2013 B Hanlon. All rights reserved.
- * @license    MIT http://opensource.org/licenses/MIT
- * @link       http://shrikeh.github.com/teapot
+ * @category StatusCode
+ *
+ * @package Teapot\StatusCode\RFC
+ *
+ * @author    Barney Hanlon <barney@shrikeh.net>
+ * @copyright 2013 B Hanlon. All rights reserved.
+ * @license   MIT http://opensource.org/licenses/MIT
+ *
+ * @link http://shrikeh.github.com/teapot
  */
 namespace Teapot\StatusCode\RFC;
 
 /**
  * Interface representing extended HTTP status codes for PEP
- * (Protocol Extension Protocol: http://www.w3.org/TR/WD-http-pep). These codes are
- * represented as an interface so that developers may implement it and then use
- * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
- * and override their default description.
+ * (Protocol Extension Protocol: http://www.w3.org/TR/WD-http-pep). These codes
+ * are represented as an interface so that developers may implement it and then
+ * use parent::[CODE] to gain a code, or to extend the codes using
+ * static::[CODE] and override their default description.
  *
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
  *
- * @category   StatusCode
- * @package    Teapot
- * @subpackage HttpResponse
- * @author     Barney Hanlon <barney@shrikeh.net>
- * @copyright  2013 B Hanlon. All rights reserved.
- * @license    MIT http://opensource.org/licenses/MIT
- * @link       http://shrikeh.github.com/teapot
+ * @category StatusCode
+ *
+ * @package Teapot\StatusCode\RFC
+ *
+ * @author    Barney Hanlon <barney@shrikeh.net>
+ * @copyright 2013 B Hanlon. All rights reserved.
+ * @license   MIT http://opensource.org/licenses/MIT
+ *
+ * @link http://shrikeh.github.com/teapot
  */
-
 interface PEP
 {
     /**
@@ -60,8 +63,9 @@ interface PEP
      * Implementers may note the similarity to the way authentication
      * challenges are issued with the 401 (Unauthorized) status-code.
      *
-     * @see http://www.w3.org/TR/WD-http-pep-971121.html#_Toc404743960
-     * @var integer
+     * @link http://www.w3.org/TR/WD-http-pep-971121.html#_Toc404743960
+     *
+     * @var int
      */
     const POLICY_NOT_FULFILLED = 420;
 
@@ -72,8 +76,9 @@ interface PEP
      * believes that it can find a unique set of header fields for which the
      * transaction will succeed.
      *
-     * @see http://www.w3.org/TR/WD-http-pep-971121.html#_Toc404743961
-     * @var integer
+     * @link http://www.w3.org/TR/WD-http-pep-971121.html#_Toc404743961
+     *
+     * @var int
      */
     const BAD_MAPPING = 421;
 }

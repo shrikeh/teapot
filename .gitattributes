@@ -1,0 +1,7 @@
+*      text=auto
+*.bat  eol=crlf
+
+/test             export-ignore
+
+# Remove all dot files for export
+/.*                export-ignore

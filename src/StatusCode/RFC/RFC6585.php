@@ -1,46 +1,48 @@
 <?php
 /**
- * Interface representing extended HTTP status codes for RFC6585. These codes are
- * represented as an interface so that developers may implement it and then use
- * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
- * and override their default description.
+ * Interface representing extended HTTP status codes for RFC6585. These codes
+ * are represented as an interface so that developers may implement it and then
+ * use parent::[CODE] to gain a code, or to extend the codes using
+ * static::[CODE] and override their default description.
  *
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
  *
  * PHP version 5.3
  *
- * @category   StatusCode
- * @package    Teapot
- * @subpackage HttpResponse
- * @author     Barney Hanlon <barney@shrikeh.net>
- * @copyright  2013 B Hanlon. All rights reserved.
- * @license    MIT http://opensource.org/licenses/MIT
- * @link       http://shrikeh.github.com/teapot
+ * @category StatusCode
+ *
+ * @package Teapot\StatusCode\RFC
+ *
+ * @author    Barney Hanlon <barney@shrikeh.net>
+ * @copyright 2013 B Hanlon. All rights reserved.
+ * @license   MIT http://opensource.org/licenses/MIT
+ *
+ * @link http://shrikeh.github.com/teapot
  */
 namespace Teapot\StatusCode\RFC;
 
 /**
- * Interface representing extended HTTP status codes for RFC6585. These codes are
- * represented as an interface so that developers may implement it and then use
- * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
- * and override their default description.
+ * Interface representing extended HTTP status codes for RFC6585. These codes
+ * are represented as an interface so that developers may implement it and then
+ * use parent::[CODE] to gain a code, or to extend the codes using
+ * static::[CODE] and override their default description.
  *
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
  *
- * @category   StatusCode
- * @package    Teapot
- * @subpackage HttpResponse
- * @author     Barney Hanlon <barney@shrikeh.net>
- * @copyright  2013 B Hanlon. All rights reserved.
- * @license    MIT http://opensource.org/licenses/MIT
- * @link       http://shrikeh.github.com/teapot
+ * @category StatusCode
+ *
+ * @package Teapot\StatusCode\RFC
+ *
+ * @author    Barney Hanlon <barney@shrikeh.net>
+ * @copyright 2013 B Hanlon. All rights reserved.
+ * @license   MIT http://opensource.org/licenses/MIT
+ *
+ * @link http://shrikeh.github.com/teapot
  */
-
 interface RFC6585
 {
-
     /**
      * The origin server requires the request to be conditional. Its typical
      * use is to avoid the "lost update" problem, where a client GETs a
@@ -54,8 +56,9 @@ interface RFC6585
      *
      * Responses with the 428 status code MUST NOT be stored by a cache.
      *
-     * @see http://tools.ietf.org/html/rfc6585
-     * @var integer
+     * @link http://tools.ietf.org/html/rfc6585
+     *
+     * @var int
      */
     const PRECONDITION_REQUIRED = 428;
 
@@ -92,8 +95,9 @@ interface RFC6585
      *
      * Responses with the 429 status code MUST NOT be stored by a cache.
      *
-     * @see http://tools.ietf.org/html/rfc6585
-     * @var integer
+     * @link http://tools.ietf.org/html/rfc6585
+     *
+     * @var int
      */
     const TOO_MANY_REQUESTS = 429;
 
@@ -107,11 +111,11 @@ interface RFC6585
      * case, the response representation SHOULD specify which header field
      * was too large.
      *
-     * @see http://tools.ietf.org/html/rfc6585
-     * @var integer
+     * @link http://tools.ietf.org/html/rfc6585
+     *
+     * @var int
      */
     const REQUEST_HEADER_FIELDS_TOO_LARGE = 431;
-
 
     /**
      * The 511 status code is designed to mitigate problems caused by
@@ -131,8 +135,9 @@ interface RFC6585
      * dedicated to "logging in" unknown clients, and of course traffic to
      * the login server itself.
      *
-     * @see http://tools.ietf.org/html/rfc6585
-     * @var integer
+     * @link http://tools.ietf.org/html/rfc6585
+     *
+     * @var int
      */
     const NETWORK_AUTHENTICATION_REQUIRED = 511;
 }

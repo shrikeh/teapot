@@ -1,43 +1,46 @@
 <?php
 /**
- * Interface representing extended HTTP status codes for RFC5842. These codes are
- * represented as an interface so that developers may implement it and then use
- * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
- * and override their default description.
+ * Interface representing extended HTTP status codes for RFC5842. These codes
+ * are represented as an interface so that developers may implement it and then
+ * use parent::[CODE] to gain a code, or to extend the codes using
+ * static::[CODE] and override their default description.
  *
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
  *
  * PHP version 5.3
  *
- * @category   StatusCode
- * @package    Teapot
- * @subpackage HttpResponse
- * @author     Barney Hanlon <barney@shrikeh.net>
- * @copyright  2013 B Hanlon. All rights reserved.
- * @license    MIT http://opensource.org/licenses/MIT
- * @link       http://shrikeh.github.com/teapot
+ * @category StatusCode
+ *
+ * @package Teapot\StatusCode\RFC
+ *
+ * @author    Barney Hanlon <barney@shrikeh.net>
+ * @copyright 2013 B Hanlon. All rights reserved.
+ * @license   MIT http://opensource.org/licenses/MIT
+ *
+ * @link http://shrikeh.github.com/teapot
  */
 namespace Teapot\StatusCode\RFC;
 
 /**
- * Interface representing extended HTTP status codes for RFC5842. These codes are
- * represented as an interface so that developers may implement it and then use
- * parent::[CODE] to gain a code, or to extend the codes using static::[CODE]
- * and override their default description.
+ * Interface representing extended HTTP status codes for RFC5842. These codes
+ * are represented as an interface so that developers may implement it and then
+ * use parent::[CODE] to gain a code, or to extend the codes using
+ * static::[CODE] and override their default description.
  *
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
  *
- * @category   StatusCode
- * @package    Teapot
- * @subpackage HttpResponse
- * @author     Barney Hanlon <barney@shrikeh.net>
- * @copyright  2013 B Hanlon. All rights reserved.
- * @license    MIT http://opensource.org/licenses/MIT
- * @link       http://shrikeh.github.com/teapot
+ * @category StatusCode
+ *
+ * @package Teapot\StatusCode\RFC
+ *
+ * @author    Barney Hanlon <barney@shrikeh.net>
+ * @copyright 2013 B Hanlon. All rights reserved.
+ * @license   MIT http://opensource.org/licenses/MIT
+ *
+ * @link http://shrikeh.github.com/teapot
  */
-
 interface RFC5842
 {
     /**
@@ -52,8 +55,9 @@ interface RFC5842
      * bindings will use the 208 status, and no DAV:response elements for
      * their descendants are included.
      *
-     * @see http://www.ietf.org/rfc/rfc5842.txt
-     * @var integer
+     * @link http://www.ietf.org/rfc/rfc5842.txt
+     *
+     * @var int
      */
     const ALREADY_REPORTED = 208;
 
@@ -62,8 +66,12 @@ interface RFC5842
      * an infinite loop while processing a request with "Depth: infinity".
      * (sent in lieu of 208).
      *
-     * @see https://tools.ietf.org/html/draft-ietf-webdav-collection-protocol-04#section-7.1
-     * @var integer
+     * @codingStandardsIgnoreStart
+     *
+     * @link https://tools.ietf.org/html/draft-ietf-webdav-collection-protocol-04#section-7.1
+     * @codingStandardsIgnoreEnd
+     *
+     * @var int
      */
     const LOOP_DETECTED = 508;
 }

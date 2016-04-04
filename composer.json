@@ -3,7 +3,7 @@
     "type": "library",
     "description": "PHP HTTP Response Status library",
     "keywords": ["http"],
-    "homepage": "http://shrikeh.github.com/teapot",
+    "homepage": "https://shrikeh.github.io/teapot/",
     "license": "MIT",
     "authors": [
         {
@@ -12,10 +12,17 @@
         }
     ],
     "require": {
-        "php": ">=5.3.3"
+        "php": ">=5.3"
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "^2.3"
+        "squizlabs/php_codesniffer": "^2.3",
+        "escapestudios/symfony2-coding-standard": "~2.0"
+    },
+    "suggest": {
+        "fabpot/php-cs-fixer": "^1.11 - For easy CS fixing"
+    },
+    "config": {
+        "bin-dir": "bin"
     },
     "autoload": {
         "psr-4": {
