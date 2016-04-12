@@ -29,6 +29,7 @@ namespace Teapot\StatusCode;
 use Teapot\StatusCode\RFC\RFC2324;
 use Teapot\StatusCode\RFC\RFC2616;
 use Teapot\StatusCode\RFC\RFC2774;
+use Teapot\StatusCode\RFC\RFC7725;
 
 /**
  * Interface representing standard and extended HTTP status codes. These codes
@@ -53,6 +54,6 @@ use Teapot\StatusCode\RFC\RFC2774;
  * @link http://lists.w3.org/Archives/Public/public-web-perf/2013Apr/att-0007/WebRequestStatusCodes4.html
  * @codingStandardsIgnoreEnd
  */
-interface Http extends RFC2616, RFC2324, RFC2774
+interface Http extends RFC2616, RFC2324, RFC2774, RFC7725
 {
 }
