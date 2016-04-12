@@ -72,27 +72,4 @@ interface Draft
      * @var int
      */
     const PERMANENT_REDIRECT = 308;
-
-    /**
-     * This status code indicates that the server is subject to legal
-     * restrictions which prevent it servicing the request.
-     *
-     * Since such restrictions typically apply to all operators in a legal
-     * jurisdiction, the server in question may or may not be an origin
-     * server.  The restrictions typically most directly affect the
-     * operations of ISPs and search engines.
-     *
-     * Responses using this status code SHOULD include an explanation, in
-     * the response body, of the details of the legal restriction; which
-     * legal authority is imposing it, and what class of resources it
-     * applies to.
-     *
-     * @codingStandardsIgnoreStart
-     *
-     * @link http://tools.ietf.org/html/draft-tbray-http-legally-restricted-status-00#section-3
-     * @codingStandardsIgnoreEnd
-     *
-     * @var int
-     */
-    const UNAVAILABLE_FOR_LEGAL_REASONS = 451;
 }
