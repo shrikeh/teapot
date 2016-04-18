@@ -59,9 +59,10 @@ interface RFC7231 extends RFC2616
    * If the request did not contain an Expect header field containing the
    * 100-continue expectation, the client can simply discard this interim
    * response.
+   * @codingStandardsIgnoreStart
    *
    * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.100
-   *
+   * @codingStandardsIgnoreEnd
    * @var int
    */
   const CONTINUING = 100;
@@ -90,9 +91,10 @@ interface RFC7231 extends RFC2616
    * might be advantageous over older versions, and switching to a real-time,
    * synchronous protocol might be advantageous when delivering resources that
    * use such features.
+   * @codingStandardsIgnoreStart
    *
    * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.101
-   *
+   * @codingStandardsIgnoreEnd
    * @var int
    */
     const SWITCHING_PROTOCOLS = 101;
@@ -122,25 +124,207 @@ interface RFC7231 extends RFC2616
      * instead. For CONNECT, no payload is allowed because the successful result
      * is a tunnel, which begins immediately after the 200 response header
      * section.
+     * @codingStandardsIgnoreStart
      *
      *  A 200 response is cacheable by default; i.e., unless otherwise indicated
      * by the method definition or explicit cache controls (see Section 4.2.2 of
      * {@link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7234.html#heuristic.freshness RFC7234}).
      *
      * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.101
-     *
+     * @codingStandardsIgnoreEnd
      * @var int
      */
     const OK = 200;
 
+    /**
+     * The 201 (Created) status code indicates that the request has been
+     * fulfilled and has resulted in one or more new resources being created.
+     * The primary resource created by the request is identified by either a
+     * Location header field in the response or, if no Location field is
+     * received, by the effective request URI.¶
+     *
+     * The 201 response payload typically describes and links to the resource(s)
+     * created. See Section 7.2 for a discussion of the meaning and purpose of
+     * validator header fields, such as ETag and Last-Modified, in a 201
+     * response.
+     *
+     * @codingStandardsIgnoreStart
+     *
+     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.201
+     * @codingStandardsIgnoreEnd
+     * @var int
+     */
+    const CREATED = 201;
 
-  201	Created	Section 6.3.2
-  202	Accepted	Section 6.3.3
-  203	Non-Authoritative Information	Section 6.3.4
-  204	No Content	Section 6.3.5
-  205	Reset Content	Section 6.3.6
-  206	Partial Content	Section 4.1 of [RFC7233]
-  300	Multiple Choices	Section 6.4.1
+    /**
+     * The 202 (Accepted) status code indicates that the request has been
+     * accepted for processing, but the processing has not been completed. The
+     * request might or might not eventually be acted upon, as it might be
+     * disallowed when processing actually takes place. There is no facility in
+     * HTTP for re-sending a status code from an asynchronous operation.
+     *
+     * The 202 response is intentionally noncommittal. Its purpose is to allow a
+     * server to accept a request for some other process (perhaps a
+     * batch-oriented process that is only run once per day) without requiring
+     * that the user agent's connection to the server persist until the process
+     * is completed. The representation sent with this response ought to
+     * describe the request's current status and point to (or embed) a status
+     * monitor that can provide the user with an estimate of when the request
+     * will be fulfilled.
+     *
+     * @codingStandardsIgnoreStart
+     *
+     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.202
+     * @codingStandardsIgnoreEnd
+     * @var int
+     */
+    const ACCEPTED = 202;
+
+    /**
+     * The 203 (Non-Authoritative Information) status code indicates that the
+     * request was successful but the enclosed payload has been modified from
+     * that of the origin server's 200 (OK) response by a transforming proxy
+     * (Section 5.7.2 of [RFC7230]). This status code allows the proxy to notify
+     * recipients when a transformation has been applied, since that knowledge
+     * might impact later decisions regarding the content. For example, future
+     * cache validation requests for the content might only be applicable along
+     * the same request path (through the same proxies).
+     *
+     * The 203 response is similar to the Warning code of 214 Transformation
+     * Applied (Section 5.5 of [RFC7234]), which has the advantage of being
+     * applicable to responses with any status code.
+     *
+     * A 203 response is cacheable by default; i.e., unless otherwise indicated
+     * by the method definition or explicit cache controls (see Section 4.2.2 of
+     * [RFC7234]).
+     *
+     * @codingStandardsIgnoreStart
+     *
+     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.203
+     * @codingStandardsIgnoreEnd
+     * @var int
+     */
+    const NON_AUTHORATIVE_INFORMATION = 203;
+
+    /**
+     * The 204 (No Content) status code indicates that the server has
+     * successfully fulfilled the request and that there is no additional
+     * content to send in the response payload body. Metadata in the response
+     * header fields refer to the target resource and its selected
+     * representation after the requested action was applied.¶
+     *
+     * For example, if a 204 status code is received in response to a PUT
+     * request and the response contains an ETag header field, then the PUT was
+     * successful and the ETag field-value contains the entity-tag for the new
+     * representation of that target resource.
+     *
+     * The 204 response allows a server to indicate that the action has been
+     * successfully applied to the target resource, while implying that the user
+     * agent does not need to traverse away from its current "document view"
+     * (if any). The server assumes that the user agent will provide some
+     * indication of the success to its user, in accord with its own interface,
+     * and apply any new or updated metadata in the response to its active
+     * representation.
+     *
+     * For example, a 204 status code is commonly used with document editing
+     * interfaces corresponding to a "save" action, such that the document being
+     * saved remains available to the user for editing. It is also frequently
+     * used with interfaces that expect automated data transfers to be
+     * prevalent, such as within distributed version control systems.
+     *
+     * A 204 response is terminated by the first empty line after the header
+     * fields because it cannot contain a message body.
+     *
+     * A 204 response is cacheable by default; i.e., unless otherwise indicated
+     * by the method definition or explicit cache controls (see Section 4.2.2 of
+     * [RFC7234]).
+     *
+     * @codingStandardsIgnoreStart
+     *
+     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.204
+     * @codingStandardsIgnoreEnd
+     * @var int
+     */
+    const NO_CONTENT = 204;
+
+    /**
+     * The 205 (Reset Content) status code indicates that the server has
+     * fulfilled the request and desires that the user agent reset the "document
+     * view", which caused the request to be sent, to its original state as
+     * received from the origin server.
+     *
+     * This response is intended to support a common data entry use case where
+     * the user receives content that supports data entry (a form, notepad,
+     * canvas, etc.), enters or manipulates data in that space, causes the
+     * entered data to be submitted in a request, and then the data entry
+     * mechanism is reset for the next entry so that the user can easily
+     * initiate another input action.
+     *
+     * Since the 205 status code implies that no additional content will be
+     * provided, a server must not generate a payload in a 205 response. In
+     * other words, a server must do one of the following for a 205 response:
+     * a) indicate a zero-length body for the response by including a
+     * Content-Length header field with a value of 0;
+     * b) indicate a zero-length payload for the response by including a
+     * Transfer-Encoding header field with a value of chunked and a message body
+     * consisting of a single chunk of zero-length; or,
+     * c) close the connection immediately after sending the blank line
+     * terminating the header section.
+     *
+     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.205
+     * @codingStandardsIgnoreEnd
+     * @var int
+     */
+    const RESET_CONTENT = 205;
+
+    /**
+     * The 300 (Multiple Choices) status code indicates that the target resource
+     * has more than one representation, each with its own more specific
+     * identifier, and information about the alternatives is being provided so
+     * that the user (or user agent) can select a preferred representation by
+     * redirecting its request to one or more of those identifiers. In other
+     * words, the server desires that the user agent engage in reactive
+     * negotiation to select the most appropriate representation(s) for its
+     * needs (Section 3.4).
+     *
+     * If the server has a preferred choice, the server should generate a
+     * Location header field containing a preferred choice's URI reference. The
+     * user agent may use the Location field value for automatic redirection.
+     *
+     * For request methods other than HEAD, the server should generate a payload
+     * in the 300 response containing a list of representation metadata and URI
+     * reference(s) from which the user or user agent can choose the one most
+     * preferred. The user agent may make a selection from that list
+     * automatically if it understands the provided media type. A specific
+     * format for automatic selection is not defined by this specification
+     * because HTTP tries to remain orthogonal to the definition of its
+     * payloads. In practice, the representation is provided in some easily
+     * parsed format believed to be acceptable to the user agent, as determined
+     * by shared design or content negotiation, or in some commonly accepted
+     * hypertext format.
+     *
+     * A 300 response is cacheable by default; i.e., unless otherwise indicated
+     * by the method definition or explicit cache controls (see Section 4.2.2 of
+     * [RFC7234]).
+     *
+     * Note: The original proposal for the 300 status code defined the URI
+     * header field as providing a list of alternative representations, such
+     * that it would be usable for 200, 300, and 406 responses and be
+     * transferred in responses to the HEAD method. However, lack of deployment
+     * and disagreement over syntax led to both URI and Alternates (a subsequent
+     * proposal) being dropped from this specification. It is possible to
+     * communicate the list using a set of Link header fields [RFC5988], each
+     * with a relationship of "alternate", though deployment is a
+     * chicken-and-egg problem.
+     *
+     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.300
+     * @codingStandardsIgnoreEnd
+     * @var int
+     */
+    const MULTIPLE_CHOICES = 300;
+
+
+
   301	Moved Permanently	Section 6.4.2
   302	Found	Section 6.4.3
   303	See Other	Section 6.4.4
