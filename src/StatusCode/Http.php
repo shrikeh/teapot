@@ -20,7 +20,7 @@
  *
  * @codingStandardsIgnoreStart
  *
- * @link http://shrikeh.github.com/teapot
+ * @link https://shrikeh.github.com/teapot
  * @link http://lists.w3.org/Archives/Public/public-web-perf/2013Apr/att-0007/WebRequestStatusCodes4.html
  * @codingStandardsIgnoreEnd
  */
@@ -50,7 +50,7 @@ use Teapot\StatusCode\RFC\RFC7725;
  *
  * @codingStandardsIgnoreStart
  *
- * @link http://shrikeh.github.com/teapot
+ * @link https://shrikeh.github.com/teapot
  * @link http://lists.w3.org/Archives/Public/public-web-perf/2013Apr/att-0007/WebRequestStatusCodes4.html
  * @codingStandardsIgnoreEnd
  */

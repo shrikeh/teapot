@@ -21,7 +21,7 @@
  * @codingStandardsIgnoreStart
  *
  * @link http://lists.w3.org/Archives/Public/public-web-perf/2013Apr/att-0007/WebRequestStatusCodes4.html
- * @link http://shrikeh.github.com/teapot
+ * @link https://shrikeh.github.com/teapot
  * @codingStandardsIgnoreEnd
  */
 namespace Teapot;
@@ -48,7 +48,7 @@ use Teapot\StatusCode\Http;
  * @codingStandardsIgnoreStart
  *
  * @link http://lists.w3.org/Archives/Public/public-web-perf/2013Apr/att-0007/WebRequestStatusCodes4.html
- * @link http://shrikeh.github.com/teapot
+ * @link https://shrikeh.github.com/teapot
  * @codingStandardsIgnoreEnd
  */
 interface StatusCode extends Http
