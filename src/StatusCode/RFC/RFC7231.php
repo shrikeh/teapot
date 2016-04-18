@@ -36,7 +36,7 @@ namespace Teapot\StatusCode\RFC;
  * @package Teapot\StatusCode\RFC
  *
  * @author    Barney Hanlon <barney@shrikeh.net>
- * @copyright 2013 B Hanlon. All rights reserved.
+ * @copyright 2013-2016 B Hanlon. All rights reserved.
  * @license   MIT http://opensource.org/licenses/MIT
  *
  * @link https://shrikeh.github.com/teapot
@@ -271,6 +271,8 @@ interface RFC7231
      * c) close the connection immediately after sending the blank line
      * terminating the header section.
      *
+     * @codingStandardsIgnoreStart
+     *
      * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.205
      * @codingStandardsIgnoreEnd
      * @var int
@@ -317,23 +319,175 @@ interface RFC7231
      * with a relationship of "alternate", though deployment is a
      * chicken-and-egg problem.
      *
+     * @codingStandardsIgnoreStart
+     *
      * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.300
      * @codingStandardsIgnoreEnd
      * @var int
      */
     const MULTIPLE_CHOICES = 300;
 
+    /**
+     * The 301 (Moved Permanently) status code indicates that the target
+     * resource has been assigned a new permanent URI and any future references
+     * to this resource ought to use one of the enclosed URIs. Clients with
+     * link-editing capabilities ought to automatically re-link references to
+     * the effective request URI to one or more of the new references sent by
+     * the server, where possible.
+     *
+     * The server should generate a Location header field in the response
+     * containing a preferred URI reference for the new permanent URI. The user
+     * agent may use the Location field value for automatic redirection. The
+     * server's response payload usually contains a short hypertext note with a
+     * hyperlink to the new URI(s).
+     *
+     * Note: For historical reasons, a user agent may change the request method
+     * from POST to GET for the subsequent request. If this behavior is
+     * undesired, the 307 (Temporary Redirect) status code can be used instead.
+     *
+     * A 301 response is cacheable by default; i.e., unless otherwise indicated
+     * by the method definition or explicit cache controls (see Section 4.2.2 of
+     * [RFC7234]).
+     *
+     * @codingStandardsIgnoreStart
+     *
+     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.301
+     * @codingStandardsIgnoreEnd
+     * @var int
+     */
+    const MOVED_PERMANENTLY = 301;
 
+    /**
+     * The 302 (Found) status code indicates that the target resource resides
+     * temporarily under a different URI. Since the redirection might be altered
+     * on occasion, the client ought to continue to use the effective request
+     * URI for future requests.
+     *
+     * The server should generate a Location header field in the response
+     * containing a URI reference for the different URI. The user agent may use
+     * the Location field value for automatic redirection. The server's response
+     * payload usually contains a short hypertext note with a hyperlink to the
+     * different URI(s).
+     *
+     * Note: For historical reasons, a user agent may change the request method
+     * from POST to GET for the subsequent request. If this behavior is
+     * undesired, the 307 (Temporary Redirect) status code can be used instead.
+     *
+     * @codingStandardsIgnoreStart
+     *
+     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.302
+     * @codingStandardsIgnoreEnd
+     * @var int
+     */
+    const FOUND = 302;
 
-  301	Moved Permanently	Section 6.4.2
-  302	Found	Section 6.4.3
-  303	See Other	Section 6.4.4
-  304	Not Modified	Section 4.1 of [RFC7232]
-  305	Use Proxy	Section 6.4.5
-  307	Temporary Redirect	Section 6.4.7
-  400	Bad Request	Section 6.5.1
-  401	Unauthorized	Section 3.1 of [RFC7235]
-  402	Payment Required	Section 6.5.2
+    /**
+     * The 303 (See Other) status code indicates that the server is redirecting
+     * the user agent to a different resource, as indicated by a URI in the
+     * Location header field, which is intended to provide an indirect response
+     * to the original request. A user agent can perform a retrieval request
+     * targeting that URI (a GET or HEAD request if using HTTP), which might
+     * also be redirected, and present the eventual result as an answer to the
+     * original request. Note that the new URI in the Location header field is
+     * not considered equivalent to the effective request URI.
+     *
+     * This status code is applicable to any HTTP method. It is primarily used
+     * to allow the output of a POST action to redirect the user agent to a
+     * selected resource, since doing so provides the information corresponding
+     * to the POST response in a form that can be separately identified,
+     * bookmarked, and cached, independent of the original request.
+     *
+     * A 303 response to a GET request indicates that the origin server does not
+     * have a representation of the target resource that can be transferred by
+     * the server over HTTP. However, the Location field value refers to a
+     * resource that is descriptive of the target resource, such that making a
+     * retrieval request on that other resource might result in a representation
+     * that is useful to recipients without implying that it represents the
+     * original target resource. Note that answers to the questions of what can
+     * be represented, what representations are adequate, and what might be a
+     * useful description are outside the scope of HTTP.
+     *
+     * Except for responses to a HEAD request, the representation of a 303
+     * response ought to contain a short hypertext note with a hyperlink to the
+     * same URI reference provided in the Location header field.
+     *
+     * @codingStandardsIgnoreStart
+     *
+     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.303
+     * @codingStandardsIgnoreEnd
+     * @var int
+     */
+    const SEE_OTHER = 303;
+
+    /**
+     * The 305 (Use Proxy) status code was defined in a previous version of this
+     * specification and is now deprecated
+     *
+     * @codingStandardsIgnoreStart
+     *
+     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.305
+     * @codingStandardsIgnoreEnd
+     * @var int
+     * @deprecated
+     */
+    const USE_PROXY = 305;
+
+    /**
+     * The 307 (Temporary Redirect) status code indicates that the target
+     * resource resides temporarily under a different URI and the user agent
+     * must not change the request method if it performs an automatic
+     * redirection to that URI. Since the redirection can change over time, the
+     * client ought to continue using the original effective request URI for
+     * future requests.
+     *
+     * The server should generate a Location header field in the response
+     * containing a URI reference for the different URI. The user agent may use
+     * the Location field value for automatic redirection. The server's response
+     * payload usually contains a short hypertext note with a hyperlink to the
+     * different URI(s).
+     *
+     * Note: This status code is similar to 302 (Found), except that it does not
+     * allow changing the request method from POST to GET. This specification
+     * defines no equivalent counterpart for 301 (Moved Permanently) ([RFC7238],
+     * however, defines the status code 308 (Permanent Redirect) for this
+     * purpose).
+     *
+     * @codingStandardsIgnoreStart
+     *
+     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.307
+     * @codingStandardsIgnoreEnd
+     * @var int
+     */
+    const TEMPORARY_REDIRECT = 307;
+
+    /**
+     * The 400 (Bad Request) status code indicates that the server cannot or
+     * will not process the request due to something that is perceived to be a
+     * client error (e.g., malformed request syntax, invalid request message
+     * framing, or deceptive request routing).
+     *
+     * @codingStandardsIgnoreStart
+     *
+     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.400
+     * @codingStandardsIgnoreEnd
+     * @var int
+     */
+    const BAD_REQUEST = 400;
+
+    /**
+     * The 402 (Payment Required) status code is reserved for future use.
+     *
+     * @codingStandardsIgnoreStart
+     *
+     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.402
+     * @codingStandardsIgnoreEnd
+     * @var int
+     */
+    const PAYMENT_REQUIRED = 402;
+
+    
+/*
+
   403	Forbidden	Section 6.5.3
   404	Not Found	Section 6.5.4
   405	Method Not Allowed	Section 6.5.5
@@ -356,4 +510,5 @@ interface RFC7231
   503	Service Unavailable	Section 6.6.4
   504	Gateway Timeout	Section 6.6.5
   505	HTTP Version Not Supported	Section 6.6.6
+*/
 }

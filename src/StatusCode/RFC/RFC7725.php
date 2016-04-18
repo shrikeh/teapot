@@ -16,7 +16,7 @@
  *
  * @author    Barney Hanlon <barney@shrikeh.net>
  * @author    Navarr Barnier <me@navarr.me>
- * @copyright 2013 B Hanlon. All rights reserved.
+ * @copyright 2013-2016 B Hanlon. All rights reserved.
  * @license   MIT http://opensource.org/licenses/MIT
  *
  * @link https://shrikeh.github.com/teapot
@@ -38,7 +38,7 @@ namespace Teapot\StatusCode\RFC;
  *
  * @author    Barney Hanlon <barney@shrikeh.net>
  * @author    Navarr Barnier <me@navarr.me>
- * @copyright 2013 B Hanlon. All rights reserved.
+ * @copyright 2013-2016 B Hanlon. All rights reserved.
  * @license   MIT http://opensource.org/licenses/MIT
  *
  * @link https://shrikeh.github.com/teapot
