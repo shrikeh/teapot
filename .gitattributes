@@ -2,6 +2,7 @@
 *.bat  eol=crlf
 
 /test             export-ignore
+/spec             export-ignore
 
 # Remove all dot files for export
 /.*                export-ignore
