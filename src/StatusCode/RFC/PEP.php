@@ -46,7 +46,7 @@ use Teapot\StatusCode\RFC\Stream\IETF as IETFStream;
  *
  * @link https://shrikeh.github.com/teapot
  */
-interface PEP implements ExpiredStatus, IETFStream
+interface PEP extends ExpiredStatus, IETFStream
 {
     /**
      * The policy for accessing the resource has not been met in the request.
