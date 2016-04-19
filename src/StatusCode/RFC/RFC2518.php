@@ -11,7 +11,7 @@
  * PHP version 5.3
  *
  * @category StatusCode
- *
+ * @deprecated
  * @package Teapot\StatusCode\RFC
  *
  * @author    Barney Hanlon <barney@shrikeh.net>

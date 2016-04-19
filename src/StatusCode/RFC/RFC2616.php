@@ -37,7 +37,7 @@ use Teapot\StatusCode\RFC\Stream\IETF as IETFStream;
  * @category StatusCode
  *
  * @package Teapot\StatusCode\RFC
- *
+ * @deprecated
  * @author    Barney Hanlon <barney@shrikeh.net>
  * @copyright 2013-2016 B Hanlon. All rights reserved.
  * @license   MIT http://opensource.org/licenses/MIT
