@@ -22,6 +22,9 @@
  */
 namespace Teapot\StatusCode\RFC;
 
+use Teapot\StatusCode\RFC\Status\DraftStandard;
+use Teapot\StatusCode\RFC\Stream\IETF as IETFStream;
+
 /**
  * Interface representing extended HTTP status codes for RFC2616. These codes
  * are represented as an interface so that developers may implement it and then
@@ -41,7 +44,7 @@ namespace Teapot\StatusCode\RFC;
  *
  * @link https://shrikeh.github.com/teapot
  */
-interface RFC2616
+interface RFC2616 extends DraftStandard, IETFStream
 {
     /**
      * This means that the server has received the request headers, and that

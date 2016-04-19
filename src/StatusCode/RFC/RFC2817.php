@@ -22,6 +22,9 @@
  */
 namespace Teapot\StatusCode\RFC;
 
+use Teapot\StatusCode\RFC\Status\ProposedStandard;
+use Teapot\StatusCode\RFC\Stream\IETF as IETFStream;
+
 /**
  * Interface representing extended HTTP status codes for RFC2817. These codes
  * are represented as an interface so that developers may implement it and then
@@ -41,7 +44,7 @@ namespace Teapot\StatusCode\RFC;
  *
  * @link https://shrikeh.github.com/teapot
  */
-interface RFC2817
+interface RFC2817 extends ProposedStandard, IETFStream
 {
     /**
      * The Upgrade response header field advertises possible protocol upgrades

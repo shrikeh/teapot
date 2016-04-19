@@ -22,6 +22,9 @@
  */
 namespace Teapot\StatusCode\RFC;
 
+use Teapot\StatusCode\RFC\Status\ProposedStandard;
+use Teapot\StatusCode\RFC\Stream\Legacy as LegacyStream;
+
 /**
  * Interface representing extended HTTP status codes for RFC3229. These codes
  * are represented as an interface so that developers may implement it and then
@@ -41,7 +44,7 @@ namespace Teapot\StatusCode\RFC;
  *
  * @link https://shrikeh.github.com/teapot
  */
-interface RFC3229
+interface RFC3229 extends ProposedStandard, LegacyStream
 {
     /**
      * The server has fulfilled a GET request for the resource, and the

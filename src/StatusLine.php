@@ -15,6 +15,7 @@
  * @link      https://shrikeh.github.com/teapot
  */
 namespace Teapot;
+
 /**
  * Interface representing a Value Object of the HTTP Status-Line, as
  * specified in RFC 2616.

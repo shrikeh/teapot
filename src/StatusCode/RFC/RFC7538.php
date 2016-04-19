@@ -1,6 +1,6 @@
 <?php
 /**
- * Interface representing extended HTTP status codes for RFC7238. These codes
+ * Interface representing extended HTTP status codes for RFC7538. These codes
  * are represented as an interface so that developers may implement it and then
  * use parent::[CODE] to gain a code, or to extend the codes using
  * static::[CODE] and override their default description.
@@ -22,8 +22,11 @@
  */
 namespace Teapot\StatusCode\RFC;
 
+use Teapot\StatusCode\RFC\Status\ProposedStandard;
+use Teapot\StatusCode\RFC\Stream\IETF as IETFStream;
+
 /**
- * Interface representing extended HTTP status codes for RFC7238. These codes
+ * Interface representing extended HTTP status codes for RFC7538. These codes
  * are represented as an interface so that developers may implement it and then
  * use parent::[CODE] to gain a code, or to extend the codes using
  * static::[CODE] and override their default description.
@@ -41,7 +44,7 @@ namespace Teapot\StatusCode\RFC;
  *
  * @link https://shrikeh.github.com/teapot
  */
-interface RFC7238
+interface RFC7538 extends ProposedStandard, IETFStream
 {
     /**
      * The 308 (Permanent Redirect) status code indicates that the target
@@ -67,26 +70,9 @@ interface RFC7238
      *
      * @codingStandardsIgnoreStart
      *
-     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7238.html#status.308
+     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7538.html#status.308
      * @codingStandardsIgnoreEnd
      * @var int
      */
-    const NOT_MODIFIED = 304;
-
-    /**
-     *
-     * The 412 (Precondition Failed) status code indicates that one or more
-     * conditions given in the request header fields evaluated to false when
-     * tested on the server. This response code allows the client to place
-     * preconditions on the current resource state (its current representations
-     * and metadata) and, thus, prevent the request method from being applied if
-     * the target resource is in an unexpected state.
-     *
-     * @codingStandardsIgnoreStart
-     *
-     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/RFC7238.html#status.412
-     * @codingStandardsIgnoreEnd
-     * @var int
-     */
-    const PRECONDITION_FAILED = 412;
+    const PERMANENT_REDIRECT = 308;
 }

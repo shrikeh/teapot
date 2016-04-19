@@ -22,6 +22,9 @@
  */
 namespace Teapot\StatusCode\RFC;
 
+use Teapot\StatusCode\RFC\Status\ProposedStandard;
+use Teapot\StatusCode\RFC\Stream\IETF as IETFStream;
+
 /**
  * Interface representing extended HTTP status codes for RFC7232. These codes
  * are represented as an interface so that developers may implement it and then
@@ -41,7 +44,7 @@ namespace Teapot\StatusCode\RFC;
  *
  * @link https://shrikeh.github.com/teapot
  */
-interface RFC7232
+interface RFC7232 extends ProposedStandard, IETFStream
 {
     /**
      * The 304 (Not Modified) status code indicates that a conditional GET or

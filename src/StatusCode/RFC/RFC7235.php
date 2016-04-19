@@ -22,6 +22,9 @@
  */
 namespace Teapot\StatusCode\RFC;
 
+use Teapot\StatusCode\RFC\Status\ProposedStandard;
+use Teapot\StatusCode\RFC\Stream\IETF as IETFStream;
+
 /**
  * Interface representing extended HTTP status codes for RFC7235. These codes
  * are represented as an interface so that developers may implement it and then
@@ -41,7 +44,7 @@ namespace Teapot\StatusCode\RFC;
  *
  * @link https://shrikeh.github.com/teapot
  */
-interface RFC7235
+interface RFC7235 extends ProposedStandard, IETFStream
 {
     /**
      * The 401 (Unauthorized) status code indicates that the request has not

@@ -23,6 +23,9 @@
  */
 namespace Teapot\StatusCode\RFC;
 
+use Teapot\StatusCode\RFC\Status\ProposedStandard;
+use Teapot\StatusCode\RFC\Stream\IETF as IETFStream;
+
 /**
  * Interface representing extended HTTP status codes for RFC7725. These codes
  * are represented as an interface so that developers may implement it and then
@@ -43,7 +46,7 @@ namespace Teapot\StatusCode\RFC;
  *
  * @link https://shrikeh.github.com/teapot
  */
-interface RFC7725
+interface RFC7725 extends ProposedStandard, IETFStream
 {
     /**
      * This status code indicates that the server is subject to legal

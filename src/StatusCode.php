@@ -15,7 +15,7 @@
  * @package Teapot
  *
  * @author    Barney Hanlon <barney@shrikeh.net>
- * @copyright 2013 B Hanlon. All rights reserved.
+ * @copyright 2013-2016 B Hanlon. All rights reserved.
  * @license   MIT http://opensource.org/licenses/MIT
  *
  * @codingStandardsIgnoreStart
@@ -42,7 +42,7 @@ use Teapot\StatusCode\Http;
  * @package Teapot
  *
  * @author    Barney Hanlon <barney@shrikeh.net>
- * @copyright 2013 B Hanlon. All rights reserved.
+ * @copyright 2013-2016 B Hanlon. All rights reserved.
  * @license   MIT http://opensource.org/licenses/MIT
  *
  * @codingStandardsIgnoreStart

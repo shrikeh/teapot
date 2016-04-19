@@ -23,6 +23,9 @@
  */
 namespace Teapot\StatusCode\RFC;
 
+use Teapot\StatusCode\RFC\Status\Expired as ExpiredStatus;
+use Teapot\StatusCode\RFC\Stream\IETF as IETFStream;
+
 /**
  * Interface representing extended HTTP status codes for PEP
  * (Protocol Extension Protocol: http://www.w3.org/TR/WD-http-pep). These codes
@@ -43,7 +46,7 @@ namespace Teapot\StatusCode\RFC;
  *
  * @link https://shrikeh.github.com/teapot
  */
-interface PEP
+interface PEP implements ExpiredStatus, IETFStream
 {
     /**
      * The policy for accessing the resource has not been met in the request.
@@ -64,7 +67,7 @@ interface PEP
      * challenges are issued with the 401 (Unauthorized) status-code.
      *
      * @link http://www.w3.org/TR/WD-http-pep-971121.html#_Toc404743960
-     *
+     * @deprecated
      * @var int
      */
     const POLICY_NOT_FULFILLED = 420;
@@ -77,7 +80,7 @@ interface PEP
      * transaction will succeed.
      *
      * @link http://www.w3.org/TR/WD-http-pep-971121.html#_Toc404743961
-     *
+     * @deprecated
      * @var int
      */
     const BAD_MAPPING = 421;

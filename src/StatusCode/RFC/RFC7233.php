@@ -22,6 +22,9 @@
  */
 namespace Teapot\StatusCode\RFC;
 
+use Teapot\StatusCode\RFC\Status\ProposedStandard;
+use Teapot\StatusCode\RFC\Stream\IETF as IETFStream;
+
 /**
  * Interface representing extended HTTP status codes for RFC7233. These codes
  * are represented as an interface so that developers may implement it and then
@@ -41,7 +44,7 @@ namespace Teapot\StatusCode\RFC;
  *
  * @link https://shrikeh.github.com/teapot
  */
-interface RFC7233
+interface RFC7233 extends ProposedStandard, IETFStream
 {
     /**
      * The 206 (Partial Content) status code indicates that the server is
@@ -146,7 +149,7 @@ interface RFC7233
      */
     const PARTIAL_CONTENT = 206;
 
-   /**
+    /**
     * The 416 (Range Not Satisfiable) status code indicates that none of the
     * ranges in the request's Range header field (Section 3.1) overlap the
     * current extent of the selected resource or that the set of ranges

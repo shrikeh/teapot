@@ -22,6 +22,9 @@
  */
 namespace Teapot\StatusCode\RFC;
 
+use Teapot\StatusCode\RFC\Status\Informational as InformationalStatus;
+use Teapot\StatusCode\RFC\Stream\Legacy as LegacyStream;
+
 /**
  * Interface representing extended HTTP status codes for RFC2324. These codes
  * are represented as an interface so that developers may implement it and then
@@ -41,7 +44,7 @@ namespace Teapot\StatusCode\RFC;
  *
  * @link https://shrikeh.github.com/teapot
  */
-interface RFC2324
+interface RFC2324 extends InformationalStatus, LegacyStream
 {
     /**
      * The HTCPCP server is a teapot; the resulting entity may be short and

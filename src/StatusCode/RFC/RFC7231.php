@@ -22,6 +22,9 @@
  */
 namespace Teapot\StatusCode\RFC;
 
+use Teapot\StatusCode\RFC\Status\ProposedStandard;
+use Teapot\StatusCode\RFC\Stream\IETF as IETFStream;
+
 /**
  * Interface representing extended HTTP status codes for RFC7231. These codes
  * are represented as an interface so that developers may implement it and then
@@ -42,10 +45,10 @@ namespace Teapot\StatusCode\RFC;
  * @link https://shrikeh.github.com/teapot
  */
 
-interface RFC7231
+interface RFC7231 extends ProposedStandard, IETFStream
 {
 
-  /**
+    /**
    * The 100 (Continue) status code indicates that the initial part of a request
    * has been received and has not yet been rejected by the server. The server
    * intends to send a final response after the request has been fully received
@@ -65,9 +68,9 @@ interface RFC7231
    * @codingStandardsIgnoreEnd
    * @var int
    */
-  const CONTINUING = 100;
+    const CONTINUING = 100;
 
-  /**
+    /**
    * As 'continue' is a reserved word in PHP, we append an underscore, so
    * developers can decide whether to use CONTINUING or CONTINUE_ as their
    * preferred choice of constant.
@@ -75,9 +78,9 @@ interface RFC7231
    * @see Teapot\StatusCode\RFC\RFC7231:CONTINUING
    * @var int
    */
-  const CONTINUE_ = self::CONTINUING;
+    const CONTINUE_ = self::CONTINUING;
 
-  /**
+    /**
    * The 101 (Switching Protocols) status code indicates that the server
    * understands and is willing to comply with the client's request, via the
    * Upgrade header field (Section 6.7 of [RFC7230]), for a change in the
@@ -485,30 +488,362 @@ interface RFC7231
      */
     const PAYMENT_REQUIRED = 402;
 
-    
-/*
+    /**
+     * The 403 (Forbidden) status code indicates that the server understood the
+     * request but refuses to authorize it. A server that wishes to make public
+     * why the request has been forbidden can describe that reason in the
+     * response payload (if any).
+     *
+     * If authentication credentials were provided in the request, the server
+     * considers them insufficient to grant access. The client should not
+     * automatically repeat the request with the same credentials. The client
+     * may repeat the request with new or different credentials. However, a
+     * request might be forbidden for reasons unrelated to the credentials.¶
+     *
+     * An origin server that wishes to "hide" the current existence of a
+     * forbidden target resource may instead respond with a status code of 404
+     * (Not Found).
+     *
+     * @codingStandardsIgnoreStart
+     *
+     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.403
+     * @codingStandardsIgnoreEnd
+     * @var int
+     */
+    const FORBIDDEN = 403;
 
-  403	Forbidden	Section 6.5.3
-  404	Not Found	Section 6.5.4
-  405	Method Not Allowed	Section 6.5.5
-  406	Not Acceptable	Section 6.5.6
-  407	Proxy Authentication Required	Section 3.2 of [RFC7235]
-  408	Request Timeout	Section 6.5.7
-  409	Conflict	Section 6.5.8
-  410	Gone	Section 6.5.9
-  411	Length Required	Section 6.5.10
-  412	Precondition Failed	Section 4.2 of [RFC7232]
-  413	Payload Too Large	Section 6.5.11
-  414	URI Too Long	Section 6.5.12
-  415	Unsupported Media Type	Section 6.5.13
-  416	Range Not Satisfiable	Section 4.4 of [RFC7233]
-  417	Expectation Failed	Section 6.5.14
-  426	Upgrade Required	Section 6.5.15
-  500	Internal Server Error	Section 6.6.1
-  501	Not Implemented	Section 6.6.2
-  502	Bad Gateway	Section 6.6.3
-  503	Service Unavailable	Section 6.6.4
-  504	Gateway Timeout	Section 6.6.5
-  505	HTTP Version Not Supported	Section 6.6.6
-*/
+    /**
+     * The 404 (Not Found) status code indicates that the origin server did not
+     * find a current representation for the target resource or is not willing
+     * to disclose that one exists. A 404 status code does not indicate whether
+     * this lack of representation is temporary or permanent; the 410 (Gone)
+     * status code is preferred over 404 if the origin server knows, presumably
+     * through some configurable means, that the condition is likely to be
+     * permanent.
+     *
+     * A 404 response is cacheable by default; i.e., unless otherwise indicated
+     * by the method definition or explicit cache controls (see Section 4.2.2 of
+     * [RFC7234]).
+     *
+     * @codingStandardsIgnoreStart
+     *
+     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.404
+     * @codingStandardsIgnoreEnd
+     * @var int
+     */
+    const NOT_FOUND = 404;
+
+    /**
+     * The 405 (Method Not Allowed) status code indicates that the method
+     * received in the request-line is known by the origin server but not
+     * supported by the target resource. The origin server must generate an
+     * Allow header field in a 405 response containing a list of the target
+     * resource's currently supported methods.
+     *
+     * A 405 response is cacheable by default; i.e., unless otherwise indicated
+     * by the method definition or explicit cache controls (see Section 4.2.2 of
+     * [RFC7234]).
+     *
+     * @codingStandardsIgnoreStart
+     *
+     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.405
+     * @codingStandardsIgnoreEnd
+     * @var int
+     */
+    const METHOD_NOT_ALLOWED = 405;
+
+    /**
+     * The 406 (Not Acceptable) status code indicates that the target resource
+     * does not have a current representation that would be acceptable to the
+     * user agent, according to the proactive negotiation header fields
+     * received in the request (Section 5.3), and the server is unwilling to
+     * supply a default representation.¶
+     *
+     * The server should generate a payload containing a list of available
+     * representation characteristics and corresponding resource identifiers
+     * from which the user or user agent can choose the one most appropriate. A
+     * user agent may automatically select the most appropriate choice from
+     * that list. However, this specification does not define any standard for
+     * such automatic selection, as described in Section 6.4.1.
+     *
+     * @codingStandardsIgnoreStart
+     *
+     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.406
+     * @codingStandardsIgnoreEnd
+     * @var int
+     */
+    const NOT_ACCEPTABLE = 406;
+
+    /**
+     * The 408 (Request Timeout) status code indicates that the server did not
+     * receive a complete request message within the time that it was prepared
+     * to wait. A server should send the "close" connection option (Section
+     * 6.1 of [RFC7230]) in the response, since 408 implies that the server
+     * has decided to close the connection rather than continue waiting. If
+     * the client has an outstanding request in transit, the client may repeat
+     * that request on a new connection.
+     *
+     * @codingStandardsIgnoreStart
+     *
+     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.408
+     * @codingStandardsIgnoreEnd
+     * @var int
+     */
+    const REQUEST_TIMEOUT = 408;
+
+    /**
+     * The 409 (Conflict) status code indicates that the request could not be
+     * completed due to a conflict with the current state of the target
+     * resource. This code is used in situations where the user might be able to
+     * resolve the conflict and resubmit the request. The server should generate
+     * a payload that includes enough information for a user to recognize the
+     * source of the conflict.¶
+     *
+     * Conflicts are most likely to occur in response to a PUT request. For
+     * example, if versioning were being used and the representation being PUT
+     * included changes to a resource that conflict with those made by an
+     * earlier (third-party) request, the origin server might use a 409 response
+     * to indicate that it can't complete the request. In this case, the
+     * response representation would likely contain information useful for
+     * merging the differences based on the revision history.
+     *
+     * @codingStandardsIgnoreStart
+     *
+     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.409
+     * @codingStandardsIgnoreEnd
+     * @var int
+     */
+    const CONFLICT = 409;
+
+    /**
+     * The 410 (Gone) status code indicates that access to the target resource
+     * is no longer available at the origin server and that this condition is
+     * likely to be permanent. If the origin server does not know, or has no
+     * facility to determine, whether or not the condition is permanent, the
+     * status code 404 (Not Found) ought to be used instead.
+     *
+     * The 410 response is primarily intended to assist the task of web
+     * maintenance by notifying the recipient that the resource is intentionally
+     * unavailable and that the server owners desire that remote links to that
+     * resource be removed. Such an event is common for limited-time,
+     * promotional services and for resources belonging to individuals no longer
+     * associated with the origin server's site. It is not necessary to mark all
+     * permanently unavailable resources as "gone" or to keep the mark for any
+     * length of time — that is left to the discretion of the server owner.
+     *
+     * A 410 response is cacheable by default; i.e., unless otherwise indicated
+     * by the method definition or explicit cache controls (see Section 4.2.2 of
+     * [RFC7234]).
+     *
+     * @codingStandardsIgnoreStart
+     *
+     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.410
+     * @codingStandardsIgnoreEnd
+     * @var int
+     */
+    const GONE = 410;
+
+    /**
+     * The 411 (Length Required) status code indicates that the server refuses
+     * to accept the request without a defined Content-Length (Section 3.3.2 of
+     * [RFC7230]). The client may repeat the request if it adds a valid
+     * Content-Length header field containing the length of the message body in
+     * the request message.
+     *
+     * @codingStandardsIgnoreStart
+     *
+     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.411
+     * @codingStandardsIgnoreEnd
+     * @var int
+     */
+    const LENGTH_REQUIRED = 411;
+
+    /**
+     * The 413 (Payload Too Large) status code indicates that the server is
+     * refusing to process a request because the request payload is larger than
+     * the server is willing or able to process. The server may close the
+     * connection to prevent the client from continuing the request.¶
+     *
+     * If the condition is temporary, the server should generate a Retry-After
+     * header field to indicate that it is temporary and after what time the
+     * client may try again.
+     *
+     * @codingStandardsIgnoreStart
+     *
+     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.413
+     * @codingStandardsIgnoreEnd
+     * @var int
+     */
+    const PAYLOAD_TOO_LARGE = 413;
+
+     /**
+      * The 414 (URI Too Long) status code indicates that the server is
+      * refusing to service the request because the request-target (Section 5.3
+      * of [RFC7230]) is longer than the server is willing to interpret. This
+      * rare condition is only likely to occur when a client has improperly
+      * converted a POST request to a GET request with long query information,
+      * when the client has descended into a "black hole" of redirection (e.g.,
+      * a redirected URI prefix that points to a suffix of itself) or when the
+      * server is under attack by a client attempting to exploit potential
+      * security holes.¶
+      *
+      * A 414 response is cacheable by default; i.e., unless otherwise indicated
+      * by the method definition or explicit cache controls (see Section 4.2.2
+      * of [RFC7234]).
+      *
+      * @codingStandardsIgnoreStart
+      *
+      * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.414
+      * @codingStandardsIgnoreEnd
+      * @var int
+      */
+    const URI_TOO_LONG = 414;
+
+    /**
+     * The 415 (Unsupported Media Type) status code indicates that the origin
+     * server is refusing to service the request because the payload is in a
+     * format not supported by this method on the target resource. The format
+     * problem might be due to the request's indicated Content-Type or
+     * Content-Encoding, or as a result of inspecting the data directly.
+     *
+     * @codingStandardsIgnoreStart
+     *
+     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.415
+     * @codingStandardsIgnoreEnd
+     * @var int
+     */
+    const UNSUPPORTED_MEDIA_TYPE = 415;
+
+    /**
+     * The 417 (Expectation Failed) status code indicates that the expectation
+     * given in the request's Expect header field (Section 5.1.1) could not be
+     * met by at least one of the inbound servers.
+     *
+     * @codingStandardsIgnoreStart
+     *
+     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.417
+     * @codingStandardsIgnoreEnd
+     * @var int
+     */
+    const EXPECTATION_FAILED = 417;
+
+    /**
+     * The 426 (Upgrade Required) status code indicates that the server refuses
+     * to perform the request using the current protocol but might be willing to
+     * do so after the client upgrades to a different protocol. The server must
+     * send an Upgrade header field in a 426 response to indicate the required
+     * protocol(s) (Section 6.7 of [RFC7230]).¶
+     *
+     * Example:
+     *
+     * HTTP/1.1 426 Upgrade Required
+     * Upgrade: HTTP/3.0
+     * Connection: Upgrade
+     * Content-Length: 53
+     * Content-Type: text/plain
+     *
+     * This service requires use of the HTTP/3.0 protocol.
+     *
+     * @codingStandardsIgnoreStart
+     *
+     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.426
+     * @codingStandardsIgnoreEnd
+     * @var int
+     */
+    const UPGRADE_REQUIRED = 426;
+
+    /**
+     * The 500 (Internal Server Error) status code indicates that the server
+     * encountered an unexpected condition that prevented it from fulfilling the
+     * request.
+     *
+     * @codingStandardsIgnoreStart
+     *
+     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.500
+     * @codingStandardsIgnoreEnd
+     * @var int
+     */
+    const INTERNAL_SERVER_ERROR = 500;
+
+    /**
+     * The 501 (Not Implemented) status code indicates that the server does not
+     * support the functionality required to fulfill the request. This is the
+     * appropriate response when the server does not recognize the request
+     * method and is not capable of supporting it for any resource.
+     *
+     * A 501 response is cacheable by default; i.e., unless otherwise indicated
+     * by the method definition or explicit cache controls (see Section 4.2.2 of
+     * [RFC7234]).
+     *
+     * @codingStandardsIgnoreStart
+     *
+     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.501
+     * @codingStandardsIgnoreEnd
+     * @var int
+     */
+    const NOT_IMPLEMENTED = 501;
+
+    /**
+     * The 502 (Bad Gateway) status code indicates that the server, while acting
+     * as a gateway or proxy, received an invalid response from an inbound
+     * server it accessed while attempting to fulfill the request.
+     *
+     * @codingStandardsIgnoreStart
+     *
+     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.502
+     * @codingStandardsIgnoreEnd
+     * @var int
+     */
+    const BAD_GATEWAY = 502;
+
+    /**
+     * The 503 (Service Unavailable) status code indicates that the server is
+     * currently unable to handle the request due to a temporary overload or
+     * scheduled maintenance, which will likely be alleviated after some delay.
+     * The server may send a Retry-After header field (Section 7.1.3) to suggest
+     * an appropriate amount of time for the client to wait before retrying the
+     * request.¶
+     *
+     * Note: The existence of the 503 status code does not imply that a server
+     * has to use it when becoming overloaded. Some servers might simply refuse
+     * the connection.
+     *
+     * @codingStandardsIgnoreStart
+     *
+     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.503
+     * @codingStandardsIgnoreEnd
+     * @var int
+     */
+    const SERVICE_UNAVAILABLE = 503;
+
+    /**
+     * The 504 (Gateway Timeout) status code indicates that the server, while
+     * acting as a gateway or proxy, did not receive a timely response from an
+     * upstream server it needed to access in order to complete the request.
+     *
+     * @codingStandardsIgnoreStart
+     *
+     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.504
+     * @codingStandardsIgnoreEnd
+     * @var int
+     */
+    const GATEWAY_TIMEOUT = 504;
+
+    /**
+     * The 505 (HTTP Version Not Supported) status code indicates that the
+     * server does not support, or refuses to support, the major version of HTTP
+     * that was used in the request message. The server is indicating that it is
+     * unable or unwilling to complete the request using the same major version
+     * as the client, as described in Section 2.6 of [RFC7230], other than with
+     * this error message. The server should generate a representation for the
+     * 505 response that describes why that version is not supported and what
+     * other protocols are supported by that server.
+     *
+     * @codingStandardsIgnoreStart
+     *
+     * @link https://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7231.html#status.505
+     * @codingStandardsIgnoreEnd
+     * @var int
+     */
+    const HTTP_VERSION_NOT_SUPPORTED = 505;
 }

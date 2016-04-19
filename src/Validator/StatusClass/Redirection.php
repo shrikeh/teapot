@@ -1,6 +1,6 @@
 <?php
 /**
- * Interface representing standard and extended HTTP status codes. These codes
+ * Interface representing extended HTTP status codes for RFC2616. These codes
  * are represented as an interface so that developers may implement it and then
  * use parent::[CODE] to gain a code, or to extend the codes using
  * static::[CODE] and override their default description.
@@ -12,27 +12,18 @@
  *
  * @category StatusCode
  *
- * @package Teapot\StatusCode
+ * @package Teapot\StatusCode\RFC
  *
  * @author    Barney Hanlon <barney@shrikeh.net>
  * @copyright 2013-2016 B Hanlon. All rights reserved.
  * @license   MIT http://opensource.org/licenses/MIT
  *
- * @codingStandardsIgnoreStart
- *
  * @link https://shrikeh.github.com/teapot
- * @link http://lists.w3.org/Archives/Public/public-web-perf/2013Apr/att-0007/WebRequestStatusCodes4.html
- * @codingStandardsIgnoreEnd
  */
-namespace Teapot\StatusCode;
-
-use Teapot\StatusCode\RFC\RFC2324;
-use Teapot\StatusCode\RFC\RFC2616;
-use Teapot\StatusCode\RFC\RFC2774;
-use Teapot\StatusCode\RFC\RFC7725;
+namespace Teapot\StatusCode\Validator\StatusClass;
 
 /**
- * Interface representing standard and extended HTTP status codes. These codes
+ * Interface representing extended HTTP status codes for RFC2616. These codes
  * are represented as an interface so that developers may implement it and then
  * use parent::[CODE] to gain a code, or to extend the codes using
  * static::[CODE] and override their default description.
@@ -40,20 +31,28 @@ use Teapot\StatusCode\RFC\RFC7725;
  * This allows for codes to be repurposed in a natural way where the core,
  * traditional use would not be meaningful.
  *
+ * PHP version 5.3
+ *
  * @category StatusCode
  *
- * @package Teapot\StatusCode
+ * @package Teapot\StatusCode\RFC
  *
  * @author    Barney Hanlon <barney@shrikeh.net>
  * @copyright 2013-2016 B Hanlon. All rights reserved.
  * @license   MIT http://opensource.org/licenses/MIT
  *
- * @codingStandardsIgnoreStart
- *
  * @link https://shrikeh.github.com/teapot
- * @link http://lists.w3.org/Archives/Public/public-web-perf/2013Apr/att-0007/WebRequestStatusCodes4.html
- * @codingStandardsIgnoreEnd
  */
-interface Http extends RFC2616, RFC2324, RFC2774, RFC7725
+class Redirection
 {
+    /**
+     * Test if the status code falls within the range.
+     *
+     * @param integer $statusCode The status code to test
+     * @return boolean
+     */
+    public function isValid($statusCode)
+    {
+        return (($statusCode >= 300) && ($statusCode <= 400));
+    }
 }

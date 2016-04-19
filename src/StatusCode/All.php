@@ -15,14 +15,13 @@
  * @package Teapot\StatusCode
  *
  * @author    Barney Hanlon <barney@shrikeh.net>
- * @copyright 2013 B Hanlon. All rights reserved.
+ * @copyright 2013-2016 B Hanlon. All rights reserved.
  * @license   MIT http://opensource.org/licenses/MIT
  *
  * @link https://shrikeh.github.com/teapot
  */
 namespace Teapot\StatusCode;
 
-use Teapot\StatusCode\RFC\Draft;
 use Teapot\StatusCode\RFC\PEP;
 use Teapot\StatusCode\RFC\RFC2295 as ContentNegotiation;
 use Teapot\StatusCode\RFC\RFC2324 as HyperTextCoffeePotControlProtocol;
@@ -46,14 +45,13 @@ use Teapot\StatusCode\WebDAV;
  * @package Teapot\StatusCode
  *
  * @author    Barney Hanlon <barney@shrikeh.net>
- * @copyright 2013 B Hanlon. All rights reserved.
+ * @copyright 2013-2016 B Hanlon. All rights reserved.
  * @license   MIT http://opensource.org/licenses/MIT
  *
  * @link https://shrikeh.github.com/teapot
  */
 interface All extends
     WebDAV,
-    Draft,
     PEP,
     ContentNegotiation,
     HyperTextCoffeePotControlProtocol,

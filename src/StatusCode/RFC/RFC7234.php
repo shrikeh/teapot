@@ -22,6 +22,9 @@
  */
 namespace Teapot\StatusCode\RFC;
 
+use Teapot\StatusCode\RFC\Status\ProposedStandard;
+use Teapot\StatusCode\RFC\Stream\IETF as IETFStream;
+
 /**
  * Interface representing extended HTTP status codes for RFC7234. These codes
  * are represented as an interface so that developers may implement it and then
@@ -42,13 +45,13 @@ namespace Teapot\StatusCode\RFC;
  * @link https://shrikeh.github.com/teapot
  */
 
-interface RFC7234
+interface RFC7234 extends ProposedStandard, IETFStream
 {
     /**
      * A cache SHOULD generate this whenever the sent response is stale.
      *
      * @link https://tools.ietf.org/html/rfc7234#section-5.5.1
-     * @var int
+     * @var  int
      */
     const RESPONSE_IS_STALE = 110;
 
@@ -58,7 +61,7 @@ interface RFC7234
      * the server.
      *
      * @link https://tools.ietf.org/html/rfc7234#section-5.5.2
-     * @var int
+     * @var  int
      */
     const REVALIDATION_FAILED = 111;
 
@@ -67,7 +70,7 @@ interface RFC7234
      * the rest of the network for a period of time.
      *
      * @link https://tools.ietf.org/html/rfc7234#section-5.5.3
-     * @var int
+     * @var  int
      */
     const DISCONNECTED_OPERATION = 112;
 
@@ -77,7 +80,7 @@ interface RFC7234
      * 24 hours.
      *
      * @link https://tools.ietf.org/html/rfc7234#section-5.5.4
-     * @var int
+     * @var  int
      */
     const HEURISTIC_EXPIRATION = 113;
 
@@ -88,7 +91,7 @@ interface RFC7234
      * user.
      *
      * @link https://tools.ietf.org/html/rfc7234#section-5.5.5
-     * @var int
+     * @var  int
      */
     const MISCELLANEOUS_WARNING = 199;
 
@@ -99,7 +102,7 @@ interface RFC7234
      * unless this Warning code already appears in the response.
      *
      * @link https://tools.ietf.org/html/rfc7234#section-5.5.6
-     * @var int
+     * @var  int
      */
     const TRANSFORMATION_APPLIED = 214;
 
@@ -109,6 +112,7 @@ interface RFC7234
      * take any automated action.
      *
      * @link https://tools.ietf.org/html/rfc7234#section-5.5.7
-     * @var int
+     * @var  int
      */
     const MISCELLANEOUS_PERSISTENT_WARNING = 299;
+}
