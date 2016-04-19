@@ -12,11 +12,13 @@
         }
     ],
     "require": {
-        "php": ">=5.3"
+        "php": ">=5.3",
+        "nette/reflection": "^2.3"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^2.3",
-        "escapestudios/symfony2-coding-standard": "~2.0"
+        "escapestudios/symfony2-coding-standard": "~2.0",
+        "phpspec/phpspec": "^2.5"
     },
     "suggest": {
         "fabpot/php-cs-fixer": "^1.11 - For easy CS fixing"

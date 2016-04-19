@@ -1,0 +1,8 @@
+---
+suites:
+  default:
+    namespace: Teapot
+    psr4_prefix: Teapot
+    spec_prefix: spec
+    src_path: %paths.config%/src
+...

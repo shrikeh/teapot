@@ -9,10 +9,10 @@
  * @package Teapot
  *
  * @author    Barney Hanlon <barney@shrikeh.net>
- * @copyright 2013 B Hanlon. All rights reserved.
+ * @copyright 2013-2016 B Hanlon. All rights reserved.
  * @license   MIT http://opensource.org/licenses/MIT
  *
- * @link http://shrikeh.github.com/teapot
+ * @link https://shrikeh.github.com/teapot
  */
 namespace Teapot;
 
@@ -24,10 +24,10 @@ namespace Teapot;
  * @package Teapot
  *
  * @author    Barney Hanlon <barney@shrikeh.net>
- * @copyright 2013 B Hanlon. All rights reserved.
+ * @copyright 2013-2016 B Hanlon. All rights reserved.
  * @license   MIT http://opensource.org/licenses/MIT
  *
- * @link http://shrikeh.github.com/teapot
+ * @link https://shrikeh.github.com/teapot
  */
 class HttpException extends \Exception implements StatusCode
 {

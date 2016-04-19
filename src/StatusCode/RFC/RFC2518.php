@@ -15,12 +15,15 @@
  * @package Teapot\StatusCode\RFC
  *
  * @author    Barney Hanlon <barney@shrikeh.net>
- * @copyright 2013 B Hanlon. All rights reserved.
+ * @copyright 2013-2016 B Hanlon. All rights reserved.
  * @license   MIT http://opensource.org/licenses/MIT
  *
- * @link http://shrikeh.github.com/teapot
+ * @link https://shrikeh.github.com/teapot
  */
 namespace Teapot\StatusCode\RFC;
+
+use Teapot\StatusCode\RFC\Status\ProposedStandard;
+use Teapot\StatusCode\RFC\Stream\IETF as IETFStream;
 
 /**
  * Interface representing extended HTTP status codes for RFC2518. These codes
@@ -36,12 +39,12 @@ namespace Teapot\StatusCode\RFC;
  * @package Teapot\StatusCode\RFC
  *
  * @author    Barney Hanlon <barney@shrikeh.net>
- * @copyright 2013 B Hanlon. All rights reserved.
+ * @copyright 2013-2016 B Hanlon. All rights reserved.
  * @license   MIT http://opensource.org/licenses/MIT
  *
- * @link http://shrikeh.github.com/teapot
+ * @link https://shrikeh.github.com/teapot
  */
-interface RFC2518
+interface RFC2518 extends ProposedStandard, IETFStream
 {
     /**
      * This code indicates that the server has received and is processing the

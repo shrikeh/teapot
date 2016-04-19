@@ -15,12 +15,12 @@
  * @package Teapot\StatusCode
  *
  * @author    Barney Hanlon <barney@shrikeh.net>
- * @copyright 2013 B Hanlon. All rights reserved.
+ * @copyright 2013-2016 B Hanlon. All rights reserved.
  * @license   MIT http://opensource.org/licenses/MIT
  *
  * @codingStandardsIgnoreStart
  *
- * @link http://shrikeh.github.com/teapot
+ * @link https://shrikeh.github.com/teapot
  * @link http://lists.w3.org/Archives/Public/public-web-perf/2013Apr/att-0007/WebRequestStatusCodes4.html
  * @codingStandardsIgnoreEnd
  */
@@ -45,12 +45,12 @@ use Teapot\StatusCode\RFC\RFC7725;
  * @package Teapot\StatusCode
  *
  * @author    Barney Hanlon <barney@shrikeh.net>
- * @copyright 2013 B Hanlon. All rights reserved.
+ * @copyright 2013-2016 B Hanlon. All rights reserved.
  * @license   MIT http://opensource.org/licenses/MIT
  *
  * @codingStandardsIgnoreStart
  *
- * @link http://shrikeh.github.com/teapot
+ * @link https://shrikeh.github.com/teapot
  * @link http://lists.w3.org/Archives/Public/public-web-perf/2013Apr/att-0007/WebRequestStatusCodes4.html
  * @codingStandardsIgnoreEnd
  */

@@ -15,10 +15,10 @@
  * @package Teapot\StatusCode
  *
  * @author    Barney Hanlon <barney@shrikeh.net>
- * @copyright 2013 B Hanlon. All rights reserved.
+ * @copyright 2013-2016 B Hanlon. All rights reserved.
  * @license   MIT http://opensource.org/licenses/MIT
  *
- * @link http://shrikeh.github.com/teapot
+ * @link https://shrikeh.github.com/teapot
  */
 namespace Teapot\StatusCode;
 
@@ -41,10 +41,10 @@ use Teapot\StatusCode\RFC\RFC5842;
  * @package Teapot\StatusCode
  *
  * @author    Barney Hanlon <barney@shrikeh.net>
- * @copyright 2013 B Hanlon. All rights reserved.
+ * @copyright 2013-2016 B Hanlon. All rights reserved.
  * @license   MIT http://opensource.org/licenses/MIT
  *
- * @link http://shrikeh.github.com/teapot
+ * @link https://shrikeh.github.com/teapot
  */
 interface WebDAV extends RFC2518, RFC3648, RFC4918, RFC5842
 {
