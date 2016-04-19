@@ -26,7 +26,6 @@
  */
 namespace Teapot\StatusCode;
 
-
 use Teapot\StatusCode\RFC\RFC7168 as HTCPCPTea;
 use Teapot\StatusCode\RFC\RFC7231 as SemanticsAndContent;
 use Teapot\StatusCode\RFC\RFC7232 as ConditionalRequests;
@@ -36,7 +35,6 @@ use Teapot\StatusCode\RFC\RFC7235 as Authentication;
 use Teapot\StatusCode\RFC\RFC7538 as PermanentRedirect;
 use Teapot\StatusCode\RFC\RFC7540 as HTTP2;
 use Teapot\StatusCode\RFC\RFC7725 as LegalObstacles;
-
 
 /**
  * Interface representing standard and extended HTTP status codes. These codes
