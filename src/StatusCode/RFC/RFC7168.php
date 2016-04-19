@@ -72,7 +72,7 @@ interface RFC7168 extends InformationalStatus, IETFStream
      * @link https://www.rfc-editor.org/rfc/rfc7168.txt
      * @var int
      */
-    const FORBIDDEN = 403;
+    const BREW_FORBIDDEN = 403;
 
     /**
      * TEA-capable pots that are not provisioned to brew coffee may return

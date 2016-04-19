@@ -26,10 +26,15 @@
  */
 namespace Teapot\StatusCode;
 
-use Teapot\StatusCode\RFC\RFC2324;
-use Teapot\StatusCode\RFC\RFC2616;
-use Teapot\StatusCode\RFC\RFC2774;
-use Teapot\StatusCode\RFC\RFC7725;
+use Teapot\StatusCode\RFC\RFC7168 as HTCPCPTea;
+use Teapot\StatusCode\RFC\RFC7231 as SemanticsAndContent;
+use Teapot\StatusCode\RFC\RFC7232 as ConditionalRequests;
+use Teapot\StatusCode\RFC\RFC7233 as RangeRequests;
+use Teapot\StatusCode\RFC\RFC7234 as Caching;
+use Teapot\StatusCode\RFC\RFC7235 as Authentication;
+use Teapot\StatusCode\RFC\RFC7538 as PermanentRedirect;
+use Teapot\StatusCode\RFC\RFC7540 as HTTP2;
+use Teapot\StatusCode\RFC\RFC7725 as LegalObstacles;
 
 /**
  * Interface representing standard and extended HTTP status codes. These codes
@@ -54,6 +59,15 @@ use Teapot\StatusCode\RFC\RFC7725;
  * @link http://lists.w3.org/Archives/Public/public-web-perf/2013Apr/att-0007/WebRequestStatusCodes4.html
  * @codingStandardsIgnoreEnd
  */
-interface Http extends RFC2616, RFC2324, RFC2774, RFC7725
+interface Http extends
+    HTCPCPTea,
+    SemanticsAndContent,
+    ConditionalRequests,
+    RangeRequests,
+    Caching,
+    Authentication,
+    PermanentRedirect,
+    HTTP2,
+    LegalObstacles
 {
 }

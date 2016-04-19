@@ -20,7 +20,7 @@
  *
  * @link https://shrikeh.github.com/teapot
  */
-namespace Teapot\StatusCode;
+namespace Teapot\StatusCode\RFC;
 
 use Teapot\StatusCode\RFC\Status\ProposedStandard;
 use Teapot\StatusCode\RFC\Stream\IETF as IETFStream;
