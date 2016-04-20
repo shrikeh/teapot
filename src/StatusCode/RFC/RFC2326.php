@@ -23,6 +23,7 @@
  */
 namespace Teapot\StatusCode\RFC;
 
+use Teapot\StatusCode\StatusCodeInterface;
 use Teapot\StatusCode\RFC\Status\ProposedStandard;
 use Teapot\StatusCode\RFC\Stream\IETF as IETFStream;
 
@@ -46,7 +47,7 @@ use Teapot\StatusCode\RFC\Stream\IETF as IETFStream;
  *
  * @link https://shrikeh.github.com/teapot
  */
-interface RFC2326 extends ProposedStandard, IETFStream
+interface RFC2326 extends StatusCodeInterface, ProposedStandard, IETFStream
 {
     /**
      * The recipient of the request does not support one or more parameters

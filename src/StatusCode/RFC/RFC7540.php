@@ -22,6 +22,7 @@
  */
 namespace Teapot\StatusCode\RFC;
 
+use Teapot\StatusCode\StatusCodeInterface;
 use Teapot\StatusCode\RFC\Status\ProposedStandard;
 use Teapot\StatusCode\RFC\Stream\IETF as IETFStream;
 
@@ -46,7 +47,7 @@ use Teapot\StatusCode\RFC\Stream\IETF as IETFStream;
  *
  * @link https://shrikeh.github.com/teapot
  */
-interface RFC7540 extends ProposedStandard, IETFStream
+interface RFC7540 extends StatusCodeInterface, ProposedStandard, IETFStream
 {
     /**
      * The 421 (Misdirected Request) status code indicates that the request was

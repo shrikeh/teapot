@@ -22,6 +22,8 @@
  */
 namespace Teapot\StatusCode\Vendor;
 
+use Teapot\StatusCode\StatusCodeInterface;
+
 /**
  * Interface representing extended HTTP status codes for Cloudflare. These codes
  * are represented as an interface so that developers may implement it and then
@@ -41,7 +43,7 @@ namespace Teapot\StatusCode\Vendor;
  *
  * @link https://shrikeh.github.com/teapot
  */
-interface CloudFlare
+interface CloudFlare extends StatusCodeInterface
 {
     /**
      * This status code is not specified in any RFCs, but is used by

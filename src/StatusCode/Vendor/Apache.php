@@ -22,6 +22,8 @@
  */
 namespace Teapot\StatusCode\Vendor;
 
+use Teapot\StatusCode\StatusCodeInterface;
+
 /**
  * Interface representing extended HTTP status codes for Apache. These codes are
  * represented as an interface so that developers may implement it and then use
@@ -41,7 +43,7 @@ namespace Teapot\StatusCode\Vendor;
  *
  * @link https://shrikeh.github.com/teapot
  */
-interface Apache
+interface Apache extends StatusCodeInterface
 {
     /**
      * This status code, while used by many servers, is not specified in any

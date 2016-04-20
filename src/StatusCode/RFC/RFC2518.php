@@ -22,6 +22,7 @@
  */
 namespace Teapot\StatusCode\RFC;
 
+use Teapot\StatusCode\StatusCodeInterface;
 use Teapot\StatusCode\RFC\Status\ProposedStandard;
 use Teapot\StatusCode\RFC\Stream\IETF as IETFStream;
 
@@ -44,7 +45,7 @@ use Teapot\StatusCode\RFC\Stream\IETF as IETFStream;
  *
  * @link https://shrikeh.github.com/teapot
  */
-interface RFC2518 extends ProposedStandard, IETFStream
+interface RFC2518 extends StatusCodeInterface, ProposedStandard, IETFStream
 {
     /**
      * This code indicates that the server has received and is processing the

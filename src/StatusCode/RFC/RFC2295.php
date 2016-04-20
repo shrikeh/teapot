@@ -22,6 +22,7 @@
  */
 namespace Teapot\StatusCode\RFC;
 
+use Teapot\StatusCode\StatusCodeInterface;
 use Teapot\StatusCode\RFC\Status\Experimental as ExperimentalStatus;
 use Teapot\StatusCode\RFC\Stream\IETF as IETFStream;
 
@@ -44,7 +45,7 @@ use Teapot\StatusCode\RFC\Stream\IETF as IETFStream;
  *
  * @link https://shrikeh.github.com/teapot
  */
-interface RFC2295 extends ExperimentalStatus, IETFStream
+interface RFC2295 extends StatusCodeInterface, ExperimentalStatus, IETFStream
 {
     /**
      * Transparent content negotiation for the request results in a circular
