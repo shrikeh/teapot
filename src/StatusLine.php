@@ -1,6 +1,6 @@
 <?php
 /**
- * Interface representing a Value Object of the HTTP Status-Line, as
+ * Class representing a Value Object of the HTTP Status-Line, as
  * specified in RFC 2616 and RFC 7231.
  *
  * PHP version 5.3
@@ -20,7 +20,7 @@ use Teapot\StatusCodeException\InvalidStatusCodeException;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Interface representing a Value Object of the HTTP Status-Line, as
+ * Class representing a Value Object of the HTTP Status-Line, as
  * specified in RFC 2616 and RFC 7231.
  *
  * PHP version 5.3
