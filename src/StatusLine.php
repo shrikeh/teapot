@@ -162,20 +162,19 @@ class StatusLine
      * Set the code. Used in constructor to ensure the code meets the
      * requirements for a status code.
      *
+     * @throws InvalidStatusCodeException If the status code is invalid
      */
     private function setCode($code)
     {
         if (!is_numeric($code)) {
-            throw new InvalidStatusCodeException(
-                "Status code must be numeric, but received $code"
-            );
+            $desc = 'Status code must be numeric, but received %d';
+            throw new InvalidStatusCodeException(sprintf($desc, $code));
         }
         $code = (int) $code;
 
         if ($code < 100) {
-            throw new InvalidStatusCodeException(
-                "Status code must be 100 or greater but code was $code"
-            );
+            $desc = 'Status code must be 100 or greater but code was %d';
+            throw new InvalidStatusCodeException(sprintf($desc, $code));
         }
         $this->code = $code;
     }
