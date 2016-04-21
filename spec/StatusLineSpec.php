@@ -8,6 +8,8 @@ use Prophecy\Argument;
 use Teapot\StatusCode;
 use Teapot\StatusCodeException\InvalidStatusCodeException;
 
+use Psr\Http\Message\ResponseInterface;
+
 class StatusLineSpec extends ObjectBehavior
 {
 
@@ -96,6 +98,18 @@ class StatusLineSpec extends ObjectBehavior
         $this->beConstructedWith('099', 'Bar');
         $this->shouldThrow('Teapot\StatusCodeException\InvalidStatusCodeException')
             ->duringInstantiation();
+    }
+
+    function it_can_append_itself_to_a_psr_7_response(
+        ResponseInterface $response1,
+        ResponseInterface $response2
+    ) {
+        $code = StatusCode::FORBIDDEN;
+        $reason = 'Forbidden';
+        $response1->withStatus($code, $reason)->willReturn($response2);
+        $this->beConstructedWith($code, $reason);
+        $this->response($response1)->shouldReturn($response2);
+
     }
 
 }

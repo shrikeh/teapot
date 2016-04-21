@@ -17,6 +17,7 @@
 namespace Teapot;
 
 use Teapot\StatusCodeException\InvalidStatusCodeException;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * Interface representing a Value Object of the HTTP Status-Line, as
@@ -79,6 +80,17 @@ class StatusLine
     final public function reason()
     {
         return (string) $this->reason;
+    }
+
+    /**
+     * Add the status code and reason phrase to a Response.
+     *
+     * @param Psr\Http\Message\ResponseInterface $response The response
+     * @return Psr\Http\Message\ResponseInterface
+     */
+    public function response(ResponseInterface $response)
+    {
+        return $response->withStatus($this->code(), $this->reason());
     }
 
     /**
@@ -169,6 +181,11 @@ class StatusLine
         $this->code = $code;
     }
 
+    /**
+     * Test whether the response class matches the class passed to it.
+     *
+     * @return bool
+     */
     private function is($class)
     {
         return ($this->responseClass() === $class);
