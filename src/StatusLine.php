@@ -111,7 +111,7 @@ class StatusLine
      */
     final public function isInformational()
     {
-        return $this->is(StatusCode::INFORMATIONAL);
+        return $this->isStatusClass(StatusCode::INFORMATIONAL);
     }
 
     /**
@@ -122,7 +122,7 @@ class StatusLine
      */
     final public function isSuccessful()
     {
-        return $this->is(StatusCode::SUCCESSFUL);
+        return $this->isStatusClass(StatusCode::SUCCESSFUL);
     }
 
     /**
@@ -133,7 +133,7 @@ class StatusLine
      */
     final public function isRedirection()
     {
-        return $this->is(StatusCode::REDIRECTION);
+        return $this->isStatusClass(StatusCode::REDIRECTION);
     }
 
     /**
@@ -144,7 +144,7 @@ class StatusLine
      */
     final public function isClientError()
     {
-        return $this->is(StatusCode::CLIENT_ERROR);
+        return $this->isStatusClass(StatusCode::CLIENT_ERROR);
     }
 
     /**
@@ -155,7 +155,7 @@ class StatusLine
      */
     final public function isServerError()
     {
-        return $this->is(StatusCode::SERVER_ERROR);
+        return $this->isStatusClass(StatusCode::SERVER_ERROR);
     }
 
     /**
@@ -190,7 +190,7 @@ class StatusLine
      * @param int $class The class of the response code
      * @return bool
      */
-    private function is($class)
+    private function isStatusClass($class)
     {
         return ($this->responseClass() === $class);
     }
