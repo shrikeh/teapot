@@ -162,7 +162,6 @@ class StatusLine
      * Set the code. Used in constructor to ensure the code meets the
      * requirements for a status code.
      *
-     * @return bool
      */
     private function setCode($code)
     {
