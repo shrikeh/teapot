@@ -85,8 +85,8 @@ class StatusLine
     /**
      * Add the status code and reason phrase to a Response.
      *
-     * @param Psr\Http\Message\ResponseInterface $response The response
-     * @return Psr\Http\Message\ResponseInterface
+     * @param ResponseInterface $response The response
+     * @return ResponseInterface
      */
     public function response(ResponseInterface $response)
     {
@@ -162,19 +162,24 @@ class StatusLine
      * Set the code. Used in constructor to ensure the code meets the
      * requirements for a status code.
      *
+     * @param int $code The status code
      * @throws InvalidStatusCodeException If the status code is invalid
      */
     private function setCode($code)
     {
         if (!is_numeric($code)) {
-            $desc = 'Status code must be numeric, but received %d';
-            throw new InvalidStatusCodeException(sprintf($desc, $code));
+            throw new InvalidStatusCodeException(sprintf(
+                'Status code must be numeric, but received %d',
+                $code
+            ));
         }
         $code = (int) $code;
 
         if ($code < 100) {
-            $desc = 'Status code must be 100 or greater but code was %d';
-            throw new InvalidStatusCodeException(sprintf($desc, $code));
+            throw new InvalidStatusCodeException(sprintf(
+                'Status code must be 100 or greater but code was %d',
+                $code
+            ));
         }
         $this->code = $code;
     }
@@ -182,6 +187,7 @@ class StatusLine
     /**
      * Test whether the response class matches the class passed to it.
      *
+     * @param int $class The class of the response code
      * @return bool
      */
     private function is($class)
