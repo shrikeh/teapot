@@ -39,7 +39,7 @@ class StatusLine
     /**
      * The actual response code.
      *
-     * @var integer
+     * @var int
      */
     private $code;
 
