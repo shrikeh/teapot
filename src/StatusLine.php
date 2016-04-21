@@ -67,7 +67,7 @@ class StatusLine
      *
      * @return int
      */
-    final public function code()
+    final public function statusCode()
     {
         return $this->code;
     }
@@ -77,7 +77,7 @@ class StatusLine
      *
      * @return string
      */
-    final public function reason()
+    final public function reasonPhrase()
     {
         return (string) $this->reason;
     }
@@ -90,7 +90,10 @@ class StatusLine
      */
     public function response(ResponseInterface $response)
     {
-        return $response->withStatus($this->code(), $this->reason());
+        return $response->withStatus(
+            $this->statusCode(),
+            $this->reasonPhrase()
+        );
     }
 
     /**

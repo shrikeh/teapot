@@ -23,7 +23,7 @@ class StatusLineSpec extends ObjectBehavior
     {
         $code = StatusCode::FORBIDDEN;
         $this->beConstructedWith($code, 'Forbidden');
-        $this->code()->shouldReturn($code);
+        $this->statusCode()->shouldReturn($code);
     }
 
     function it_returns_the_response_code_class()
@@ -72,11 +72,11 @@ class StatusLineSpec extends ObjectBehavior
         $this->isServerError()->shouldReturn(true);
     }
 
-    function it_returns_the_reason()
+    function it_returns_the_reason_phrase()
     {
         $reason = 'Forbidden';
         $this->beConstructedWith(StatusCode::FORBIDDEN, $reason);
-        $this->reason()->shouldReturn($reason);
+        $this->reasonPhrase()->shouldReturn($reason);
     }
 
     function it_throws_an_exception_if_the_code_is_not_numeric()
@@ -90,7 +90,7 @@ class StatusLineSpec extends ObjectBehavior
     {
         $code = StatusCode::FORBIDDEN;
         $this->beConstructedWith((string) $code, 'Bar');
-        $this->code()->shouldReturn($code);
+        $this->statusCode()->shouldReturn($code);
     }
 
     function it_throws_an_exception_if_the_code_is_below_100()
