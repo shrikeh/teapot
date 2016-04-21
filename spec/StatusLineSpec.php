@@ -77,18 +77,25 @@ class StatusLineSpec extends ObjectBehavior
         $this->reason()->shouldReturn($reason);
     }
 
-    function it_throws_an_exception_if_the_code_is_invalid()
+    function it_throws_an_exception_if_the_code_is_not_numeric()
     {
         $this->beConstructedWith('Foo', 'Bar');
         $this->shouldThrow('Teapot\StatusCodeException\InvalidStatusCodeException')
             ->duringInstantiation();
-
     }
 
     function it_accepts_numeric_codes()
     {
         $code = StatusCode::FORBIDDEN;
-        $this->beConstructedWith("$code", 'Bar');
+        $this->beConstructedWith((string) $code, 'Bar');
         $this->code()->shouldReturn($code);
     }
+
+    function it_throws_an_exception_if_the_code_is_below_100()
+    {
+        $this->beConstructedWith('099', 'Bar');
+        $this->shouldThrow('Teapot\StatusCodeException\InvalidStatusCodeException')
+            ->duringInstantiation();
+    }
+
 }

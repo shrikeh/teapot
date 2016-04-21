@@ -35,68 +35,142 @@ use Teapot\StatusCodeException\InvalidStatusCodeException;
  */
 class StatusLine
 {
+    /**
+     * The actual response code.
+     *
+     * @var integer
+     */
     private $code;
 
+    /**
+     * The reason phrase.
+     *
+     * @var string
+     */
     private $reason;
 
-    public function __construct($code, $reason)
+    /**
+     * Constructor.
+     *
+     * @param int    $code   The response code
+     * @param string $reason The reason phrase
+     */
+    final public function __construct($code, $reason)
     {
         $this->setCode($code);
-        $this->reason   = $reason;
+        $this->reason = $reason;
     }
 
-    public final function code()
+    /**
+     * Return the response code.
+     *
+     * @return int
+     */
+    final public function code()
     {
         return $this->code;
     }
 
-    public final function reason()
+    /**
+     * Return the reason phrase
+     *
+     * @return string
+     */
+    final public function reason()
     {
-        return $this->reason;
+        return (string) $this->reason;
     }
 
-    public final function version()
-    {
-        return $this->version;
-    }
-
-    private final function setCode($code)
-    {
-        if (!is_numeric($code)) {
-            throw new InvalidStatusCodeException(
-                 "Status code must be numeric, but received $code"
-            );
-        }
-        $this->code = (int) $code;
-    }
-
-    public final function responseClass()
+    /**
+     * Return the status class of the response code.
+     *
+     * @return int
+     */
+    final public function responseClass()
     {
         return (int) floor($this->code / 100);
     }
 
-    public final function isInformational()
+    /**
+     * Helper to establish if the class of the status code
+     * is informational (1xx).
+     *
+     * @return bool
+     */
+    final public function isInformational()
     {
-        return ($this->responseClass() === StatusCode::INFORMATIONAL);
+        return $this->is(StatusCode::INFORMATIONAL);
     }
 
-    public final function isSuccessful()
+    /**
+     * Helper to establish if the class of the status code
+     * is successful (2xx).
+     *
+     * @return bool
+     */
+    final public function isSuccessful()
     {
-        return ($this->responseClass() === StatusCode::SUCCESSFUL);
+        return $this->is(StatusCode::SUCCESSFUL);
     }
 
-    public final function isRedirection()
+    /**
+     * Helper to establish if the class of the status code
+     * is redirection (3xx).
+     *
+     * @return bool
+     */
+    final public function isRedirection()
     {
-        return ($this->responseClass() === StatusCode::REDIRECTION);
+        return $this->is(StatusCode::REDIRECTION);
     }
 
-    public final function isClientError()
+    /**
+     * Helper to establish if the class of the status code
+     * is client error (4xx).
+     *
+     * @return bool
+     */
+    final public function isClientError()
     {
-        return ($this->responseClass() === StatusCode::CLIENT_ERROR);
+        return $this->is(StatusCode::CLIENT_ERROR);
     }
 
-    public final function isServerError()
+    /**
+     * Helper to establish if the class of the status code
+     * is server error (5xx).
+     *
+     * @return bool
+     */
+    final public function isServerError()
     {
-        return ($this->responseClass() === StatusCode::SERVER_ERROR);
+        return $this->is(StatusCode::SERVER_ERROR);
+    }
+
+    /**
+     * Set the code. Used in constructor to ensure the code meets the
+     * requirements for a status code.
+     *
+     * @return bool
+     */
+    private function setCode($code)
+    {
+        if (!is_numeric($code)) {
+            throw new InvalidStatusCodeException(
+                "Status code must be numeric, but received $code"
+            );
+        }
+        $code = (int) $code;
+
+        if ($code < 100) {
+            throw new InvalidStatusCodeException(
+                "Status code must be 100 or greater but code was $code"
+            );
+        }
+        $this->code = $code;
+    }
+
+    private function is($class)
+    {
+        return ($this->responseClass() === $class);
     }
 }
