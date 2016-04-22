@@ -22,7 +22,6 @@
  */
 namespace Teapot\StatusCode\RFC;
 
-use Teapot\StatusCode\StatusCodeInterface;
 use Teapot\StatusCode\RFC\Status\Informational as InformationalStatus;
 use Teapot\StatusCode\RFC\Stream\IETF as IETFStream;
 
@@ -45,7 +44,7 @@ use Teapot\StatusCode\RFC\Stream\IETF as IETFStream;
  *
  * @link https://shrikeh.github.com/teapot
  */
-interface RFC7168 extends StatusCodeInterface, InformationalStatus, IETFStream
+interface RFC7168 extends InformationalStatus, IETFStream
 {
     /**
      * A BREW request to the "/" URI, as defined in Section 2.1.1, will

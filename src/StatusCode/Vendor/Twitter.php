@@ -22,8 +22,6 @@
  */
 namespace Teapot\StatusCode\Vendor;
 
-use Teapot\StatusCode\StatusCodeInterface;
-
 /**
  * Interface representing extended HTTP status codes for vendor-specific codes.
  * These codes are represented as an interface so that developers may implement
@@ -43,7 +41,7 @@ use Teapot\StatusCode\StatusCodeInterface;
  *
  * @link https://shrikeh.github.com/teapot
  */
-interface Twitter extends StatusCodeInterface
+interface Twitter
 {
     /**
      * Returned by the version 1 Search and Trends APIs when you are being rate

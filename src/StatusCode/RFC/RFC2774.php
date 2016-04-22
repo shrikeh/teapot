@@ -22,7 +22,6 @@
  */
 namespace Teapot\StatusCode\RFC;
 
-use Teapot\StatusCode\StatusCodeInterface;
 use Teapot\StatusCode\RFC\Status\Experimental as ExperimentalStatus;
 use Teapot\StatusCode\RFC\Stream\Legacy as LegacyStream;
 
@@ -45,7 +44,7 @@ use Teapot\StatusCode\RFC\Stream\Legacy as LegacyStream;
  *
  * @link https://shrikeh.github.com/teapot
  */
-interface RFC2774 extends StatusCodeInterface, ExperimentalStatus, LegacyStream
+interface RFC2774 extends ExperimentalStatus, LegacyStream
 {
     /**
      * The policy for accessing the resource has not been met in the

@@ -19,18 +19,18 @@ class StatusLineSpec extends ObjectBehavior
         $this->shouldHaveType('Teapot\StatusLine');
     }
 
-    function it_returns_a_code()
+    function it_returns_a_status_code()
     {
         $code = StatusCode::FORBIDDEN;
         $this->beConstructedWith($code, 'Forbidden');
         $this->statusCode()->shouldReturn($code);
     }
 
-    function it_returns_the_response_code_class()
+    function it_returns_the_status_code_class()
     {
         $code = StatusCode::FORBIDDEN;
         $this->beConstructedWith($code, 'Forbidden');
-        $this->responseClass()->shouldReturn(StatusCode::CLIENT_ERROR);
+        $this->statusClass()->shouldReturn(StatusCode::CLIENT_ERROR);
     }
 
     function it_returns_true_if_it_is_informational()

@@ -22,8 +22,6 @@
  */
 namespace Teapot\StatusCode\Vendor;
 
-use Teapot\StatusCode\StatusCodeInterface;
-
 /**
  * Interface representing extended HTTP status codes for Apache. These codes are
  * represented as an interface so that developers may implement it and then use
@@ -43,7 +41,7 @@ use Teapot\StatusCode\StatusCodeInterface;
  *
  * @link https://shrikeh.github.com/teapot
  */
-interface Nginx extends StatusCodeInterface
+interface Nginx
 {
     /**
      * Used in Nginx logs to indicate that the server has returned no

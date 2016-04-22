@@ -23,7 +23,6 @@
  */
 namespace Teapot\StatusCode\RFC;
 
-use Teapot\StatusCode\StatusCodeInterface;
 use Teapot\StatusCode\RFC\Status\Expired as ExpiredStatus;
 use Teapot\StatusCode\RFC\Stream\IETF as IETFStream;
 
@@ -47,7 +46,7 @@ use Teapot\StatusCode\RFC\Stream\IETF as IETFStream;
  *
  * @link https://shrikeh.github.com/teapot
  */
-interface PEP extends StatusCodeInterface, ExpiredStatus, IETFStream
+interface PEP extends ExpiredStatus, IETFStream
 {
     /**
      * The policy for accessing the resource has not been met in the request.

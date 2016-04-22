@@ -101,7 +101,7 @@ class StatusLine
      *
      * @return int
      */
-    final public function responseClass()
+    final public function statusClass()
     {
         return (int) floor($this->code / 100);
     }
@@ -195,6 +195,6 @@ class StatusLine
      */
     private function isStatusClass($class)
     {
-        return ($this->responseClass() === $class);
+        return ($this->statusClass() === $class);
     }
 }

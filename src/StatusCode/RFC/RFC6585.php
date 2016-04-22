@@ -22,7 +22,6 @@
  */
 namespace Teapot\StatusCode\RFC;
 
-use Teapot\StatusCode\StatusCodeInterface;
 use Teapot\StatusCode\RFC\Status\ProposedStandard;
 use Teapot\StatusCode\RFC\Stream\IETF as IETFStream;
 
@@ -45,7 +44,7 @@ use Teapot\StatusCode\RFC\Stream\IETF as IETFStream;
  *
  * @link https://shrikeh.github.com/teapot
  */
-interface RFC6585 extends StatusCodeInterface, ProposedStandard, IETFStream
+interface RFC6585 extends ProposedStandard, IETFStream
 {
     /**
      * The origin server requires the request to be conditional. Its typical

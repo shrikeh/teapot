@@ -22,8 +22,6 @@
  */
 namespace Teapot\StatusCode\Vendor;
 
-use Teapot\StatusCode\StatusCodeInterface;
-
 /**
  * Interface representing extended HTTP status codes for Microsoft. These codes
  * are represented as an interface so that developers may implement it and then
@@ -43,7 +41,7 @@ use Teapot\StatusCode\StatusCodeInterface;
  *
  * @link https://shrikeh.github.com/teapot
  */
-interface Microsoft extends StatusCodeInterface
+interface Microsoft
 {
     /**
      * A Microsoft extension. Indicates that your session has expired.
