@@ -1,6 +1,6 @@
 <?php
 /**
- * Class representing a Value Object of the HTTP Status-Line, as
+ * Interface representing a Value Object of the HTTP Status-Line, as
  * specified in RFC 2616 and RFC 7231.
  *
  * PHP version 5.3
@@ -16,11 +16,10 @@
  */
 namespace Teapot;
 
-use Teapot\StatusCodeException\InvalidStatusCodeException;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Class representing a Value Object of the HTTP Status-Line, as
+ * Interface representing a Value Object of the HTTP Status-Line, as
  * specified in RFC 2616 and RFC 7231.
  *
  * PHP version 5.3
@@ -34,53 +33,21 @@ use Psr\Http\Message\ResponseInterface;
  * @license   MIT http://opensource.org/licenses/MIT
  * @link      https://shrikeh.github.com/teapot
  */
-class StatusLine
+interface StatusLine
 {
-    /**
-     * The actual response code.
-     *
-     * @var int
-     */
-    private $code;
-
-    /**
-     * The reason phrase.
-     *
-     * @var string
-     */
-    private $reason;
-
-    /**
-     * Constructor.
-     *
-     * @param int    $code   The response code
-     * @param string $reason The reason phrase
-     */
-    final public function __construct($code, $reason)
-    {
-        $this->setCode($code);
-        $this->reason = $reason;
-    }
-
     /**
      * Return the response code.
      *
      * @return int
      */
-    final public function statusCode()
-    {
-        return $this->code;
-    }
+    public function statusCode();
 
     /**
      * Return the reason phrase
      *
      * @return string
      */
-    final public function reasonPhrase()
-    {
-        return (string) $this->reason;
-    }
+    public function reasonPhrase();
 
     /**
      * Add the status code and reason phrase to a Response.
@@ -88,23 +55,14 @@ class StatusLine
      * @param ResponseInterface $response The response
      * @return ResponseInterface
      */
-    public function response(ResponseInterface $response)
-    {
-        return $response->withStatus(
-            $this->statusCode(),
-            $this->reasonPhrase()
-        );
-    }
+    public function response(ResponseInterface $response);
 
     /**
      * Return the status class of the response code.
      *
      * @return int
      */
-    final public function statusClass()
-    {
-        return (int) floor($this->code / 100);
-    }
+    public function statusClass();
 
     /**
      * Helper to establish if the class of the status code
@@ -112,10 +70,7 @@ class StatusLine
      *
      * @return bool
      */
-    final public function isInformational()
-    {
-        return $this->isStatusClass(StatusCode::INFORMATIONAL);
-    }
+    public function isInformational();
 
     /**
      * Helper to establish if the class of the status code
@@ -123,10 +78,7 @@ class StatusLine
      *
      * @return bool
      */
-    final public function isSuccessful()
-    {
-        return $this->isStatusClass(StatusCode::SUCCESSFUL);
-    }
+    public function isSuccessful();
 
     /**
      * Helper to establish if the class of the status code
@@ -134,10 +86,7 @@ class StatusLine
      *
      * @return bool
      */
-    final public function isRedirection()
-    {
-        return $this->isStatusClass(StatusCode::REDIRECTION);
-    }
+    public function isRedirection();
 
     /**
      * Helper to establish if the class of the status code
@@ -145,10 +94,7 @@ class StatusLine
      *
      * @return bool
      */
-    final public function isClientError()
-    {
-        return $this->isStatusClass(StatusCode::CLIENT_ERROR);
-    }
+    public function isClientError();
 
     /**
      * Helper to establish if the class of the status code
@@ -156,39 +102,5 @@ class StatusLine
      *
      * @return bool
      */
-    final public function isServerError()
-    {
-        return $this->isStatusClass(StatusCode::SERVER_ERROR);
-    }
-
-    /**
-     * Set the code. Used in constructor to ensure the code meets the
-     * requirements for a status code.
-     *
-     * @param int $code The status code
-     * @throws InvalidStatusCodeException If the status code is invalid
-     */
-    private function setCode($code)
-    {
-        if (!is_numeric($code)) {
-            throw InvalidStatusCodeException::notNumeric($code);
-        }
-        $code = (int) $code;
-
-        if ($code < 100) {
-            throw InvalidStatusCodeException::notGreaterOrEqualTo100($code);
-        }
-        $this->code = $code;
-    }
-
-    /**
-     * Test whether the response class matches the class passed to it.
-     *
-     * @param int $class The class of the response code
-     * @return bool
-     */
-    private function isStatusClass($class)
-    {
-        return ($this->statusClass() === $class);
-    }
+    public function isServerError();
 }

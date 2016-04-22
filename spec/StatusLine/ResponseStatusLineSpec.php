@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\Teapot;
+namespace spec\Teapot\StatusLine;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -10,7 +10,7 @@ use Teapot\StatusCodeException\InvalidStatusCodeException;
 
 use Psr\Http\Message\ResponseInterface;
 
-class StatusLineSpec extends ObjectBehavior
+class ResponseStatusLineSpec extends ObjectBehavior
 {
 
     function it_is_initializable()
