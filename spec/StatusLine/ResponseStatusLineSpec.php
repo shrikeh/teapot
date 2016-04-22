@@ -12,7 +12,6 @@ use Psr\Http\Message\ResponseInterface;
 
 class ResponseStatusLineSpec extends ObjectBehavior
 {
-
     function it_is_initializable()
     {
         $this->beConstructedWith(StatusCode::OK, 'OK');
@@ -109,7 +108,5 @@ class ResponseStatusLineSpec extends ObjectBehavior
         $response1->withStatus($code, $reason)->willReturn($response2);
         $this->beConstructedWith($code, $reason);
         $this->response($response1)->shouldReturn($response2);
-
     }
-
 }
