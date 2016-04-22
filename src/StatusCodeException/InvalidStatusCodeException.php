@@ -56,7 +56,7 @@ class InvalidStatusCodeException extends InvalidArgumentException
     public static function notGreaterOrEqualTo100($code)
     {
         return new self(sprintf(
-            'Status code must be 100 or greater but code was %d'
+            'Status code must be 100 or greater but code was %d',
             $code
         ));
     }

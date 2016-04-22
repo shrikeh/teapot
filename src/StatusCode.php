@@ -53,6 +53,13 @@ use Teapot\StatusCode\Http;
  */
 interface StatusCode extends Http
 {
+  const INFORMATIONAL = 1;
 
+  const SUCCESSFUL = 2;
 
+  const REDIRECTION = 3;
+
+  const CLIENT_ERROR = 4;
+
+  const SERVER_ERROR = 5;
 }
