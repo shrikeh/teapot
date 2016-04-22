@@ -191,6 +191,6 @@ final class ResponseStatusLine implements StatusLine
      */
     private function isStatusClass($class)
     {
-        return ($this->statusClass() === $class);
+        return $this->statusClass() === $class;
     }
 }
