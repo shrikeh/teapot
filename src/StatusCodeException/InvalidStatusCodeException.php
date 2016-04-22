@@ -33,5 +33,31 @@ use InvalidArgumentException;
  */
 class InvalidStatusCodeException extends InvalidArgumentException
 {
+    /**
+     * Named constructor for non-numeric status codes.
+     *
+     * @param mixed $code the non-numeric code
+     * @return InvalidStatusCodeException
+     */
+    public static function notNumeric($code)
+    {
+        return new self(sprintf(
+            'Status code must be numeric, but received %d',
+            $code
+        ));
+    }
 
+    /**
+     * Named constructor for numeric status codes below 100.
+     *
+     * @param mixed $code the status code
+     * @return InvalidStatusCodeException
+     */
+    public static function notGreaterOrEqualTo100($code)
+    {
+        return new self(sprintf(
+            'Status code must be 100 or greater but code was %d'
+            $code
+        ));
+    }
 }
