@@ -34,4 +34,5 @@ install:
 
 script:
   - bin/phpcs --standard=phpcs.xml src
+  - bin/phpspec run --no-code-generation --format=pretty
 ...
