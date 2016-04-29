@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0343793b79c48fdd2d62a70181c51273",
-    "content-hash": "4879dd5ac58e1c9ed66a46631a021baf",
+    "hash": "a99a8030878751f4f4db2d228b7ae49e",
+    "content-hash": "c4ae2472ae948ade8fc546180a051038",
     "packages": [
         {
             "name": "nette/caching",
