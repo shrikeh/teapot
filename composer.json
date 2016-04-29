@@ -31,5 +31,10 @@
         "psr-4": {
             "Teapot\\": "src"
         }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-stable": "2.0"
+        }
     }
 }
