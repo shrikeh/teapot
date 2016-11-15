@@ -14,7 +14,7 @@
     "require": {
         "php": ">=5.3",
         "psr/http-message": "^1.0",
-        "teapot/status-code": "dev-master"
+        "teapot/status-code": "^1.0"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^2.3",

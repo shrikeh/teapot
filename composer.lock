@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4273926b674b99a68fb13c5c2ba5efa0",
-    "content-hash": "108c3dab5afd7c122be48e09d8938c88",
+    "hash": "4b819fef48b0c70efc00218809cefa48",
+    "content-hash": "da47d65fddfbb004b78d44299ae64a48",
     "packages": [
         {
             "name": "psr/http-message",
@@ -59,16 +59,16 @@
         },
         {
             "name": "teapot/status-code",
-            "version": "dev-master",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/teapot-php/status-code.git",
-                "reference": "f8de9d91282c8e9951fbfe4f2e7a44f34a548ec4"
+                "reference": "8b0a35083e0b2e3da434b9b3372c3665c4d44e09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/teapot-php/status-code/zipball/f8de9d91282c8e9951fbfe4f2e7a44f34a548ec4",
-                "reference": "f8de9d91282c8e9951fbfe4f2e7a44f34a548ec4",
+                "url": "https://api.github.com/repos/teapot-php/status-code/zipball/8b0a35083e0b2e3da434b9b3372c3665c4d44e09",
+                "reference": "8b0a35083e0b2e3da434b9b3372c3665c4d44e09",
                 "shasum": ""
             },
             "require": {
@@ -100,7 +100,7 @@
             "keywords": [
                 "http"
             ],
-            "time": "2016-11-15 15:20:09"
+            "time": "2016-11-15 15:33:05"
         }
     ],
     "packages-dev": [
@@ -1322,9 +1322,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "teapot/status-code": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
