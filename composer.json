@@ -27,7 +27,7 @@
     "config": {
         "bin-dir": "bin"
     },
-    "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Teapot\\": "src"
