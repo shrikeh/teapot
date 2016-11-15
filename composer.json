@@ -13,7 +13,8 @@
     ],
     "require": {
         "php": ">=5.3",
-        "psr/http-message": "^1.0"
+        "psr/http-message": "^1.0",
+        "teapot/status-code": "dev-master"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^2.3",
@@ -26,6 +27,7 @@
     "config": {
         "bin-dir": "bin"
     },
+    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "Teapot\\": "src"

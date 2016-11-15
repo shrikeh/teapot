@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6f260d35ff62fa5ab3807596f7d96053",
-    "content-hash": "b9f69d420c78b161a5f5761295fa763c",
+    "hash": "0911f358fe51f507c5da785e7e8adbbb",
+    "content-hash": "1f228660c7a1b0ff306b0d438af1c1f3",
     "packages": [
         {
             "name": "psr/http-message",
@@ -55,6 +55,56 @@
                 "response"
             ],
             "time": "2015-05-04 20:22:00"
+        },
+        {
+            "name": "teapot/status-code",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/teapot-php/status-code.git",
+                "reference": "700581db76e8f3604dbe6c59a52cb62afafa332b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/teapot-php/status-code/zipball/700581db76e8f3604dbe6c59a52cb62afafa332b",
+                "reference": "700581db76e8f3604dbe6c59a52cb62afafa332b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "pdepend/pdepend": "*",
+                "phploc/phploc": ">=1.7.4",
+                "phpmd/phpmd": ">=1.4.0",
+                "phpunit/phpunit": "3.7.*",
+                "shrink/phpcpd": "dev-master",
+                "squizlabs/php_codesniffer": "1.*",
+                "theseer/phpdox": "*",
+                "zerkalica/php-code-browser": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Teapot\\StatusCode\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Barney Hanlon",
+                    "email": "barney@shrikeh.net"
+                }
+            ],
+            "description": "PHP HTTP Response Status library",
+            "homepage": "http://shrikeh.github.com/teapot",
+            "keywords": [
+                "http"
+            ],
+            "time": "2016-11-15 13:05:45"
         }
     ],
     "packages-dev": [
@@ -1022,8 +1072,10 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "teapot/status-code": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
