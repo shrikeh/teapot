@@ -1,8 +1,10 @@
 *      text=auto
 *.bat  eol=crlf
 
-/test             export-ignore
-/spec             export-ignore
+/test           export-ignore
+/spec           export-ignore
 
 # Remove all dot files for export
-/.*                export-ignore
+/.*             export-ignore
+phpcs.xml       export-ignore
+phpspec.yml     export-ignore
