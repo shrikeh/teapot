@@ -14,12 +14,12 @@
     "require": {
         "php": ">=5.3",
         "psr/http-message": "^1.0",
-        "teapot/status-code": "^1.0"
+        "teapot/status-code": "^1.0",
+        "phpspec/phpspec": "^3.1"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^2.3",
-        "escapestudios/symfony2-coding-standard": "~2.0",
-        "phpspec/phpspec": "^2.5"
+        "escapestudios/symfony2-coding-standard": "~2.0"
     },
     "suggest": {
         "fabpot/php-cs-fixer": "^1.11 - For easy CS fixing"
