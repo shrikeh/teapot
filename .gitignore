@@ -1,7 +1,6 @@
 # All dot (e.g. .htaccess) files #
 #######################
 .*
-.*/*
 
 # OS generated files #
 ######################
@@ -31,8 +30,8 @@ composer.phar
 
 # Dot files we want to keep #
 #######################
-!/.git*
-!/.travis.yml
-!/.php_cs
-!/.scrutinizer.yml
-!/.editorconfig
+!.git*
+!.travis.yml
+!.php_cs
+!.scrutinizer.yml
+!.editorconfig
