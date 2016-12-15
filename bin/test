@@ -39,7 +39,7 @@ function test_phpmd() {
 }
 
 function test_composer_update() {
-  composer update --optimize-autoloader --help;
+  composer update --optimize-autoloader --no-suggest --quiet;
 }
 
 
