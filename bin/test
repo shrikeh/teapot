@@ -39,8 +39,11 @@ function test_phpmd() {
 }
 
 function test_composer_update() {
-  phpenv config-rm xdebug.ini;
-  composer update --optimize-autoloader --no-suggest --quiet;
+  composer update \
+  --prefer-dist \
+  --optimize-autoloader \
+  --no-suggest \
+  --quiet;
 }
 
 
