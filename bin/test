@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# Runs automated test suites for local development
+
+
+# Run behat suites
 function test_behat() {
   local BEHAT_BIN="${1}/behat";
 
@@ -9,6 +13,7 @@ function test_behat() {
   fi;
 }
 
+# Run phpspec suites
 function test_phpspec() {
   local PHPSPEC_BIN="${1}/phpspec";
 
@@ -18,6 +23,7 @@ function test_phpspec() {
   fi;
 }
 
+# Analyse code against agreed rulesets
 function test_phpcs() {
   local PHPCS_BIN="${1}/phpcs";
   local SRC_DIR="${2}";
@@ -28,6 +34,7 @@ function test_phpcs() {
   fi;
 }
 
+# Check code for smells and complexity
 function test_phpmd() {
   local PHPMD_BIN="${1}/phpmd";
   local SRC_DIR="${2}";
@@ -37,7 +44,7 @@ function test_phpmd() {
     eval "${PHPMD_BIN} ${SRC_DIR} text phpmd.xml" || exit 1;
   fi;
 }
-
+# Update composer
 function test_composer_update() {
   composer update \
   --prefer-dist \
@@ -46,7 +53,7 @@ function test_composer_update() {
   --quiet;
 }
 
-
+# Run all local automated code checks
 function test_all() {
   local SRC_DIR="${PWD}/src";
   local BIN_DIR="${PWD}/bin";
@@ -57,11 +64,10 @@ function test_all() {
 
   test_composer_update;
 
-  test_behat "${BIN_DIR}";
-  test_phpspec "${BIN_DIR}";
-  test_phpcs "${BIN_DIR}" "${SRC_DIR}";
-  test_phpmd "${BIN_DIR}" "${SRC_DIR}";
+  test_behat    "${BIN_DIR}";
+  test_phpspec  "${BIN_DIR}";
+  test_phpcs    "${BIN_DIR}" "${SRC_DIR}";
+  test_phpmd    "${BIN_DIR}" "${SRC_DIR}";
 }
-
 
 test_all;
