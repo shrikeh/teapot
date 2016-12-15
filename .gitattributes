@@ -15,3 +15,4 @@ phpspec.yml                 export-ignore
 phpcs.xml                   export-ignore
 phpmd.xml                   export-ignore
 .*                          export-ignore
+composer.lock               export-ignore
