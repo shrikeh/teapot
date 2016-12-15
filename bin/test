@@ -19,7 +19,7 @@ function test_phpspec() {
 
   if [ -x "${PHPSPEC_BIN}" ]; then
     echo 'Running phpspec...';
-    eval "${PHPSPEC_BIN} run --quiet --stop-on-failure" || exit 1;
+    eval "${PHPSPEC_BIN} run --no-code-generation --quiet --stop-on-failure" || exit 1;
   fi;
 }
 
