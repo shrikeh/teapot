@@ -2,6 +2,7 @@
 *      text=auto
 *.bat  eol=crlf
 
+/bin                        export-ignore
 /docs                       export-ignore
 /examples                   export-ignore
 /features                   export-ignore
