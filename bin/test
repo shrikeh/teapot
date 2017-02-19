@@ -30,7 +30,7 @@ function test_phpcs() {
 
   if [ -x "${PHPCS_BIN}" ]; then
     echo 'Running CodeSniffer...';
-    eval "${PHPCS_BIN} -q ${SRC_DIR}" || exit 1;
+    eval "${PHPCS_BIN} --extensions=php -q ${SRC_DIR}" || exit 1;
   fi;
 }
 
