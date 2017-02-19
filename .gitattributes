@@ -1,0 +1,18 @@
+
+*      text=auto
+*.bat  eol=crlf
+
+/bin                        export-ignore
+/docs                       export-ignore
+/examples                   export-ignore
+/features                   export-ignore
+/hooks                      export-ignore
+/spec                       export-ignore
+LICENSE                     export-ignore
+README.md                   export-ignore
+behat.yml                   export-ignore
+phpspec.yml                 export-ignore
+phpcs.xml                   export-ignore
+phpmd.xml                   export-ignore
+.*                          export-ignore
+composer.lock               export-ignore
