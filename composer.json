@@ -18,5 +18,19 @@
   },
   "config": {
     "bin-dir": "bin"
+  },
+  "archive": {
+    "exclude": ["*", "!/src"]
+  },
+  "prefer-stable": true,
+  "autoload": {
+    "psr-4": {
+      "Teapot\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "examples\\Teapot\\": "examples"
+    }
   }
 }
