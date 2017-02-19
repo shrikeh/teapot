@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .*
 # OS generated files #
 ######################
@@ -15,13 +16,50 @@ tmtagsHistory
 .project
 *.iml
 .idea/
+=======
+# All dot (e.g. .htaccess) files #
+#######################
+.*
+
+# OS generated files #
+#######################
+thumbs.db
+Icon
+Thumbs.db
+tags
+vendor.tags
+tmtagsHistory
+
+
+# IDE generated files #
+#######################
+.project
+.idea
+>>>>>>> feature/update-documentation-and-clean=up
 *.sublime-project
 *.sublime-workspace
 atlassian-ide-plugin.xml
 
+<<<<<<< HEAD
+=======
+# PHP-specific files #
+#######################
+>>>>>>> feature/update-documentation-and-clean=up
 vendor
 bin
 data
 build
+<<<<<<< HEAD
 !/.gitignore
 !/.travis.yml
+=======
+composer.phar
+
+# Dot files we want to keep #
+#######################
+!.git*
+!.travis.yml
+!.php_cs
+!.scrutinizer.yml
+!.editorconfig
+>>>>>>> feature/update-documentation-and-clean=up
