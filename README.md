@@ -1,11 +1,15 @@
-## Teapot
+# Teapot
+
+[![build_status_img]][build_status_travis]
+[![code_quality_img]][code_quality]
+[![latest_stable_version_img]][latest_stable_version]
+[![latest_unstable_version_img]][latest_unstable_version]
+[![license_img]][license]
+[![twitter_img]][twitter]
 
 This is a _very_ simple library that aims to aid verbosity in any Web-based application by defining clearly the HTTP 1.1 response codes as constants. It includes two main components: an interface, which contains the constants, and an exception specifically for HTTP.
 
-[![Build Status](https://travis-ci.org/shrikeh/teapot.svg?branch=master)](https://travis-ci.org/shrikeh/teapot)
-[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/shrikeh/teapot/badges/quality-score.png?s=401b84c5188e1d2397dc52931f4ccb323770f6ef)](https://scrutinizer-ci.com/g/shrikeh/teapot/)
-[![Dependency Status](https://img.shields.io/librariesio/github/shrikeh/teapot.svg)](https://libraries.io/github/shrikeh/teapot)
-[![Latest Stable Version](https://poser.pugx.org/shrikeh/teapot/v/stable.png)](https://packagist.org/packages/shrikeh/teapot) [![Total Downloads](https://poser.pugx.org/shrikeh/teapot/downloads.png)](https://packagist.org/packages/shrikeh/teapot) [![Latest Unstable Version](https://poser.pugx.org/shrikeh/teapot/v/unstable.png)](https://packagist.org/packages/shrikeh/teapot) [![License](https://poser.pugx.org/shrikeh/teapot/license.png)](https://packagist.org/packages/shrikeh/teapot)
+## Usage
 
 ### Using the StatusCodes interface
 
@@ -79,7 +83,6 @@ All constants have doc blocks that use the official [W3C](http://www.w3.org/Prot
 
 The `HttpException` is very straightforward. It simply is a named exception to aid verbosity:
 
-
 ```php
 <?php
 
@@ -111,13 +114,35 @@ Run the following command.
 
 ```sh
 composer require shrikeh/teapot
- ```
-
+```
 ### Coding Standards
 
 The entire library is intended to be [PSR-1](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md "PSR-1"), [PSR-2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md "PSR-2") and
 [PSR-4](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md "PSR-4") compliant.
 
-### Get in touch
+## Get in touch
 
-If you have any suggestions, feel free to email me at barney+teapot@shrikeh.net or ping me on Twitter with [@barney_hanlon](https://twitter.com/barney_hanlon).
+If you have any suggestions, feel free to email me at barney+teapot@shrikeh.net or ping me on Twitter with [@shrikeh](https://twitter.com/shrikeh).
+
+
+[build_status_img]: https://img.shields.io/travis/shrikeh/teapot.svg "Build Status"
+[build_status_travis]: https://travis-ci.org/shrikeh/teapot
+
+[code_quality]: https://scrutinizer-ci.com/g/shrikeh/teapot/?branch=master
+[code_quality_img]: https://img.shields.io/scrutinizer/g/shrikeh/teapot.svg "Scrutinizer Code Quality"
+
+[latest_stable_version_img]: https://img.shields.io/packagist/v/shrikeh/teapot.svg "Latest Stable Version"
+[latest_stable_version]: https://packagist.org/packages/shrikeh/teapot "Latest Stable Version"
+
+[latest_unstable_version_img]: https://img.shields.io/packagist/vpre/shrikeh/teapot.svg "Latest Unstable Version"
+[latest_unstable_version]: https://packagist.org/packages/shrikeh/collections "Latest Unstable Version"
+
+[license_img]: https://img.shields.io/packagist/l/shrikeh/collections.svg "License"
+[license]: https://packagist.org/packages/shrikeh/collections
+
+[twitter_img]: https://img.shields.io/badge/twitter-%40shrikeh-blue.svg "@shrikeh on Twitter"
+[twitter]: https://twitter.com/shrikeh
+
+[examples]: https://github.com/shrikeh/teapot/tree/master/examples "Link to examples in master"
+[docs]: https://github.com/shrikeh/teapot/tree/master/docs "Link to docs in master"
+[specs]: https://github.com/shrikeh/teapot/tree/master/spec "Link to specs in master"

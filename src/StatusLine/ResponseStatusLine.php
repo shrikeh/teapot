@@ -53,9 +53,8 @@ final class ResponseStatusLine implements StatusLine
     private $reason;
 
     /**
-     * Constructor.
-     *
-     * @param int    $code   The response code
+     * ResponseStatusLine constructor.
+     * @param int    $code   The HTTP response code
      * @param string $reason The reason phrase
      */
     public function __construct($code, $reason)
@@ -64,6 +63,7 @@ final class ResponseStatusLine implements StatusLine
         $this->reason = $reason;
     }
 
+
     /**
      * Return the response code.
      *
@@ -71,7 +71,7 @@ final class ResponseStatusLine implements StatusLine
      */
     public function statusCode()
     {
-        return $this->code;
+        return (int) $this->code;
     }
 
     /**
@@ -105,7 +105,7 @@ final class ResponseStatusLine implements StatusLine
      */
     public function statusClass()
     {
-        return (int) floor($this->code / 100);
+        return (int) \floor($this->code / 100);
     }
 
     /**
@@ -172,7 +172,7 @@ final class ResponseStatusLine implements StatusLine
      */
     private function setCode($code)
     {
-        if (!is_numeric($code)) {
+        if (!\is_numeric($code)) {
             throw InvalidStatusCodeException::notNumeric($code);
         }
         $code = (int) $code;
