@@ -146,4 +146,3 @@ If you have any suggestions, feel free to email me at barney+teapot@shrikeh.net 
 [examples]: https://github.com/shrikeh/teapot/tree/master/examples "Link to examples in master"
 [docs]: https://github.com/shrikeh/teapot/tree/master/docs "Link to docs in master"
 [specs]: https://github.com/shrikeh/teapot/tree/master/spec "Link to specs in master"
->>>>>>> feature/update-documentation-and-clean=up
