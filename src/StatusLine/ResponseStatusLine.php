@@ -105,7 +105,7 @@ final class ResponseStatusLine implements StatusLine
      */
     public function statusClass()
     {
-        return (int) floor($this->code / 100);
+        return (int) \floor($this->code / 100);
     }
 
     /**
@@ -172,7 +172,7 @@ final class ResponseStatusLine implements StatusLine
      */
     private function setCode($code)
     {
-        if (!is_numeric($code)) {
+        if (!\is_numeric($code)) {
             throw InvalidStatusCodeException::notNumeric($code);
         }
         $code = (int) $code;
