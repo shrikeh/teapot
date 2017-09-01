@@ -39,6 +39,9 @@
       "Teapot\\": "src"
     }
   },
+  "archive": {
+    "exclude": ["*", "!/src"]
+  },
   "autoload-dev": {
     "psr-4": {
       "examples\\Teapot\\": "examples"
