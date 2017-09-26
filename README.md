@@ -135,10 +135,10 @@ If you have any suggestions, feel free to email me at barney+teapot@shrikeh.net 
 [latest_stable_version]: https://packagist.org/packages/shrikeh/teapot "Latest Stable Version"
 
 [latest_unstable_version_img]: https://img.shields.io/packagist/vpre/shrikeh/teapot.svg "Latest Unstable Version"
-[latest_unstable_version]: https://packagist.org/packages/shrikeh/collections "Latest Unstable Version"
+[latest_unstable_version]: https://packagist.org/packages/shrikeh/teapot "Latest Unstable Version"
 
-[license_img]: https://img.shields.io/packagist/l/shrikeh/collections.svg "License"
-[license]: https://packagist.org/packages/shrikeh/collections
+[license_img]: https://img.shields.io/packagist/l/shrikeh/teapot.svg "License"
+[license]: https://packagist.org/packages/shrikeh/teapot
 
 [twitter_img]: https://img.shields.io/badge/twitter-%40shrikeh-blue.svg "@shrikeh on Twitter"
 [twitter]: https://twitter.com/shrikeh
