@@ -1,9 +1,6 @@
 # Teapot
 
-[![build_status_img]][build_status_travis]
-[![code_quality_img]][code_quality]
 [![latest_stable_version_img]][latest_stable_version]
-[![latest_unstable_version_img]][latest_unstable_version]
 [![license_img]][license]
 [![twitter_img]][twitter]
 
@@ -125,24 +122,11 @@ The entire library is intended to be [PSR-1](https://github.com/php-fig/fig-stan
 If you have any suggestions, feel free to email me at barney+teapot@shrikeh.net or ping me on Twitter with [@shrikeh](https://twitter.com/shrikeh).
 
 
-[build_status_img]: https://img.shields.io/travis/shrikeh/teapot.svg "Build Status"
-[build_status_travis]: https://travis-ci.org/shrikeh/teapot
-
-[code_quality]: https://scrutinizer-ci.com/g/shrikeh/teapot/?branch=master
-[code_quality_img]: https://img.shields.io/scrutinizer/g/shrikeh/teapot.svg "Scrutinizer Code Quality"
-
 [latest_stable_version_img]: https://img.shields.io/packagist/v/shrikeh/teapot.svg "Latest Stable Version"
 [latest_stable_version]: https://packagist.org/packages/shrikeh/teapot "Latest Stable Version"
-
-[latest_unstable_version_img]: https://img.shields.io/packagist/vpre/shrikeh/teapot.svg "Latest Unstable Version"
-[latest_unstable_version]: https://packagist.org/packages/shrikeh/teapot "Latest Unstable Version"
 
 [license_img]: https://img.shields.io/packagist/l/shrikeh/teapot.svg "License"
 [license]: https://packagist.org/packages/shrikeh/teapot
 
 [twitter_img]: https://img.shields.io/badge/twitter-%40shrikeh-blue.svg "@shrikeh on Twitter"
 [twitter]: https://twitter.com/shrikeh
-
-[examples]: https://github.com/shrikeh/teapot/tree/master/examples "Link to examples in master"
-[docs]: https://github.com/shrikeh/teapot/tree/master/docs "Link to docs in master"
-[specs]: https://github.com/shrikeh/teapot/tree/master/spec "Link to specs in master"

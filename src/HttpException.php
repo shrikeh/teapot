@@ -2,8 +2,6 @@
 /**
  * Simple Exception to represent http-based Exceptions.
  *
- * PHP version 5.3
- *
  * @category Exception
  *
  * @package Teapot
@@ -12,8 +10,9 @@
  * @copyright 2013-2016 B Hanlon. All rights reserved.
  * @license   MIT http://opensource.org/licenses/MIT
  *
- * @link https://shrikeh.github.com/teapot
+ * @see https://shrikeh.github.com/teapot
  */
+
 namespace Teapot;
 
 /**
@@ -27,7 +26,8 @@ namespace Teapot;
  * @copyright 2013-2016 B Hanlon. All rights reserved.
  * @license   MIT http://opensource.org/licenses/MIT
  *
- * @link https://shrikeh.github.com/teapot
+ * @see https://shrikeh.github.com/teapot
+ * @api
  */
 class HttpException extends \Exception implements StatusCode
 {
@@ -36,7 +36,8 @@ class HttpException extends \Exception implements StatusCode
      *
      * @var string
      */
-    const HTTP1_1_PREFIX = 'HTTP/1.1';
+    public const HTTP1_1_PREFIX = 'HTTP/1.1';
+
     /**
      * Simple magic so you can use the Exception directly as a string, for
      * example in header();.
@@ -55,14 +56,13 @@ class HttpException extends \Exception implements StatusCode
      * response status header.
      *
      * @param bool $prependHttp Whether to prepend the HTTP/1.1 prefix
-     *
-     * @return string
      */
-    public function render($prependHttp = true)
+    public function render(bool $prependHttp = true): string
     {
-        $string = $this->getCode().' '.$this->getMessage();
-        if (true === $prependHttp) {
-            $string = self::HTTP1_1_PREFIX.' '.$string;
+        $string = $this->getCode() . ' ' . $this->getMessage();
+
+        if ($prependHttp) {
+            $string = self::HTTP1_1_PREFIX . ' ' . $string;
         }
 
         return $string;

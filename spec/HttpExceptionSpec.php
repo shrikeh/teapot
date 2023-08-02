@@ -2,23 +2,20 @@
 
 namespace spec\Teapot;
 
-use Teapot\HttpException;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use Teapot\StatusCode\RFC\RFC7231;
-use Teapot\StatusCodeException\InvalidStatusCodeException;
 
 class HttpExceptionSpec extends ObjectBehavior
 {
-    function it_is_renderable()
+    public function it_is_renderable(): void
     {
         $message = 'Forbidden';
-        $code = RFC7231::FORBIDDEN;
+        $code    = RFC7231::FORBIDDEN;
         $this->beConstructedWith($message, $code);
-        $this->render(false)->shouldReturn("$code $message");
+        $this->render(false)->shouldReturn("{$code} {$message}");
     }
 
-    function it_behaves_as_a_string()
+    public function it_behaves_as_a_string(): void
     {
         $this->beConstructedWith('Expectation Failed', RFC7231::EXPECTATION_FAILED);
         $this->__toString()->shouldReturn('HTTP/1.1 417 Expectation Failed');

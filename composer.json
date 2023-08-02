@@ -18,35 +18,35 @@
     }
   ],
   "require": {
-    "php": ">=5.5",
-    "psr/http-message": "^1.0",
-    "teapot/status-code": "^1.0"
+    "php": ">=8.0",
+    "psr/http-message": "^1.1 || ^2.0",
+    "teapot/status-code": "^2.1"
   },
   "require-dev": {
-    "behat/behat": "^3.2",
-    "bossa/phpspec2-expect": "^2.0",
-    "escapestudios/symfony2-coding-standard": "^2.9",
-    "phpspec/phpspec": "~3.0.0",
-    "squizlabs/php_codesniffer": "^2.7"
+    "ergebnis/php-cs-fixer-config": "^5.9.2",
+    "phpspec/phpspec": "^7.4",
+    "vimeo/psalm": "^5.14.1"
+  },
+  "scripts": {
+    "analyze": "psalm",
+    "cs-check": "php-cs-fixer fix --dry-run",
+    "cs-fix": "php-cs-fixer fix",
+    "test": "phpspec run"
   },
   "config": {
-    "bin-dir": "bin"
+    "platform": {
+      "php": "8.0.29"
+    },
+    "sort-packages": true
   },
   "autoload": {
     "psr-4": {
       "Teapot\\": "src"
     }
   },
-  "autoload-dev": {
-    "psr-4": {
-      "examples\\Teapot\\": "examples"
-    }
-  },
   "archive": {
     "exclude": [
-      "*",
-      "!/src"
+      "/*, !/src"
     ]
-  },
-  "prefer-stable": true
+  }
 }

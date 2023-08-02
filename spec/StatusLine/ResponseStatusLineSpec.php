@@ -3,43 +3,41 @@
 namespace spec\Teapot\StatusLine;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
-
+use Psr\Http\Message\ResponseInterface;
 use Teapot\StatusCode;
 use Teapot\StatusCodeException\InvalidStatusCodeException;
-
-use Psr\Http\Message\ResponseInterface;
+use Teapot\StatusLine;
 
 class ResponseStatusLineSpec extends ObjectBehavior
 {
-    function it_is_initializable()
+    public function it_is_initializable(): void
     {
         $this->beConstructedWith(StatusCode::OK, 'OK');
-        $this->shouldHaveType('Teapot\StatusLine');
+        $this->shouldHaveType(StatusLine::class);
     }
 
-    function it_returns_a_status_code()
+    public function it_returns_a_status_code(): void
     {
         $code = StatusCode::FORBIDDEN;
         $this->beConstructedWith($code, 'Forbidden');
         $this->statusCode()->shouldReturn($code);
     }
 
-    function it_returns_the_status_code_class()
+    public function it_returns_the_status_code_class(): void
     {
         $code = StatusCode::FORBIDDEN;
         $this->beConstructedWith($code, 'Forbidden');
         $this->statusClass()->shouldReturn(StatusCode::CLIENT_ERROR);
     }
 
-    function it_returns_true_if_it_is_informational()
+    public function it_returns_true_if_it_is_informational(): void
     {
         $code = StatusCode::SWITCHING_PROTOCOLS;
         $this->beConstructedWith($code, 'Switching Protocols');
         $this->isInformational()->shouldReturn(true);
     }
 
-    function it_returns_true_if_it_is_successful()
+    public function it_returns_true_if_it_is_successful(): void
     {
         $code = StatusCode::CREATED;
         $this->beConstructedWith($code, 'Created');
@@ -47,7 +45,7 @@ class ResponseStatusLineSpec extends ObjectBehavior
         $this->isSuccessful()->shouldReturn(true);
     }
 
-    function it_returns_true_if_it_is_redirection()
+    public function it_returns_true_if_it_is_redirection(): void
     {
         $code = StatusCode::NOT_MODIFIED;
         $this->beConstructedWith($code, 'Not Modified');
@@ -55,7 +53,7 @@ class ResponseStatusLineSpec extends ObjectBehavior
         $this->isRedirection()->shouldReturn(true);
     }
 
-    function it_returns_true_if_it_is_a_client_error()
+    public function it_returns_true_if_it_is_a_client_error(): void
     {
         $code = StatusCode::FORBIDDEN;
         $this->beConstructedWith($code, 'Forbidden');
@@ -63,7 +61,7 @@ class ResponseStatusLineSpec extends ObjectBehavior
         $this->isClientError()->shouldReturn(true);
     }
 
-    function it_returns_true_if_it_is_a_server_error()
+    public function it_returns_true_if_it_is_a_server_error(): void
     {
         $code = StatusCode::INTERNAL_SERVER_ERROR;
         $this->beConstructedWith($code, 'Forbidden');
@@ -71,39 +69,39 @@ class ResponseStatusLineSpec extends ObjectBehavior
         $this->isServerError()->shouldReturn(true);
     }
 
-    function it_returns_the_reason_phrase()
+    public function it_returns_the_reason_phrase(): void
     {
         $reason = 'Forbidden';
         $this->beConstructedWith(StatusCode::FORBIDDEN, $reason);
         $this->reasonPhrase()->shouldReturn($reason);
     }
 
-    function it_throws_an_exception_if_the_code_is_not_numeric()
+    public function it_throws_an_exception_if_the_code_is_not_numeric(): void
     {
         $this->beConstructedWith('Foo', 'Bar');
-        $this->shouldThrow('Teapot\StatusCodeException\InvalidStatusCodeException')
+        $this->shouldThrow(InvalidStatusCodeException::class)
             ->duringInstantiation();
     }
 
-    function it_accepts_numeric_codes()
+    public function it_accepts_numeric_codes(): void
     {
         $code = StatusCode::FORBIDDEN;
         $this->beConstructedWith((string) $code, 'Bar');
         $this->statusCode()->shouldReturn($code);
     }
 
-    function it_throws_an_exception_if_the_code_is_below_100()
+    public function it_throws_an_exception_if_the_code_is_below_100(): void
     {
         $this->beConstructedWith('099', 'Bar');
-        $this->shouldThrow('Teapot\StatusCodeException\InvalidStatusCodeException')
+        $this->shouldThrow(InvalidStatusCodeException::class)
             ->duringInstantiation();
     }
 
-    function it_can_append_itself_to_a_psr_7_response(
+    public function it_can_append_itself_to_a_psr_7_response(
         ResponseInterface $response1,
-        ResponseInterface $response2
-    ) {
-        $code = StatusCode::FORBIDDEN;
+        ResponseInterface $response2,
+    ): void {
+        $code   = StatusCode::FORBIDDEN;
         $reason = 'Forbidden';
         $response1->withStatus($code, $reason)->willReturn($response2);
         $this->beConstructedWith($code, $reason);
