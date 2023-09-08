@@ -2,7 +2,9 @@
 
 # Run all automated tests on commit.
 function test_on_commit() {
-  bin/test --no-fix || exit 1;
+  composer analyze || exit 1;
+  composer cs-check || exit 1;
+  composer test || exit 1;
   exit 0;
 }
 

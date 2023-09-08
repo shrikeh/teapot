@@ -1,0 +1,41 @@
+# https://docs.github.com/en/actions
+
+name: "Integrate"
+
+on: [push, pull_request]
+
+jobs:
+  coding-standards:
+    name: "Run tests on ${{ matrix.php }}"
+    runs-on: "ubuntu-latest"
+
+    strategy:
+      matrix:
+        php: [ '8.0', '8.1', '8.2' ]
+
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v3.5.3"
+
+      - name: "Set up PHP"
+        uses: "shivammathur/setup-php@2.25.5"
+        with:
+          php-version: "${{ matrix.php }}"
+          tools: "psalm"
+
+      - name: "Validate composer.json and composer.lock"
+        run: "composer validate --strict"
+
+      - name: "Install Composer dependencies"
+        run: "composer install --no-progress"
+
+      - name: "Run PHP CS Fixer"
+        run: "vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --verbose --dry-run --using-cache=no"
+        if: ${{ matrix.php == '8.2' }}
+
+      - name: "Run Psalm"
+        run: "psalm --output-format=github"
+        if: ${{ matrix.php == '8.2' }}
+
+      - name: "Run phpspec"
+        run: "vendor/bin/phpspec run"

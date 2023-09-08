@@ -20,10 +20,11 @@
  *
  * @codingStandardsIgnoreStart
  *
- * @link http://lists.w3.org/Archives/Public/public-web-perf/2013Apr/att-0007/WebRequestStatusCodes4.html
- * @link https://shrikeh.github.com/teapot
+ * @see http://lists.w3.org/Archives/Public/public-web-perf/2013Apr/att-0007/WebRequestStatusCodes4.html
+ * @see https://shrikeh.github.com/teapot
  * @codingStandardsIgnoreEnd
  */
+
 namespace Teapot;
 
 use Teapot\StatusCode\Http;
@@ -47,19 +48,15 @@ use Teapot\StatusCode\Http;
  *
  * @codingStandardsIgnoreStart
  *
- * @link http://lists.w3.org/Archives/Public/public-web-perf/2013Apr/att-0007/WebRequestStatusCodes4.html
- * @link https://shrikeh.github.com/teapot
+ * @see http://lists.w3.org/Archives/Public/public-web-perf/2013Apr/att-0007/WebRequestStatusCodes4.html
+ * @see https://shrikeh.github.com/teapot
  * @codingStandardsIgnoreEnd
  */
 interface StatusCode extends Http
 {
-    const INFORMATIONAL = 1;
-
-    const SUCCESSFUL = 2;
-
-    const REDIRECTION = 3;
-
-    const CLIENT_ERROR = 4;
-
-    const SERVER_ERROR = 5;
+    public const INFORMATIONAL = 1;
+    public const SUCCESSFUL    = 2;
+    public const REDIRECTION   = 3;
+    public const CLIENT_ERROR  = 4;
+    public const SERVER_ERROR  = 5;
 }
